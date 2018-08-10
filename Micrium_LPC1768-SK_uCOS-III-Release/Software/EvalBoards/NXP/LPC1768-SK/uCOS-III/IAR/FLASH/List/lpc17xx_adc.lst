@@ -1,0 +1,974 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       06/Apr/2017  11:01:05
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_adc.c
+#    Command line =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_adc.c
+#        -lCN
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\List
+#        --diag_suppress Pe174 -o
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files\IAR
+#        Systems\Embedded Workbench 7.5\arm\INC\c\DLib_Config_Normal.h" -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\OS\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\NXP\LPC17xx\LPC1768\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Ports\ARM-Cortex-M3\CSP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Source\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-LIB\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CPU\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Core\CM3\CoreSupport\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Core\CM3\DeviceSupport\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\include\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Driver\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Driver\NXP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Line\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\OS\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\OS\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Source\
+#        -On --use_c++_inline -I "C:\Program Files\IAR Systems\Embedded
+#        Workbench 7.5\arm\CMSIS\Include\"
+#    Locale       =  Chinese (Simplified)_People's Republic of China.936
+#    List file    =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\List\lpc17xx_adc.lst
+#    Object file  =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\Obj\lpc17xx_adc.o
+#
+###############################################################################
+
+E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_adc.c
+      1          /**
+      2           * @file	: lpc17xx_adc.c
+      3           * @brief	: Contains all functions support for ADC firmware library on LPC17xx
+      4           * @version	: 1.0
+      5           * @date	: 3. April. 2009
+      6           * @author	: NgaDinh
+      7           **************************************************************************
+      8           * Software that is described herein is for illustrative purposes only
+      9           * which provides customers with programming information regarding the
+     10           * products. This software is supplied "AS IS" without any warranties.
+     11           * NXP Semiconductors assumes no responsibility or liability for the
+     12           * use of the software, conveys no license or title under any patent,
+     13           * copyright, or mask work right to the product. NXP Semiconductors
+     14           * reserves the right to make changes in the software without
+     15           * notification. NXP Semiconductors also make no representation or
+     16           * warranty that such application will be suitable for the specified
+     17           * use without further testing or modification.
+     18           **********************************************************************/
+     19          
+     20          /* Peripheral group ----------------------------------------------------------- */
+     21          /** @addtogroup ADC
+     22           * @{
+     23           */
+     24          
+     25          /* Includes ------------------------------------------------------------------- */
+     26          #include "lpc17xx_adc.h"
+     27          #include "lpc17xx_clkpwr.h"
+     28          
+     29          /* If this source file built with example, the LPC17xx FW library configuration
+     30           * file in each example directory ("lpc17xx_libcfg.h") must be included,
+     31           * otherwise the default FW library configuration file must be included instead
+     32           */
+     33          #ifdef __BUILD_WITH_EXAMPLE__
+     34          #include "lpc17xx_libcfg.h"
+     35          #else
+     36          #include "lpc17xx_libcfg_default.h"
+     37          #endif /* __BUILD_WITH_EXAMPLE__ */
+     38          
+     39          
+     40          #ifdef _ADC
+     41          
+     42          /* Public Functions ----------------------------------------------------------- */
+     43          /** @addtogroup ADC_Public_Functions
+     44           * @{
+     45           */
+     46          
+     47          /*********************************************************************//**
+     48           * @brief 		Initial for ADC
+     49           * 					- Set bit PCADC
+     50           * 					- Set clock for ADC
+     51           * 					- Set Clock Frequency
+     52           *
+     53           * @param[in]	ADCx pointer to LPC_ADC_TypeDef
+     54           * @param[in]	ConvFreq Clock frequency
+     55           * @return 		None
+     56           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     57          void ADC_Init(LPC_ADC_TypeDef *ADCx, uint32_t ConvFreq)
+     58          
+     59          {
+   \                     ADC_Init: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     60          	uint32_t temp, tmp;
+     61          
+     62          	CHECK_PARAM(PARAM_ADCx(ADCx));
+   \   00000006   0x....             LDR.N    R0,??DataTable12  ;; 0x40034000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD003             BEQ.N    ??ADC_Init_0
+   \   0000000C   0x213E             MOVS     R1,#+62
+   \   0000000E   0x....             LDR.N    R0,??DataTable12_1
+   \   00000010   0x.... 0x....      BL       check_failed
+     63          	CHECK_PARAM(PARAM_ADC_FREQUENCY(ConvFreq));
+   \                     ??ADC_Init_0: (+1)
+   \   00000014   0x....             LDR.N    R0,??DataTable12_2  ;; 0xc65d41
+   \   00000016   0x4285             CMP      R5,R0
+   \   00000018   0xD303             BCC.N    ??ADC_Init_1
+   \   0000001A   0x213F             MOVS     R1,#+63
+   \   0000001C   0x....             LDR.N    R0,??DataTable12_1
+   \   0000001E   0x.... 0x....      BL       check_failed
+     64          
+     65          	// Turn on power and clock
+     66          	CLKPWR_ConfigPPWR (CLKPWR_PCONP_PCAD, ENABLE);
+   \                     ??ADC_Init_1: (+1)
+   \   00000022   0x2101             MOVS     R1,#+1
+   \   00000024   0xF44F 0x5080      MOV      R0,#+4096
+   \   00000028   0x.... 0x....      BL       CLKPWR_ConfigPPWR
+     67          	// Set clock divider for ADC to 4 from CCLK as default
+     68          	// CLKPWR_SetPCLKDiv(CLKPWR_PCLKSEL_ADC,CLKPWR_PCLKSEL_CCLK_DIV_4);
+     69          
+     70          	ADCx->ADCR = 0;
+   \   0000002C   0x2000             MOVS     R0,#+0
+   \   0000002E   0x6020             STR      R0,[R4, #+0]
+     71          
+     72          	//Enable PDN bit
+     73          	tmp = ADC_CR_PDN;
+   \   00000030   0xF45F 0x1000      MOVS     R0,#+2097152
+   \   00000034   0x0006             MOVS     R6,R0
+     74          	// Set clock frequency
+     75          	temp = CLKPWR_GetPCLK(CLKPWR_PCLKSEL_ADC) ;
+   \   00000036   0x2018             MOVS     R0,#+24
+   \   00000038   0x.... 0x....      BL       CLKPWR_GetPCLK
+   \   0000003C   0x0007             MOVS     R7,R0
+     76          	temp = (temp /ConvFreq) - 1;
+   \   0000003E   0xFBB7 0xF0F5      UDIV     R0,R7,R5
+   \   00000042   0x1E47             SUBS     R7,R0,#+1
+     77          	tmp |=  ADC_CR_CLKDIV(temp);
+   \   00000044   0xEA56 0x2607      ORRS     R6,R6,R7, LSL #+8
+     78          
+     79          	ADCx->ADCR = tmp;
+   \   00000048   0x6026             STR      R6,[R4, #+0]
+     80          }
+   \   0000004A   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+     81          
+     82          
+     83          /*********************************************************************//**
+     84          * @brief 		Close ADC
+     85          * @param[in]	ADCx pointer to ADC
+     86          * @return 		None
+     87          **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     88          void 		ADC_DeInit(LPC_ADC_TypeDef *ADCx)
+     89          {
+   \                     ADC_DeInit: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     90          	CHECK_PARAM(PARAM_ADCx(ADCx));
+   \   00000004   0x....             LDR.N    R0,??DataTable12  ;; 0x40034000
+   \   00000006   0x4284             CMP      R4,R0
+   \   00000008   0xD003             BEQ.N    ??ADC_DeInit_0
+   \   0000000A   0x215A             MOVS     R1,#+90
+   \   0000000C   0x....             LDR.N    R0,??DataTable12_1
+   \   0000000E   0x.... 0x....      BL       check_failed
+     91          
+     92          	// Clear PDN bit
+     93          	ADCx->ADCR &= ~ADC_CR_PDN;
+   \                     ??ADC_DeInit_0: (+1)
+   \   00000012   0x6820             LDR      R0,[R4, #+0]
+   \   00000014   0xF430 0x1000      BICS     R0,R0,#0x200000
+   \   00000018   0x6020             STR      R0,[R4, #+0]
+     94          	// Turn on power and clock
+     95          	CLKPWR_ConfigPPWR (CLKPWR_PCONP_PCAD, DISABLE);
+   \   0000001A   0x2100             MOVS     R1,#+0
+   \   0000001C   0xF44F 0x5080      MOV      R0,#+4096
+   \   00000020   0x.... 0x....      BL       CLKPWR_ConfigPPWR
+     96          }
+   \   00000024   0xBD10             POP      {R4,PC}          ;; return
+     97          
+     98          
+     99          /*********************************************************************//**
+    100          * @brief 		Get Result conversion from A/D data register
+    101          * @param[in]	channel number which want to read back the result
+    102          * @return 		Result of conversion
+    103          *********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    104          uint32_t ADC_GetData(uint32_t channel)
+    105          {
+   \                     ADC_GetData: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+    106          	uint32_t adc_value;
+    107          
+    108          	CHECK_PARAM(PARAM_ADC_CHANNEL_SELECTION(channel));
+    109          
+    110          	adc_value = *(uint32_t *)((&LPC_ADC->ADDR0) + channel);
+   \   00000002   0x....             LDR.N    R2,??DataTable12_3  ;; 0x40034010
+   \   00000004   0xF852 0x2021      LDR      R2,[R2, R1, LSL #+2]
+   \   00000008   0x0010             MOVS     R0,R2
+    111          	return ADC_GDR_RESULT(adc_value);
+   \   0000000A   0xF3C0 0x100B      UBFX     R0,R0,#+4,#+12
+   \   0000000E   0x4770             BX       LR               ;; return
+    112          }
+    113          
+    114          /*********************************************************************//**
+    115          * @brief 		Set start mode for ADC
+    116          * @param[in]	ADCx pointer to LPC_ADC_TypeDef
+    117          * @param[in]	start_mode Start mode choose one of modes in
+    118          * 							'ADC_START_OPT' enumeration type definition
+    119          * @return 		None
+    120          *********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    121          void ADC_StartCmd(LPC_ADC_TypeDef *ADCx, uint8_t start_mode)
+    122          {
+   \                     ADC_StartCmd: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    123          	CHECK_PARAM(PARAM_ADCx(ADCx));
+   \   00000006   0x....             LDR.N    R0,??DataTable12  ;; 0x40034000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD003             BEQ.N    ??ADC_StartCmd_0
+   \   0000000C   0x217B             MOVS     R1,#+123
+   \   0000000E   0x....             LDR.N    R0,??DataTable12_1
+   \   00000010   0x.... 0x....      BL       check_failed
+    124          	CHECK_PARAM(PARAM_ADC_START_OPT(start_mode));
+   \                     ??ADC_StartCmd_0: (+1)
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0x2D00             CMP      R5,#+0
+   \   00000018   0xD018             BEQ.N    ??ADC_StartCmd_1
+   \   0000001A   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001C   0x2D01             CMP      R5,#+1
+   \   0000001E   0xD015             BEQ.N    ??ADC_StartCmd_1
+   \   00000020   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000022   0x2D02             CMP      R5,#+2
+   \   00000024   0xD012             BEQ.N    ??ADC_StartCmd_1
+   \   00000026   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000028   0x2D03             CMP      R5,#+3
+   \   0000002A   0xD00F             BEQ.N    ??ADC_StartCmd_1
+   \   0000002C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000002E   0x2D04             CMP      R5,#+4
+   \   00000030   0xD00C             BEQ.N    ??ADC_StartCmd_1
+   \   00000032   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000034   0x2D05             CMP      R5,#+5
+   \   00000036   0xD009             BEQ.N    ??ADC_StartCmd_1
+   \   00000038   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000003A   0x2D06             CMP      R5,#+6
+   \   0000003C   0xD006             BEQ.N    ??ADC_StartCmd_1
+   \   0000003E   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000040   0x2D07             CMP      R5,#+7
+   \   00000042   0xD003             BEQ.N    ??ADC_StartCmd_1
+   \   00000044   0x217C             MOVS     R1,#+124
+   \   00000046   0x....             LDR.N    R0,??DataTable12_1
+   \   00000048   0x.... 0x....      BL       check_failed
+    125          
+    126          	ADCx->ADCR &= ~ADC_CR_START_MASK;
+   \                     ??ADC_StartCmd_1: (+1)
+   \   0000004C   0x6820             LDR      R0,[R4, #+0]
+   \   0000004E   0xF030 0x60E0      BICS     R0,R0,#0x7000000
+   \   00000052   0x6020             STR      R0,[R4, #+0]
+    127          	ADCx->ADCR |=ADC_CR_START_MODE_SEL((uint32_t)start_mode);
+   \   00000054   0x6820             LDR      R0,[R4, #+0]
+   \   00000056   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000058   0xEA50 0x6005      ORRS     R0,R0,R5, LSL #+24
+   \   0000005C   0x6020             STR      R0,[R4, #+0]
+    128          }
+   \   0000005E   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    129          
+    130          
+    131          /*********************************************************************//**
+    132          * @brief 		ADC Burst mode setting
+    133          *
+    134          * @param[in]	ADCx pointer to ADC
+    135          * @param[in]	NewState
+    136          * 				-	1: Set Burst mode
+    137          * 				-	0: reset Burst mode
+    138          * @return 		None
+    139          **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    140          void ADC_BurstCmd(LPC_ADC_TypeDef *ADCx, FunctionalState NewState)
+    141          {
+   \                     ADC_BurstCmd: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    142          	CHECK_PARAM(PARAM_ADCx(ADCx));
+   \   00000006   0x....             LDR.N    R0,??DataTable12  ;; 0x40034000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD003             BEQ.N    ??ADC_BurstCmd_0
+   \   0000000C   0x218E             MOVS     R1,#+142
+   \   0000000E   0x....             LDR.N    R0,??DataTable12_1
+   \   00000010   0x.... 0x....      BL       check_failed
+    143          
+    144          	ADCx->ADCR &= ~ADC_CR_BURST;
+   \                     ??ADC_BurstCmd_0: (+1)
+   \   00000014   0x6820             LDR      R0,[R4, #+0]
+   \   00000016   0xF430 0x3080      BICS     R0,R0,#0x10000
+   \   0000001A   0x6020             STR      R0,[R4, #+0]
+    145          	if (NewState){
+   \   0000001C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001E   0x2D00             CMP      R5,#+0
+   \   00000020   0xD003             BEQ.N    ??ADC_BurstCmd_1
+    146          		ADCx->ADCR |= ADC_CR_BURST;
+   \   00000022   0x6820             LDR      R0,[R4, #+0]
+   \   00000024   0xF450 0x3080      ORRS     R0,R0,#0x10000
+   \   00000028   0x6020             STR      R0,[R4, #+0]
+    147          	}
+    148          
+    149          }
+   \                     ??ADC_BurstCmd_1: (+1)
+   \   0000002A   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    150          
+    151          /*********************************************************************//**
+    152          * @brief 		Set AD conversion in power mode
+    153          *
+    154          * @param[in]	ADCx pointer to ADC
+    155          * @param[in]	NewState
+    156          * 				-	1: AD converter is optional
+    157          * 				-	0: AD Converter is in power down mode
+    158          * @return 		None
+    159          **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    160          void ADC_PowerdownCmd(LPC_ADC_TypeDef *ADCx, FunctionalState NewState)
+    161          {
+   \                     ADC_PowerdownCmd: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    162          	CHECK_PARAM(PARAM_ADCx(ADCx));
+   \   00000006   0x....             LDR.N    R0,??DataTable12  ;; 0x40034000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD003             BEQ.N    ??ADC_PowerdownCmd_0
+   \   0000000C   0x21A2             MOVS     R1,#+162
+   \   0000000E   0x....             LDR.N    R0,??DataTable12_1
+   \   00000010   0x.... 0x....      BL       check_failed
+    163          
+    164          	ADCx->ADCR &= ~ADC_CR_PDN;
+   \                     ??ADC_PowerdownCmd_0: (+1)
+   \   00000014   0x6820             LDR      R0,[R4, #+0]
+   \   00000016   0xF430 0x1000      BICS     R0,R0,#0x200000
+   \   0000001A   0x6020             STR      R0,[R4, #+0]
+    165          	if (NewState){
+   \   0000001C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001E   0x2D00             CMP      R5,#+0
+   \   00000020   0xD003             BEQ.N    ??ADC_PowerdownCmd_1
+    166          		ADCx->ADCR |= ADC_CR_PDN;
+   \   00000022   0x6820             LDR      R0,[R4, #+0]
+   \   00000024   0xF450 0x1000      ORRS     R0,R0,#0x200000
+   \   00000028   0x6020             STR      R0,[R4, #+0]
+    167          	}
+    168          }
+   \                     ??ADC_PowerdownCmd_1: (+1)
+   \   0000002A   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    169          
+    170          /*********************************************************************//**
+    171          * @brief 		Set Edge start configuration
+    172          *
+    173          * @param[in]	ADCx pointer to ADC
+    174          * @param[in]	EdgeOption is ADC_START_ON_RISING and ADC_START_ON_FALLING
+    175          * 					0:ADC_START_ON_RISING
+    176          * 					1:ADC_START_ON_FALLING
+    177          *
+    178          * @return 		None
+    179          **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    180          void ADC_EdgeStartConfig(LPC_ADC_TypeDef *ADCx, uint8_t EdgeOption)
+    181          {
+   \                     ADC_EdgeStartConfig: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    182          	CHECK_PARAM(PARAM_ADCx(ADCx));
+   \   00000006   0x....             LDR.N    R0,??DataTable12  ;; 0x40034000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD003             BEQ.N    ??ADC_EdgeStartConfig_0
+   \   0000000C   0x21B6             MOVS     R1,#+182
+   \   0000000E   0x....             LDR.N    R0,??DataTable12_1
+   \   00000010   0x.... 0x....      BL       check_failed
+    183          	CHECK_PARAM(PARAM_ADC_START_ON_EDGE_OPT(EdgeOption));
+   \                     ??ADC_EdgeStartConfig_0: (+1)
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0x2D00             CMP      R5,#+0
+   \   00000018   0xD006             BEQ.N    ??ADC_EdgeStartConfig_1
+   \   0000001A   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001C   0x2D01             CMP      R5,#+1
+   \   0000001E   0xD003             BEQ.N    ??ADC_EdgeStartConfig_1
+   \   00000020   0x21B7             MOVS     R1,#+183
+   \   00000022   0x....             LDR.N    R0,??DataTable12_1
+   \   00000024   0x.... 0x....      BL       check_failed
+    184          
+    185          	ADCx->ADCR &= ~ADC_CR_EDGE;
+   \                     ??ADC_EdgeStartConfig_1: (+1)
+   \   00000028   0x6820             LDR      R0,[R4, #+0]
+   \   0000002A   0xF030 0x6000      BICS     R0,R0,#0x8000000
+   \   0000002E   0x6020             STR      R0,[R4, #+0]
+    186          	if (EdgeOption){
+   \   00000030   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000032   0x2D00             CMP      R5,#+0
+   \   00000034   0xD003             BEQ.N    ??ADC_EdgeStartConfig_2
+    187          		ADCx->ADCR |= ADC_CR_EDGE;
+   \   00000036   0x6820             LDR      R0,[R4, #+0]
+   \   00000038   0xF050 0x6000      ORRS     R0,R0,#0x8000000
+   \   0000003C   0x6020             STR      R0,[R4, #+0]
+    188          	}
+    189          }
+   \                     ??ADC_EdgeStartConfig_2: (+1)
+   \   0000003E   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    190          
+    191          /*********************************************************************//**
+    192          * @brief 		ADC interrupt configuration
+    193          * @param[in]	ADCx pointer to ADC
+    194          * @param[in]	IntType
+    195          * @param[in]	NewState:
+    196          * 					- SET : enable ADC interrupt
+    197          * 					- RESET: disable ADC interrupt
+    198          *
+    199          * @return 		None
+    200          **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    201          void ADC_IntConfig (LPC_ADC_TypeDef *ADCx, ADC_TYPE_INT_OPT IntType, FunctionalState NewState)
+    202          {
+   \                     ADC_IntConfig: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    203          	CHECK_PARAM(PARAM_ADCx(ADCx));
+   \   00000008   0x....             LDR.N    R0,??DataTable12  ;; 0x40034000
+   \   0000000A   0x4284             CMP      R4,R0
+   \   0000000C   0xD003             BEQ.N    ??ADC_IntConfig_0
+   \   0000000E   0x21CB             MOVS     R1,#+203
+   \   00000010   0x....             LDR.N    R0,??DataTable12_1
+   \   00000012   0x.... 0x....      BL       check_failed
+    204          	CHECK_PARAM(PARAM_ADC_TYPE_INT_OPT(IntType));
+   \                     ??ADC_IntConfig_0: (+1)
+   \   00000016   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000018   0x2D00             CMP      R5,#+0
+   \   0000001A   0xD01B             BEQ.N    ??ADC_IntConfig_1
+   \   0000001C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001E   0x2D01             CMP      R5,#+1
+   \   00000020   0xD018             BEQ.N    ??ADC_IntConfig_1
+   \   00000022   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000024   0x2D02             CMP      R5,#+2
+   \   00000026   0xD015             BEQ.N    ??ADC_IntConfig_1
+   \   00000028   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000002A   0x2D03             CMP      R5,#+3
+   \   0000002C   0xD012             BEQ.N    ??ADC_IntConfig_1
+   \   0000002E   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000030   0x2D04             CMP      R5,#+4
+   \   00000032   0xD00F             BEQ.N    ??ADC_IntConfig_1
+   \   00000034   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000036   0x2D05             CMP      R5,#+5
+   \   00000038   0xD00C             BEQ.N    ??ADC_IntConfig_1
+   \   0000003A   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000003C   0x2D06             CMP      R5,#+6
+   \   0000003E   0xD009             BEQ.N    ??ADC_IntConfig_1
+   \   00000040   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000042   0x2D07             CMP      R5,#+7
+   \   00000044   0xD006             BEQ.N    ??ADC_IntConfig_1
+   \   00000046   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000048   0x2D08             CMP      R5,#+8
+   \   0000004A   0xD003             BEQ.N    ??ADC_IntConfig_1
+   \   0000004C   0x21CC             MOVS     R1,#+204
+   \   0000004E   0x....             LDR.N    R0,??DataTable12_1
+   \   00000050   0x.... 0x....      BL       check_failed
+    205          
+    206          	ADCx->ADINTEN &= ~ADC_INTEN_CH(IntType);
+   \                     ??ADC_IntConfig_1: (+1)
+   \   00000054   0x68E0             LDR      R0,[R4, #+12]
+   \   00000056   0x2101             MOVS     R1,#+1
+   \   00000058   0x40A9             LSLS     R1,R1,R5
+   \   0000005A   0x4388             BICS     R0,R0,R1
+   \   0000005C   0x60E0             STR      R0,[R4, #+12]
+    207          	if (NewState){
+   \   0000005E   0xB2F6             UXTB     R6,R6            ;; ZeroExt  R6,R6,#+24,#+24
+   \   00000060   0x2E00             CMP      R6,#+0
+   \   00000062   0xD004             BEQ.N    ??ADC_IntConfig_2
+    208          		ADCx->ADINTEN |= ADC_INTEN_CH(IntType);
+   \   00000064   0x68E0             LDR      R0,[R4, #+12]
+   \   00000066   0x2101             MOVS     R1,#+1
+   \   00000068   0x40A9             LSLS     R1,R1,R5
+   \   0000006A   0x4308             ORRS     R0,R1,R0
+   \   0000006C   0x60E0             STR      R0,[R4, #+12]
+    209          	}
+    210          }
+   \                     ??ADC_IntConfig_2: (+1)
+   \   0000006E   0xBD70             POP      {R4-R6,PC}       ;; return
+    211          
+    212          /*********************************************************************//**
+    213          * @brief 		Enable/Disable ADC channel number
+    214          * @param[in]	ADCx pointer to ADC
+    215          * @param[in]	Channel channel number
+    216          * @param[in]	NewState Enable or Disable
+    217          *
+    218          * @return 		None
+    219          **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    220          void ADC_ChannelCmd (LPC_ADC_TypeDef *ADCx, uint8_t Channel, FunctionalState NewState)
+    221          {
+   \                     ADC_ChannelCmd: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    222          	CHECK_PARAM(PARAM_ADCx(ADCx));
+   \   00000008   0x....             LDR.N    R0,??DataTable12  ;; 0x40034000
+   \   0000000A   0x4284             CMP      R4,R0
+   \   0000000C   0xD003             BEQ.N    ??ADC_ChannelCmd_0
+   \   0000000E   0x21DE             MOVS     R1,#+222
+   \   00000010   0x....             LDR.N    R0,??DataTable12_1
+   \   00000012   0x.... 0x....      BL       check_failed
+    223          	CHECK_PARAM(PARAM_ADC_CHANNEL_SELECTION(Channel));
+    224          
+    225          	if (NewState == ENABLE) {
+   \                     ??ADC_ChannelCmd_0: (+1)
+   \   00000016   0xB2F6             UXTB     R6,R6            ;; ZeroExt  R6,R6,#+24,#+24
+   \   00000018   0x2E01             CMP      R6,#+1
+   \   0000001A   0xD105             BNE.N    ??ADC_ChannelCmd_1
+    226          		ADCx->ADCR |= ADC_CR_CH_SEL(Channel);
+   \   0000001C   0x6820             LDR      R0,[R4, #+0]
+   \   0000001E   0x2101             MOVS     R1,#+1
+   \   00000020   0x40A9             LSLS     R1,R1,R5
+   \   00000022   0x4308             ORRS     R0,R1,R0
+   \   00000024   0x6020             STR      R0,[R4, #+0]
+   \   00000026   0xE004             B.N      ??ADC_ChannelCmd_2
+    227          	} else {
+    228          		ADCx->ADCR &= ~ADC_CR_CH_SEL(Channel);
+   \                     ??ADC_ChannelCmd_1: (+1)
+   \   00000028   0x6820             LDR      R0,[R4, #+0]
+   \   0000002A   0x2101             MOVS     R1,#+1
+   \   0000002C   0x40A9             LSLS     R1,R1,R5
+   \   0000002E   0x4388             BICS     R0,R0,R1
+   \   00000030   0x6020             STR      R0,[R4, #+0]
+    229          	}
+    230          }
+   \                     ??ADC_ChannelCmd_2: (+1)
+   \   00000032   0xBD70             POP      {R4-R6,PC}       ;; return
+    231          
+    232          /*********************************************************************//**
+    233          * @brief 		Get ADC result
+    234          * @param[in]	ADCx pointer to ADC
+    235          * @param[in]	channel channel number
+    236          * @return 		Data conversion
+    237          **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    238          uint16_t ADC_ChannelGetData(LPC_ADC_TypeDef *ADCx, uint8_t channel)
+    239          {
+   \                     ADC_ChannelGetData: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    240          	uint32_t adc_value;
+    241          
+    242          	CHECK_PARAM(PARAM_ADCx(ADCx));
+   \   00000006   0x....             LDR.N    R0,??DataTable12  ;; 0x40034000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD003             BEQ.N    ??ADC_ChannelGetData_0
+   \   0000000C   0x21F2             MOVS     R1,#+242
+   \   0000000E   0x....             LDR.N    R0,??DataTable12_1
+   \   00000010   0x.... 0x....      BL       check_failed
+    243          	CHECK_PARAM(PARAM_ADC_CHANNEL_SELECTION(channel));
+    244          
+    245          	adc_value = *(uint32_t *) ((&ADCx->ADDR0) + channel);
+   \                     ??ADC_ChannelGetData_0: (+1)
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0xEB04 0x0085      ADD      R0,R4,R5, LSL #+2
+   \   0000001A   0x6900             LDR      R0,[R0, #+16]
+   \   0000001C   0x0006             MOVS     R6,R0
+    246          	return ADC_DR_RESULT(adc_value);
+   \   0000001E   0xF3C6 0x100B      UBFX     R0,R6,#+4,#+12
+   \   00000022   0xB280             UXTH     R0,R0            ;; ZeroExt  R0,R0,#+16,#+16
+   \   00000024   0xBD70             POP      {R4-R6,PC}       ;; return
+    247          }
+    248          
+    249          /*********************************************************************//**
+    250          * @brief 		Get ADC Chanel status from ADC data register
+    251          * @param[in]	ADCx pointer to ADC
+    252          * @param[in]	channel channel number
+    253          * @param[in]  	StatusType
+    254          *              		 	0:Burst status
+    255          *               		1:Done 	status
+    256          * @return 		SET / RESET
+    257          **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    258          FlagStatus ADC_ChannelGetStatus(LPC_ADC_TypeDef *ADCx, uint8_t channel, uint32_t StatusType)
+    259          {
+   \                     ADC_ChannelGetStatus: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    260          	uint32_t temp;
+    261          
+    262          	CHECK_PARAM(PARAM_ADCx(ADCx));
+   \   00000008   0x....             LDR.N    R0,??DataTable12  ;; 0x40034000
+   \   0000000A   0x4284             CMP      R4,R0
+   \   0000000C   0xD004             BEQ.N    ??ADC_ChannelGetStatus_0
+   \   0000000E   0xF44F 0x7183      MOV      R1,#+262
+   \   00000012   0x....             LDR.N    R0,??DataTable12_1
+   \   00000014   0x.... 0x....      BL       check_failed
+    263          	CHECK_PARAM(PARAM_ADC_CHANNEL_SELECTION(channel));
+    264          	CHECK_PARAM(PARAM_ADC_DATA_STATUS(StatusType));
+   \                     ??ADC_ChannelGetStatus_0: (+1)
+   \   00000018   0x2E00             CMP      R6,#+0
+   \   0000001A   0xD006             BEQ.N    ??ADC_ChannelGetStatus_1
+   \   0000001C   0x2E01             CMP      R6,#+1
+   \   0000001E   0xD004             BEQ.N    ??ADC_ChannelGetStatus_1
+   \   00000020   0xF44F 0x7184      MOV      R1,#+264
+   \   00000024   0x....             LDR.N    R0,??DataTable12_1
+   \   00000026   0x.... 0x....      BL       check_failed
+    265          
+    266          	temp =  *(uint32_t *) ((&ADCx->ADDR0) + channel);
+   \                     ??ADC_ChannelGetStatus_1: (+1)
+   \   0000002A   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000002C   0xEB04 0x0085      ADD      R0,R4,R5, LSL #+2
+   \   00000030   0x6900             LDR      R0,[R0, #+16]
+   \   00000032   0x0007             MOVS     R7,R0
+    267          	if (StatusType) {
+   \   00000034   0x2E00             CMP      R6,#+0
+   \   00000036   0xD002             BEQ.N    ??ADC_ChannelGetStatus_2
+    268          		temp &= ADC_DR_DONE_FLAG;
+   \   00000038   0xF017 0x4700      ANDS     R7,R7,#0x80000000
+   \   0000003C   0xE001             B.N      ??ADC_ChannelGetStatus_3
+    269          	}else{
+    270          		temp &= ADC_DR_OVERRUN_FLAG;
+   \                     ??ADC_ChannelGetStatus_2: (+1)
+   \   0000003E   0xF017 0x4780      ANDS     R7,R7,#0x40000000
+    271          	}
+    272          	if (temp) {
+   \                     ??ADC_ChannelGetStatus_3: (+1)
+   \   00000042   0x2F00             CMP      R7,#+0
+   \   00000044   0xD001             BEQ.N    ??ADC_ChannelGetStatus_4
+    273          		return SET;
+   \   00000046   0x2001             MOVS     R0,#+1
+   \   00000048   0xE000             B.N      ??ADC_ChannelGetStatus_5
+    274          	} else {
+    275          		return RESET;
+   \                     ??ADC_ChannelGetStatus_4: (+1)
+   \   0000004A   0x2000             MOVS     R0,#+0
+   \                     ??ADC_ChannelGetStatus_5: (+1)
+   \   0000004C   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    276          	}
+    277          
+    278          }
+    279          
+    280          /*********************************************************************//**
+    281          * @brief 		Get ADC Data from AD Global register
+    282          * @param[in]	ADCx pointer to ADC
+    283          * @param[in]	channel channel number
+    284          * @return 		Result of conversion
+    285          **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    286          uint16_t ADC_GlobalGetData(LPC_ADC_TypeDef *ADCx, uint8_t channel)
+    287          {
+   \                     ADC_GlobalGetData: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    288          	CHECK_PARAM(PARAM_ADCx(ADCx));
+   \   00000006   0x....             LDR.N    R0,??DataTable12  ;; 0x40034000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD004             BEQ.N    ??ADC_GlobalGetData_0
+   \   0000000C   0xF44F 0x7190      MOV      R1,#+288
+   \   00000010   0x....             LDR.N    R0,??DataTable12_1
+   \   00000012   0x.... 0x....      BL       check_failed
+    289          	CHECK_PARAM(PARAM_ADC_CHANNEL_SELECTION(channel));
+    290          
+    291          	//ADCx->ADGDR &= ~ADC_GDR_CH_MASK;
+    292          	//ADCx->ADGDR |= ADC_GDR_CH(channel);
+    293          	return (uint16_t)(ADC_GDR_RESULT(ADCx->ADGDR));
+   \                     ??ADC_GlobalGetData_0: (+1)
+   \   00000016   0x6860             LDR      R0,[R4, #+4]
+   \   00000018   0xF3C0 0x100B      UBFX     R0,R0,#+4,#+12
+   \   0000001C   0xB280             UXTH     R0,R0            ;; ZeroExt  R0,R0,#+16,#+16
+   \   0000001E   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    294          }
+    295          
+    296          /*********************************************************************//**
+    297          * @brief 		Get ADC Chanel status from AD global data register
+    298          * @param[in]	ADCx pointer to ADC
+    299          * @param[in]  	StatusType
+    300          *              		 	0:Burst status
+    301          *               		1:Done 	status
+    302          * @return 		SET / RESET
+    303          **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    304          FlagStatus	ADC_GlobalGetStatus(LPC_ADC_TypeDef *ADCx, uint32_t StatusType)
+    305          {
+   \                     ADC_GlobalGetStatus: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    306          	uint32_t temp;
+    307          
+    308          	CHECK_PARAM(PARAM_ADCx(ADCx));
+   \   00000006   0x....             LDR.N    R0,??DataTable12  ;; 0x40034000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD004             BEQ.N    ??ADC_GlobalGetStatus_0
+   \   0000000C   0xF44F 0x719A      MOV      R1,#+308
+   \   00000010   0x....             LDR.N    R0,??DataTable12_1
+   \   00000012   0x.... 0x....      BL       check_failed
+    309          	CHECK_PARAM(PARAM_ADC_DATA_STATUS(StatusType));
+   \                     ??ADC_GlobalGetStatus_0: (+1)
+   \   00000016   0x2D00             CMP      R5,#+0
+   \   00000018   0xD006             BEQ.N    ??ADC_GlobalGetStatus_1
+   \   0000001A   0x2D01             CMP      R5,#+1
+   \   0000001C   0xD004             BEQ.N    ??ADC_GlobalGetStatus_1
+   \   0000001E   0xF240 0x1135      MOVW     R1,#+309
+   \   00000022   0x....             LDR.N    R0,??DataTable12_1
+   \   00000024   0x.... 0x....      BL       check_failed
+    310          
+    311          	temp =  ADCx->ADGDR;
+   \                     ??ADC_GlobalGetStatus_1: (+1)
+   \   00000028   0x6860             LDR      R0,[R4, #+4]
+   \   0000002A   0x0006             MOVS     R6,R0
+    312          	if (StatusType){
+   \   0000002C   0x2D00             CMP      R5,#+0
+   \   0000002E   0xD002             BEQ.N    ??ADC_GlobalGetStatus_2
+    313          		temp &= ADC_DR_DONE_FLAG;
+   \   00000030   0xF016 0x4600      ANDS     R6,R6,#0x80000000
+   \   00000034   0xE001             B.N      ??ADC_GlobalGetStatus_3
+    314          	}else{
+    315          		temp &= ADC_DR_OVERRUN_FLAG;
+   \                     ??ADC_GlobalGetStatus_2: (+1)
+   \   00000036   0xF016 0x4680      ANDS     R6,R6,#0x40000000
+    316          	}
+    317          	if (temp){
+   \                     ??ADC_GlobalGetStatus_3: (+1)
+   \   0000003A   0x2E00             CMP      R6,#+0
+   \   0000003C   0xD001             BEQ.N    ??ADC_GlobalGetStatus_4
+    318          		return SET;
+   \   0000003E   0x2001             MOVS     R0,#+1
+   \   00000040   0xE000             B.N      ??ADC_GlobalGetStatus_5
+    319          	}else{
+    320          		return RESET;
+   \                     ??ADC_GlobalGetStatus_4: (+1)
+   \   00000042   0x2000             MOVS     R0,#+0
+   \                     ??ADC_GlobalGetStatus_5: (+1)
+   \   00000044   0xBD70             POP      {R4-R6,PC}       ;; return
+    321          	}
+    322          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12:
+   \   00000000   0x40034000         DC32     0x40034000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_1:
+   \   00000000   0x........         DC32     ?_0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_2:
+   \   00000000   0x00C65D41         DC32     0xc65d41
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable12_3:
+   \   00000000   0x40034010         DC32     0x40034010
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \   00000000   0x45 0x3A          DC8 45H, 3AH, 5CH, 0D0H, 0C2H, 0CFH, 0EEH, 0C4H
+   \              0x5C 0xD0    
+   \              0xC2 0xCF    
+   \              0xEE 0xC4    
+   \   00000008   0xBF 0x5C          DC8 0BFH, 5CH, 0D2H, 0C6H, 0BDH, 0BBH, 0D7H, 0CAH
+   \              0xD2 0xC6    
+   \              0xBD 0xBB    
+   \              0xD7 0xCA    
+   \   00000010   0xC1 0xCF          DC8 0C1H, 0CFH, 4CH, 48H, 54H, 5CH, 0D7H, 0D4H
+   \              0x4C 0x48    
+   \              0x54 0x5C    
+   \              0xD7 0xD4    
+   \   00000018   0xD6 0xFA          DC8 0D6H, 0FAH, 0BDH, 0C9H, 0B7H, 0D1H, 0BBH, 0FAH
+   \              0xBD 0xC9    
+   \              0xB7 0xD1    
+   \              0xBB 0xFA    
+   \   00000020   0x5C 0xC8          DC8 5CH, 0C8H, 0EDH, 0BCH, 0FEH, 5CH, 4DH, 69H
+   \              0xED 0xBC    
+   \              0xFE 0x5C    
+   \              0x4D 0x69    
+   \   00000028   0x63 0x72          DC8 63H, 72H, 69H, 75H, 6DH, 5FH, 4CH, 50H
+   \              0x69 0x75    
+   \              0x6D 0x5F    
+   \              0x4C 0x50    
+   \   00000030   0x43 0x31          DC8 43H, 31H, 37H, 36H, 38H, 2DH, 53H, 4BH
+   \              0x37 0x36    
+   \              0x38 0x2D    
+   \              0x53 0x4B    
+   \   00000038   0x5F 0x75          DC8 5FH, 75H, 43H, 4FH, 53H, 2DH, 49H, 49H
+   \              0x43 0x4F    
+   \              0x53 0x2D    
+   \              0x49 0x49    
+   \   00000040   0x49 0x2D          DC8 49H, 2DH, 52H, 65H, 6CH, 65H, 61H, 73H
+   \              0x52 0x65    
+   \              0x6C 0x65    
+   \              0x61 0x73    
+   \   00000048   0x65 0x5C          DC8 65H, 5CH, 53H, 6FH, 66H, 74H, 77H, 61H
+   \              0x53 0x6F    
+   \              0x66 0x74    
+   \              0x77 0x61    
+   \   00000050   0x72 0x65          DC8 72H, 65H, 5CH, 45H, 76H, 61H, 6CH, 42H
+   \              0x5C 0x45    
+   \              0x76 0x61    
+   \              0x6C 0x42    
+   \   00000058   0x6F 0x61          DC8 6FH, 61H, 72H, 64H, 73H, 5CH, 4EH, 58H
+   \              0x72 0x64    
+   \              0x73 0x5C    
+   \              0x4E 0x58    
+   \   00000060   0x50 0x5C          DC8 50H, 5CH, 4CH, 50H, 43H, 31H, 37H, 36H
+   \              0x4C 0x50    
+   \              0x43 0x31    
+   \              0x37 0x36    
+   \   00000068   0x38 0x2D          DC8 38H, 2DH, 53H, 4BH, 5CH, 4CH, 50H, 43H
+   \              0x53 0x4B    
+   \              0x5C 0x4C    
+   \              0x50 0x43    
+   \   00000070   0x31 0x37          DC8 31H, 37H, 58H, 58H, 43H, 4DH, 53H, 49H
+   \              0x58 0x58    
+   \              0x43 0x4D    
+   \              0x53 0x49    
+   \   00000078   0x53 0x5C          DC8 53H, 5CH, 44H, 72H, 69H, 76H, 65H, 72H
+   \              0x44 0x72    
+   \              0x69 0x76    
+   \              0x65 0x72    
+   \   00000080   0x73 0x5C          DC8 73H, 5CH, 73H, 6FH, 75H, 72H, 63H, 65H
+   \              0x73 0x6F    
+   \              0x75 0x72    
+   \              0x63 0x65    
+   \   00000088   0x5C 0x6C          DC8 5CH, 6CH, 70H, 63H, 31H, 37H, 78H, 78H
+   \              0x70 0x63    
+   \              0x31 0x37    
+   \              0x78 0x78    
+   \   00000090   0x5F 0x61          DC8 5FH, 61H, 64H, 63H, 2EH, 63H, 0
+   \              0x64 0x63    
+   \              0x2E 0x63    
+   \              0x00         
+   \   00000097   0x00               DC8 0
+    323          
+    324          /**
+    325           * @}
+    326           */
+    327          
+    328          #endif /* _ADC */
+    329          
+    330          /**
+    331           * @}
+    332           */
+    333          
+    334          /* --------------------------------- End Of File ------------------------------ */
+    335          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   ADC_BurstCmd
+        16   -> check_failed
+      16   ADC_ChannelCmd
+        16   -> check_failed
+      16   ADC_ChannelGetData
+        16   -> check_failed
+      24   ADC_ChannelGetStatus
+        24   -> check_failed
+       8   ADC_DeInit
+         8   -> CLKPWR_ConfigPPWR
+         8   -> check_failed
+      16   ADC_EdgeStartConfig
+        16   -> check_failed
+       0   ADC_GetData
+      16   ADC_GlobalGetData
+        16   -> check_failed
+      16   ADC_GlobalGetStatus
+        16   -> check_failed
+      24   ADC_Init
+        24   -> CLKPWR_ConfigPPWR
+        24   -> CLKPWR_GetPCLK
+        24   -> check_failed
+      16   ADC_IntConfig
+        16   -> check_failed
+      16   ADC_PowerdownCmd
+        16   -> check_failed
+      16   ADC_StartCmd
+        16   -> check_failed
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable12
+       4  ??DataTable12_1
+       4  ??DataTable12_2
+       4  ??DataTable12_3
+     152  ?_0
+      44  ADC_BurstCmd
+      52  ADC_ChannelCmd
+      38  ADC_ChannelGetData
+      78  ADC_ChannelGetStatus
+      38  ADC_DeInit
+      64  ADC_EdgeStartConfig
+      16  ADC_GetData
+      32  ADC_GlobalGetData
+      70  ADC_GlobalGetStatus
+      76  ADC_Init
+     112  ADC_IntConfig
+      44  ADC_PowerdownCmd
+      96  ADC_StartCmd
+
+ 
+ 152 bytes in section .rodata
+ 776 bytes in section .text
+ 
+ 776 bytes of CODE  memory
+ 152 bytes of CONST memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1423 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       06/Apr/2017  11:01:08
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_spi.c
+#    Command line =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_spi.c
+#        -lCN
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\List
+#        --diag_suppress Pe174 -o
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files\IAR
+#        Systems\Embedded Workbench 7.5\arm\INC\c\DLib_Config_Normal.h" -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\OS\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\NXP\LPC17xx\LPC1768\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Ports\ARM-Cortex-M3\CSP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Source\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-LIB\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CPU\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Core\CM3\CoreSupport\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Core\CM3\DeviceSupport\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\include\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Driver\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Driver\NXP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Line\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\OS\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\OS\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Source\
+#        -On --use_c++_inline -I "C:\Program Files\IAR Systems\Embedded
+#        Workbench 7.5\arm\CMSIS\Include\"
+#    Locale       =  Chinese (Simplified)_People's Republic of China.936
+#    List file    =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\List\lpc17xx_spi.lst
+#    Object file  =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\Obj\lpc17xx_spi.o
+#
+###############################################################################
+
+E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_spi.c
+      1          /**
+      2           * @file	: lpc17xx_spi.c
+      3           * @brief	: Contains all functions support for SPI firmware library on LPC17xx
+      4           * @version	: 1.0
+      5           * @date	: 3. April. 2009
+      6           * @author	: HieuNguyen
+      7           **************************************************************************
+      8           * Software that is described herein is for illustrative purposes only
+      9           * which provides customers with programming information regarding the
+     10           * products. This software is supplied "AS IS" without any warranties.
+     11           * NXP Semiconductors assumes no responsibility or liability for the
+     12           * use of the software, conveys no license or title under any patent,
+     13           * copyright, or mask work right to the product. NXP Semiconductors
+     14           * reserves the right to make changes in the software without
+     15           * notification. NXP Semiconductors also make no representation or
+     16           * warranty that such application will be suitable for the specified
+     17           * use without further testing or modification.
+     18           **********************************************************************/
+     19          
+     20          /* Peripheral group ----------------------------------------------------------- */
+     21          /** @addtogroup SPI
+     22           * @{
+     23           */
+     24          
+     25          /* Includes ------------------------------------------------------------------- */
+     26          #include "lpc17xx_spi.h"
+     27          #include "lpc17xx_clkpwr.h"
+     28          
+     29          /* If this source file built with example, the LPC17xx FW library configuration
+     30           * file in each example directory ("lpc17xx_libcfg.h") must be included,
+     31           * otherwise the default FW library configuration file must be included instead
+     32           */
+     33          #ifdef __BUILD_WITH_EXAMPLE__
+     34          #include "lpc17xx_libcfg.h"
+     35          #else
+     36          #include "lpc17xx_libcfg_default.h"
+     37          #endif /* __BUILD_WITH_EXAMPLE__ */
+     38          
+     39          #ifdef _SPI
+     40          
+     41          /* Private Types -------------------------------------------------------------- */
+     42          /** @defgroup SPI_Private_Types
+     43           * @{
+     44           */
+     45          
+     46          /** @brief SPI device configuration structure type */
+     47          typedef struct
+     48          {
+     49          	int32_t 	dataword;				/* Current data word: 0 - 8 bit; 1 - 16 bit */
+     50          	uint32_t    txrx_setup; 			/* Transmission setup */
+     51          	void		(*inthandler)(void);   	/* Transmission interrupt handler */
+     52          } SPI_CFG_T;
+     53          
+     54          /**
+     55           * @}
+     56           */
+     57          
+     58          
+     59          /* Private Variables ---------------------------------------------------------- */
+     60          /* SPI configuration data */
+
+   \                                 In section .bss, align 4
+     61          static SPI_CFG_T spidat;
+   \                     spidat:
+   \   00000000                      DS8 12
+     62          
+     63          
+     64          /* Private Functions ---------------------------------------------------------- */
+     65          /** @defgroup SPI_Private_Functions
+     66           * @{
+     67           */
+     68          
+     69          /*********************************************************************//**
+     70           * @brief 		Standard Private SPI Interrupt handler
+     71           * @param[in]	None
+     72           * @return 		None
+     73           ***********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     74          void SPI_IntHandler(void)
+     75          {
+   \                     SPI_IntHandler: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+     76          	SPI_DATA_SETUP_Type *xf_setup;
+     77              uint16_t tmp;
+     78          
+     79              xf_setup = (SPI_DATA_SETUP_Type *)spidat.txrx_setup;
+   \   00000002   0x.... 0x....      LDR.W    R0,??DataTable13
+   \   00000006   0x6840             LDR      R0,[R0, #+4]
+   \   00000008   0x0004             MOVS     R4,R0
+     80          
+     81              /* Dummy read to clear SPI interrupt flag */
+     82              if (LPC_SPI->SPINT & SPI_SPINT_INTFLAG){
+   \   0000000A   0x.... 0x....      LDR.W    R0,??DataTable13_1  ;; 0x4002001c
+   \   0000000E   0x6800             LDR      R0,[R0, #+0]
+   \   00000010   0x07C0             LSLS     R0,R0,#+31
+   \   00000012   0xD503             BPL.N    ??SPI_IntHandler_0
+     83              	LPC_SPI->SPINT = SPI_SPINT_INTFLAG;
+   \   00000014   0x2001             MOVS     R0,#+1
+   \   00000016   0x.... 0x....      LDR.W    R1,??DataTable13_1  ;; 0x4002001c
+   \   0000001A   0x6008             STR      R0,[R1, #+0]
+     84              }
+     85          
+     86              // save status
+     87              tmp = LPC_SPI->SPSR;
+   \                     ??SPI_IntHandler_0: (+1)
+   \   0000001C   0x.... 0x....      LDR.W    R0,??DataTable13_2  ;; 0x40020004
+   \   00000020   0x6800             LDR      R0,[R0, #+0]
+   \   00000022   0x0005             MOVS     R5,R0
+     88              xf_setup->status = tmp;
+   \   00000024   0xB2AD             UXTH     R5,R5            ;; ZeroExt  R5,R5,#+16,#+16
+   \   00000026   0x6125             STR      R5,[R4, #+16]
+     89              // Check for error
+     90              if (tmp & (SPI_SPSR_ABRT | SPI_SPSR_MODF | SPI_SPSR_ROVR | SPI_SPSR_WCOL)){
+   \   00000028   0x2078             MOVS     R0,#+120
+   \   0000002A   0x4205             TST      R5,R0
+   \   0000002C   0xD00E             BEQ.N    ??SPI_IntHandler_1
+     91              	xf_setup->status |= SPI_STAT_ERROR;
+   \   0000002E   0x6920             LDR      R0,[R4, #+16]
+   \   00000030   0xF450 0x7000      ORRS     R0,R0,#0x200
+   \   00000034   0x6120             STR      R0,[R4, #+16]
+     92              	// Disable Interrupt and call call-back
+     93              	SPI_IntCmd(LPC_SPI, DISABLE);
+   \   00000036   0x2100             MOVS     R1,#+0
+   \   00000038   0x.... 0x....      LDR.W    R0,??DataTable13_3  ;; 0x40020000
+   \   0000003C   0x.... 0x....      BL       SPI_IntCmd
+     94              	if (xf_setup->callback != NULL){
+   \   00000040   0x6960             LDR      R0,[R4, #+20]
+   \   00000042   0x2800             CMP      R0,#+0
+   \   00000044   0xD001             BEQ.N    ??SPI_IntHandler_2
+     95              		xf_setup->callback();
+   \   00000046   0x6960             LDR      R0,[R4, #+20]
+   \   00000048   0x4780             BLX      R0
+     96              	}
+     97              	return;
+   \                     ??SPI_IntHandler_2: (+1)
+   \   0000004A   0xE060             B.N      ??SPI_IntHandler_3
+     98              }
+     99          
+    100              /* Check SPI complete flag */
+    101              if (tmp & SPI_SPSR_SPIF){
+   \                     ??SPI_IntHandler_1: (+1)
+   \   0000004C   0x0628             LSLS     R0,R5,#+24
+   \   0000004E   0xD521             BPL.N    ??SPI_IntHandler_4
+    102          	   // Read data from SPI data
+    103          		tmp = SPI_ReceiveData(LPC_SPI);
+   \   00000050   0x.... 0x....      LDR.W    R0,??DataTable13_3  ;; 0x40020000
+   \   00000054   0x.... 0x....      BL       SPI_ReceiveData
+   \   00000058   0x0005             MOVS     R5,R0
+    104          		if (xf_setup->rx_data != NULL)
+   \   0000005A   0x6860             LDR      R0,[R4, #+4]
+   \   0000005C   0x2800             CMP      R0,#+0
+   \   0000005E   0xD00D             BEQ.N    ??SPI_IntHandler_5
+    105          		{
+    106          //			if (spidat.dataword == 0){
+    107          //				*(uint8_t *)(xf_setup->rx_data + xf_setup->counter) = (uint8_t) tmp;
+    108          //			} else {
+    109          //				*(uint16_t *)(xf_setup->rx_data + xf_setup->counter) = (uint8_t) tmp;
+    110          //			}
+    111          			if (spidat.dataword == 0){
+   \   00000060   0x.... 0x....      LDR.W    R0,??DataTable13
+   \   00000064   0x6800             LDR      R0,[R0, #+0]
+   \   00000066   0x2800             CMP      R0,#+0
+   \   00000068   0xD103             BNE.N    ??SPI_IntHandler_6
+    112          				*(uint8_t *)((uint8_t *)(xf_setup->rx_data) + xf_setup->counter) = (uint8_t) tmp;
+   \   0000006A   0x6860             LDR      R0,[R4, #+4]
+   \   0000006C   0x68E1             LDR      R1,[R4, #+12]
+   \   0000006E   0x5445             STRB     R5,[R0, R1]
+   \   00000070   0xE004             B.N      ??SPI_IntHandler_5
+    113          			} else {
+    114          				*(uint16_t *)((uint8_t *)(xf_setup->rx_data) + xf_setup->counter) = (uint8_t) tmp;
+   \                     ??SPI_IntHandler_6: (+1)
+   \   00000072   0x0028             MOVS     R0,R5
+   \   00000074   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000076   0x6861             LDR      R1,[R4, #+4]
+   \   00000078   0x68E2             LDR      R2,[R4, #+12]
+   \   0000007A   0x5288             STRH     R0,[R1, R2]
+    115          			}
+    116          		}
+    117          		// Increase counter
+    118          		if (spidat.dataword == 0){
+   \                     ??SPI_IntHandler_5: (+1)
+   \   0000007C   0x.... 0x....      LDR.W    R0,??DataTable13
+   \   00000080   0x6800             LDR      R0,[R0, #+0]
+   \   00000082   0x2800             CMP      R0,#+0
+   \   00000084   0xD103             BNE.N    ??SPI_IntHandler_7
+    119          			xf_setup->counter++;
+   \   00000086   0x68E0             LDR      R0,[R4, #+12]
+   \   00000088   0x1C40             ADDS     R0,R0,#+1
+   \   0000008A   0x60E0             STR      R0,[R4, #+12]
+   \   0000008C   0xE002             B.N      ??SPI_IntHandler_4
+    120          		} else {
+    121          			xf_setup->counter += 2;
+   \                     ??SPI_IntHandler_7: (+1)
+   \   0000008E   0x68E0             LDR      R0,[R4, #+12]
+   \   00000090   0x1C80             ADDS     R0,R0,#+2
+   \   00000092   0x60E0             STR      R0,[R4, #+12]
+    122          		}
+    123              }
+    124          
+    125              if (xf_setup->counter < xf_setup->length){
+   \                     ??SPI_IntHandler_4: (+1)
+   \   00000094   0x68E0             LDR      R0,[R4, #+12]
+   \   00000096   0x68A1             LDR      R1,[R4, #+8]
+   \   00000098   0x4288             CMP      R0,R1
+   \   0000009A   0xD22A             BCS.N    ??SPI_IntHandler_8
+    126          		// Write data to buffer
+    127          		if(xf_setup->tx_data == NULL){
+   \   0000009C   0x6820             LDR      R0,[R4, #+0]
+   \   0000009E   0x2800             CMP      R0,#+0
+   \   000000A0   0xD111             BNE.N    ??SPI_IntHandler_9
+    128          			if (spidat.dataword == 0){
+   \   000000A2   0x.... 0x....      LDR.W    R0,??DataTable13
+   \   000000A6   0x6800             LDR      R0,[R0, #+0]
+   \   000000A8   0x2800             CMP      R0,#+0
+   \   000000AA   0xD105             BNE.N    ??SPI_IntHandler_10
+    129          				SPI_SendData(LPC_SPI, 0xFF);
+   \   000000AC   0x21FF             MOVS     R1,#+255
+   \   000000AE   0x.... 0x....      LDR.W    R0,??DataTable13_3  ;; 0x40020000
+   \   000000B2   0x.... 0x....      BL       SPI_SendData
+   \   000000B6   0xE02A             B.N      ??SPI_IntHandler_11
+    130          			} else {
+    131          				SPI_SendData(LPC_SPI, 0xFFFF);
+   \                     ??SPI_IntHandler_10: (+1)
+   \   000000B8   0xF64F 0x71FF      MOVW     R1,#+65535
+   \   000000BC   0x.... 0x....      LDR.W    R0,??DataTable13_3  ;; 0x40020000
+   \   000000C0   0x.... 0x....      BL       SPI_SendData
+   \   000000C4   0xE023             B.N      ??SPI_IntHandler_11
+    132          			}
+    133          		} else {
+    134          //			if (spidat.dataword == 0){
+    135          //				SPI_SendData(SPI, (*(uint8_t *)(xf_setup->tx_data + xf_setup->counter)));
+    136          //			} else {
+    137          //				SPI_SendData(SPI, (*(uint16_t *)(xf_setup->tx_data + xf_setup->counter)));
+    138          //			}
+    139          			if (spidat.dataword == 0){
+   \                     ??SPI_IntHandler_9: (+1)
+   \   000000C6   0x.... 0x....      LDR.W    R0,??DataTable13
+   \   000000CA   0x6800             LDR      R0,[R0, #+0]
+   \   000000CC   0x2800             CMP      R0,#+0
+   \   000000CE   0xD108             BNE.N    ??SPI_IntHandler_12
+    140          				SPI_SendData(LPC_SPI, (*(uint8_t *)((uint8_t *)(xf_setup->tx_data) + xf_setup->counter)));
+   \   000000D0   0x6820             LDR      R0,[R4, #+0]
+   \   000000D2   0x68E1             LDR      R1,[R4, #+12]
+   \   000000D4   0x5C41             LDRB     R1,[R0, R1]
+   \   000000D6   0xB289             UXTH     R1,R1            ;; ZeroExt  R1,R1,#+16,#+16
+   \   000000D8   0x.... 0x....      LDR.W    R0,??DataTable13_3  ;; 0x40020000
+   \   000000DC   0x.... 0x....      BL       SPI_SendData
+   \   000000E0   0xE015             B.N      ??SPI_IntHandler_11
+    141          			} else {
+    142          				SPI_SendData(LPC_SPI, (*(uint16_t *)((uint8_t *)(xf_setup->tx_data) + xf_setup->counter)));
+   \                     ??SPI_IntHandler_12: (+1)
+   \   000000E2   0x6820             LDR      R0,[R4, #+0]
+   \   000000E4   0x68E1             LDR      R1,[R4, #+12]
+   \   000000E6   0x5A41             LDRH     R1,[R0, R1]
+   \   000000E8   0x.... 0x....      LDR.W    R0,??DataTable13_3  ;; 0x40020000
+   \   000000EC   0x.... 0x....      BL       SPI_SendData
+   \   000000F0   0xE00D             B.N      ??SPI_IntHandler_11
+    143          			}
+    144          		}
+    145              }
+    146              // No more data to send
+    147          	else {
+    148              	xf_setup->status |= SPI_STAT_DONE;
+   \                     ??SPI_IntHandler_8: (+1)
+   \   000000F2   0x6920             LDR      R0,[R4, #+16]
+   \   000000F4   0xF450 0x7080      ORRS     R0,R0,#0x100
+   \   000000F8   0x6120             STR      R0,[R4, #+16]
+    149              	// Disable Interrupt and call call-back
+    150              	SPI_IntCmd(LPC_SPI, DISABLE);
+   \   000000FA   0x2100             MOVS     R1,#+0
+   \   000000FC   0x.... 0x....      LDR.W    R0,??DataTable13_3  ;; 0x40020000
+   \   00000100   0x.... 0x....      BL       SPI_IntCmd
+    151              	if (xf_setup->callback != NULL){
+   \   00000104   0x6960             LDR      R0,[R4, #+20]
+   \   00000106   0x2800             CMP      R0,#+0
+   \   00000108   0xD001             BEQ.N    ??SPI_IntHandler_11
+    152              		xf_setup->callback();
+   \   0000010A   0x6960             LDR      R0,[R4, #+20]
+   \   0000010C   0x4780             BLX      R0
+    153              	}
+    154          	}
+    155          }
+   \                     ??SPI_IntHandler_11: (+1)
+   \                     ??SPI_IntHandler_3: (+1)
+   \   0000010E   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    156          
+    157          
+    158          /**
+    159           * @}
+    160           */
+    161          
+    162          /* Public Functions ----------------------------------------------------------- */
+    163          /** @addtogroup SPI_Public_Functions
+    164           * @{
+    165           */
+    166          
+    167          /*********************************************************************//**
+    168           * @brief 		Setup clock rate for SPI device
+    169           * @param[in] 	SPIx	SPI peripheral definition, should be SPI
+    170           * @param[in]	target_clock : clock of SPI (Hz)
+    171           * @return 		None
+    172           ***********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    173          void SPI_SetClock (LPC_SPI_TypeDef *SPIx, uint32_t target_clock)
+    174          {
+   \                     SPI_SetClock: (+1)
+   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+    175          	uint32_t spi_pclk;
+    176          	uint32_t prescale, temp;
+    177          
+    178          	CHECK_PARAM(PARAM_SPIx(SPIx));
+   \   00000008   0x.... 0x....      LDR.W    R0,??DataTable13_3  ;; 0x40020000
+   \   0000000C   0x4284             CMP      R4,R0
+   \   0000000E   0xD004             BEQ.N    ??SPI_SetClock_0
+   \   00000010   0x21B2             MOVS     R1,#+178
+   \   00000012   0x.... 0x....      LDR.W    R0,??DataTable13_4
+   \   00000016   0x.... 0x....      BL       check_failed
+    179          
+    180          	if (SPIx == LPC_SPI){
+   \                     ??SPI_SetClock_0: (+1)
+   \   0000001A   0x.... 0x....      LDR.W    R0,??DataTable13_3  ;; 0x40020000
+   \   0000001E   0x4284             CMP      R4,R0
+   \   00000020   0xD106             BNE.N    ??SPI_SetClock_1
+    181          		spi_pclk =  CLKPWR_GetPCLK (CLKPWR_PCLKSEL_SPI);
+   \   00000022   0x2010             MOVS     R0,#+16
+   \   00000024   0x.... 0x....      BL       CLKPWR_GetPCLK
+   \   00000028   0x0006             MOVS     R6,R0
+    182          	} else {
+    183          		return;
+    184          	}
+    185          
+    186          	prescale = 8;
+   \   0000002A   0x2008             MOVS     R0,#+8
+   \   0000002C   0x0007             MOVS     R7,R0
+   \   0000002E   0xE000             B.N      ??SPI_SetClock_2
+   \                     ??SPI_SetClock_1: (+1)
+   \   00000030   0xE00A             B.N      ??SPI_SetClock_3
+    187          	// Find closest clock to target clock
+    188          	while (1){
+    189          		temp = target_clock * prescale;
+   \                     ??SPI_SetClock_2: (+1)
+   \   00000032   0xFB07 0xF005      MUL      R0,R7,R5
+   \   00000036   0x4680             MOV      R8,R0
+    190          		if (temp >= spi_pclk){
+   \   00000038   0x45B0             CMP      R8,R6
+   \   0000003A   0xD202             BCS.N    ??SPI_SetClock_4
+    191          			break;
+    192          		}
+    193          		prescale += 2;
+   \                     ??SPI_SetClock_5: (+1)
+   \   0000003C   0x1CBF             ADDS     R7,R7,#+2
+    194          		if(prescale >= 254){
+   \   0000003E   0x2FFE             CMP      R7,#+254
+   \   00000040   0xD3F7             BCC.N    ??SPI_SetClock_2
+    195          			break;
+    196          		}
+    197          	}
+    198          
+    199          	// Write to register
+    200          	SPIx->SPCCR = SPI_SPCCR_COUNTER(prescale);
+   \                     ??SPI_SetClock_4: (+1)
+   \   00000042   0xF007 0x00FF      AND      R0,R7,#0xFF
+   \   00000046   0x60E0             STR      R0,[R4, #+12]
+    201          }
+   \                     ??SPI_SetClock_3: (+1)
+   \   00000048   0xE8BD 0x81F0      POP      {R4-R8,PC}       ;; return
+    202          
+    203          
+    204          /*********************************************************************//**
+    205           * @brief		De-initializes the SPIx peripheral registers to their
+    206          *                  default reset values.
+    207           * @param[in]	SPIx	SPI peripheral selected, should be SPI
+    208           * @return 		None
+    209           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    210          void SPI_DeInit(LPC_SPI_TypeDef *SPIx)
+    211          {
+   \                     SPI_DeInit: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    212          	CHECK_PARAM(PARAM_SPIx(SPIx));
+   \   00000004   0x.... 0x....      LDR.W    R0,??DataTable13_3  ;; 0x40020000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD003             BEQ.N    ??SPI_DeInit_0
+   \   0000000C   0x21D4             MOVS     R1,#+212
+   \   0000000E   0x....             LDR.N    R0,??DataTable13_4
+   \   00000010   0x.... 0x....      BL       check_failed
+    213          
+    214          	if (SPIx == LPC_SPI){
+   \                     ??SPI_DeInit_0: (+1)
+   \   00000014   0x....             LDR.N    R0,??DataTable13_3  ;; 0x40020000
+   \   00000016   0x4284             CMP      R4,R0
+   \   00000018   0xD104             BNE.N    ??SPI_DeInit_1
+    215          		/* Set up clock and power for SPI module */
+    216          		CLKPWR_ConfigPPWR (CLKPWR_PCONP_PCSPI, DISABLE);
+   \   0000001A   0x2100             MOVS     R1,#+0
+   \   0000001C   0xF44F 0x7080      MOV      R0,#+256
+   \   00000020   0x.... 0x....      BL       CLKPWR_ConfigPPWR
+    217          	}
+    218          }
+   \                     ??SPI_DeInit_1: (+1)
+   \   00000024   0xBD10             POP      {R4,PC}          ;; return
+    219          
+    220          
+    221          
+    222          /********************************************************************//**
+    223           * @brief		Initializes the SPIx peripheral according to the specified
+    224          *               parameters in the UART_ConfigStruct.
+    225           * @param[in]	SPIx	SPI peripheral selected, should be SPI
+    226           * @param[in]	SPI_ConfigStruct Pointer to a SPI_CFG_Type structure
+    227          *                    that contains the configuration information for the
+    228          *                    specified SPI peripheral.
+    229           * @return 		None
+    230           *********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    231          void SPI_Init(LPC_SPI_TypeDef *SPIx, SPI_CFG_Type *SPI_ConfigStruct)
+    232          {
+   \                     SPI_Init: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    233          	uint32_t tmp;
+    234          
+    235          	CHECK_PARAM(PARAM_SPIx(SPIx));
+   \   00000006   0x....             LDR.N    R0,??DataTable13_3  ;; 0x40020000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD003             BEQ.N    ??SPI_Init_0
+   \   0000000C   0x21EB             MOVS     R1,#+235
+   \   0000000E   0x....             LDR.N    R0,??DataTable13_4
+   \   00000010   0x.... 0x....      BL       check_failed
+    236          
+    237          	if(SPIx == LPC_SPI){
+   \                     ??SPI_Init_0: (+1)
+   \   00000014   0x....             LDR.N    R0,??DataTable13_3  ;; 0x40020000
+   \   00000016   0x4284             CMP      R4,R0
+   \   00000018   0xD119             BNE.N    ??SPI_Init_1
+    238          		/* Set up clock and power for UART module */
+    239          		CLKPWR_ConfigPPWR (CLKPWR_PCONP_PCSPI, ENABLE);
+   \   0000001A   0x2101             MOVS     R1,#+1
+   \   0000001C   0xF44F 0x7080      MOV      R0,#+256
+   \   00000020   0x.... 0x....      BL       CLKPWR_ConfigPPWR
+    240          	} else {
+    241          		return;
+    242          	}
+    243          
+    244          	// Configure SPI, interrupt is disable as default
+    245          	tmp = ((SPI_ConfigStruct->CPHA) | (SPI_ConfigStruct->CPOL) \
+    246          		| (SPI_ConfigStruct->DataOrder) | (SPI_ConfigStruct->Databit) \
+    247          		| (SPI_ConfigStruct->Mode) | SPI_SPCR_BIT_EN) & SPI_SPCR_BITMASK;
+   \   00000024   0x6868             LDR      R0,[R5, #+4]
+   \   00000026   0x68A9             LDR      R1,[R5, #+8]
+   \   00000028   0x4308             ORRS     R0,R1,R0
+   \   0000002A   0x6929             LDR      R1,[R5, #+16]
+   \   0000002C   0x4308             ORRS     R0,R1,R0
+   \   0000002E   0x6829             LDR      R1,[R5, #+0]
+   \   00000030   0x4308             ORRS     R0,R1,R0
+   \   00000032   0x68E9             LDR      R1,[R5, #+12]
+   \   00000034   0x4308             ORRS     R0,R1,R0
+   \   00000036   0xF640 0x71FC      MOVW     R1,#+4092
+   \   0000003A   0x4008             ANDS     R0,R1,R0
+   \   0000003C   0xF050 0x0004      ORRS     R0,R0,#0x4
+   \   00000040   0x0006             MOVS     R6,R0
+    248          	// write back to SPI control register
+    249          	SPIx->SPCR = tmp;
+   \   00000042   0x6026             STR      R6,[R4, #+0]
+    250          
+    251          	if (SPI_ConfigStruct->Databit > SPI_DATABIT_8){
+   \   00000044   0x6828             LDR      R0,[R5, #+0]
+   \   00000046   0xF5B0 0x6F00      CMP      R0,#+2048
+   \   0000004A   0xD905             BLS.N    ??SPI_Init_2
+   \   0000004C   0xE000             B.N      ??SPI_Init_3
+   \                     ??SPI_Init_1: (+1)
+   \   0000004E   0xE00F             B.N      ??SPI_Init_4
+    252          		spidat.dataword = 1;
+   \                     ??SPI_Init_3: (+1)
+   \   00000050   0x2001             MOVS     R0,#+1
+   \   00000052   0x....             LDR.N    R1,??DataTable13
+   \   00000054   0x6008             STR      R0,[R1, #+0]
+   \   00000056   0xE002             B.N      ??SPI_Init_5
+    253          	} else {
+    254          		spidat.dataword = 0;
+   \                     ??SPI_Init_2: (+1)
+   \   00000058   0x2000             MOVS     R0,#+0
+   \   0000005A   0x....             LDR.N    R1,??DataTable13
+   \   0000005C   0x6008             STR      R0,[R1, #+0]
+    255          	}
+    256          
+    257          	// Set clock rate for SPI peripheral
+    258          	SPI_SetClock(SPIx, SPI_ConfigStruct->ClockRate);
+   \                     ??SPI_Init_5: (+1)
+   \   0000005E   0x6969             LDR      R1,[R5, #+20]
+   \   00000060   0x0020             MOVS     R0,R4
+   \   00000062   0x.... 0x....      BL       SPI_SetClock
+    259          
+    260          	// If interrupt flag is set, Write '1' to Clear interrupt flag
+    261          	if (SPIx->SPINT & SPI_SPINT_INTFLAG){
+   \   00000066   0x69E0             LDR      R0,[R4, #+28]
+   \   00000068   0x07C0             LSLS     R0,R0,#+31
+   \   0000006A   0xD501             BPL.N    ??SPI_Init_6
+    262          		SPIx->SPINT = SPI_SPINT_INTFLAG;
+   \   0000006C   0x2001             MOVS     R0,#+1
+   \   0000006E   0x61E0             STR      R0,[R4, #+28]
+    263          	}
+    264          }
+   \                     ??SPI_Init_6: (+1)
+   \                     ??SPI_Init_4: (+1)
+   \   00000070   0xBD70             POP      {R4-R6,PC}       ;; return
+    265          
+    266          
+    267          
+    268          /*****************************************************************************//**
+    269          * @brief		Fills each SPI_InitStruct member with its default value:
+    270          * 				- CPHA = SPI_CPHA_FIRST
+    271          * 				- CPOL = SPI_CPOL_HI
+    272          * 				- ClockRate = 1000000
+    273          * 				- DataOrder = SPI_DATA_MSB_FIRST
+    274          * 				- Databit = SPI_DATABIT_8
+    275          * 				- Mode = SPI_MASTER_MODE
+    276          * @param[in]	SPI_InitStruct Pointer to a SPI_CFG_Type structure
+    277          *                    which will be initialized.
+    278          * @return		None
+    279          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    280          void SPI_ConfigStructInit(SPI_CFG_Type *SPI_InitStruct)
+    281          {
+    282          	SPI_InitStruct->CPHA = SPI_CPHA_FIRST;
+   \                     SPI_ConfigStructInit: (+1)
+   \   00000000   0x2100             MOVS     R1,#+0
+   \   00000002   0x6041             STR      R1,[R0, #+4]
+    283          	SPI_InitStruct->CPOL = SPI_CPOL_HI;
+   \   00000004   0x2100             MOVS     R1,#+0
+   \   00000006   0x6081             STR      R1,[R0, #+8]
+    284          	SPI_InitStruct->ClockRate = 1000000;
+   \   00000008   0x....             LDR.N    R1,??DataTable13_5  ;; 0xf4240
+   \   0000000A   0x6141             STR      R1,[R0, #+20]
+    285          	SPI_InitStruct->DataOrder = SPI_DATA_MSB_FIRST;
+   \   0000000C   0x2100             MOVS     R1,#+0
+   \   0000000E   0x6101             STR      R1,[R0, #+16]
+    286          	SPI_InitStruct->Databit = SPI_DATABIT_8;
+   \   00000010   0xF44F 0x6100      MOV      R1,#+2048
+   \   00000014   0x6001             STR      R1,[R0, #+0]
+    287          	SPI_InitStruct->Mode = SPI_MASTER_MODE;
+   \   00000016   0x2120             MOVS     R1,#+32
+   \   00000018   0x60C1             STR      R1,[R0, #+12]
+    288          }
+   \   0000001A   0x4770             BX       LR               ;; return
+    289          
+    290          /*********************************************************************//**
+    291           * @brief		Transmit a single data through SPIx peripheral
+    292           * @param[in]	SPIx	SPI peripheral selected, should be SPI
+    293           * @param[in]	Data	Data to transmit (must be 16 or 8-bit long,
+    294           * 						this depend on SPI data bit number configured)
+    295           * @return 		none
+    296           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    297          void SPI_SendData(LPC_SPI_TypeDef* SPIx, uint16_t Data)
+    298          {
+   \                     SPI_SendData: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    299          	CHECK_PARAM(PARAM_SPIx(SPIx));
+   \   00000006   0x....             LDR.N    R0,??DataTable13_3  ;; 0x40020000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD004             BEQ.N    ??SPI_SendData_0
+   \   0000000C   0xF240 0x112B      MOVW     R1,#+299
+   \   00000010   0x....             LDR.N    R0,??DataTable13_4
+   \   00000012   0x.... 0x....      BL       check_failed
+    300          
+    301          	SPIx->SPDR = Data & SPI_SPDR_BITMASK;
+   \                     ??SPI_SendData_0: (+1)
+   \   00000016   0xB2AD             UXTH     R5,R5            ;; ZeroExt  R5,R5,#+16,#+16
+   \   00000018   0x60A5             STR      R5,[R4, #+8]
+    302          }
+   \   0000001A   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    303          
+    304          
+    305          
+    306          /*********************************************************************//**
+    307           * @brief		Receive a single data from SPIx peripheral
+    308           * @param[in]	SPIx	SPI peripheral selected, should be SPI
+    309           * @return 		Data received (16-bit long)
+    310           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    311          uint16_t SPI_ReceiveData(LPC_SPI_TypeDef* SPIx)
+    312          {
+   \                     SPI_ReceiveData: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    313          	CHECK_PARAM(PARAM_SPIx(SPIx));
+   \   00000004   0x....             LDR.N    R0,??DataTable13_3  ;; 0x40020000
+   \   00000006   0x4284             CMP      R4,R0
+   \   00000008   0xD004             BEQ.N    ??SPI_ReceiveData_0
+   \   0000000A   0xF240 0x1139      MOVW     R1,#+313
+   \   0000000E   0x....             LDR.N    R0,??DataTable13_4
+   \   00000010   0x.... 0x....      BL       check_failed
+    314          
+    315          	return ((uint16_t) (SPIx->SPDR & SPI_SPDR_BITMASK));
+   \                     ??SPI_ReceiveData_0: (+1)
+   \   00000014   0x68A0             LDR      R0,[R4, #+8]
+   \   00000016   0xB280             UXTH     R0,R0            ;; ZeroExt  R0,R0,#+16,#+16
+   \   00000018   0xBD10             POP      {R4,PC}          ;; return
+    316          }
+    317          
+    318          /*********************************************************************//**
+    319           * @brief 		SPI 	Read write data function
+    320           * @param[in]	SPIx 	Pointer to SPI peripheral, should be SPI
+    321           * @param[in]	dataCfg	Pointer to a SPI_DATA_SETUP_Type structure that
+    322           * 						contains specified information about transmit
+    323           * 						data configuration.
+    324           * @param[in]	xfType	Transfer type, should be:
+    325           * 						- SPI_TRANSFER_POLLING: Polling mode
+    326           * 						- SPI_TRANSFER_INTERRUPT: Interrupt mode
+    327           * @return 		Actual Data length has been transferred in polling mode.
+    328           * 				In interrupt mode, always return (0)
+    329           * 				Return (-1) if error.
+    330           * Note: This function can be used in both master and slave mode.
+    331           ***********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    332          int32_t SPI_ReadWrite (LPC_SPI_TypeDef *SPIx, SPI_DATA_SETUP_Type *dataCfg, \
+    333          						SPI_TRANSFER_Type xfType)
+    334          {
+   \                     SPI_ReadWrite: (+1)
+   \   00000000   0xE92D 0x4FF4      PUSH     {R2,R4-R11,LR}
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+    335          	uint8_t *rdata8;
+    336              uint8_t *wdata8;
+    337          	uint16_t *rdata16;
+    338              uint16_t *wdata16;
+    339              uint32_t stat;
+    340              uint32_t temp;
+    341          
+    342          	//read for empty buffer
+    343          	temp = SPIx->SPDR;
+   \   00000008   0x68A0             LDR      R0,[R4, #+8]
+   \   0000000A   0x4681             MOV      R9,R0
+    344          	//dummy to clear status
+    345          	temp = SPIx->SPSR;
+   \   0000000C   0x6860             LDR      R0,[R4, #+4]
+   \   0000000E   0x4681             MOV      R9,R0
+    346          	dataCfg->counter = 0;
+   \   00000010   0x2000             MOVS     R0,#+0
+   \   00000012   0x60E8             STR      R0,[R5, #+12]
+    347          	dataCfg->status = 0;
+   \   00000014   0x2000             MOVS     R0,#+0
+   \   00000016   0x6128             STR      R0,[R5, #+16]
+    348          
+    349          	if (xfType == SPI_TRANSFER_POLLING){
+   \   00000018   0xF89D 0x0000      LDRB     R0,[SP, #+0]
+   \   0000001C   0x2800             CMP      R0,#+0
+   \   0000001E   0xD165             BNE.N    ??SPI_ReadWrite_0
+    350          
+    351          		if (spidat.dataword == 0){
+   \   00000020   0x....             LDR.N    R0,??DataTable13
+   \   00000022   0x6800             LDR      R0,[R0, #+0]
+   \   00000024   0x2800             CMP      R0,#+0
+   \   00000026   0xD104             BNE.N    ??SPI_ReadWrite_1
+    352          			rdata8 = (uint8_t *)dataCfg->rx_data;
+   \   00000028   0x6868             LDR      R0,[R5, #+4]
+   \   0000002A   0x0006             MOVS     R6,R0
+    353          			wdata8 = (uint8_t *)dataCfg->tx_data;
+   \   0000002C   0x6828             LDR      R0,[R5, #+0]
+   \   0000002E   0x4682             MOV      R10,R0
+   \   00000030   0xE003             B.N      ??SPI_ReadWrite_2
+    354          		} else {
+    355          			rdata16 = (uint16_t *)dataCfg->rx_data;
+   \                     ??SPI_ReadWrite_1: (+1)
+   \   00000032   0x6868             LDR      R0,[R5, #+4]
+   \   00000034   0x0007             MOVS     R7,R0
+    356          			wdata16 = (uint16_t *)dataCfg->tx_data;
+   \   00000036   0x6828             LDR      R0,[R5, #+0]
+   \   00000038   0x4683             MOV      R11,R0
+    357          		}
+    358          
+    359          		while(dataCfg->counter < dataCfg->length)
+   \                     ??SPI_ReadWrite_2: (+1)
+   \   0000003A   0x68E8             LDR      R0,[R5, #+12]
+   \   0000003C   0x68A9             LDR      R1,[R5, #+8]
+   \   0000003E   0x4288             CMP      R0,R1
+   \   00000040   0xD24F             BCS.N    ??SPI_ReadWrite_3
+    360          		{
+    361          			// Write data to buffer
+    362          			if(dataCfg->tx_data == NULL){
+   \   00000042   0x6828             LDR      R0,[R5, #+0]
+   \   00000044   0x2800             CMP      R0,#+0
+   \   00000046   0xD10E             BNE.N    ??SPI_ReadWrite_4
+    363          				if (spidat.dataword == 0){
+   \   00000048   0x....             LDR.N    R0,??DataTable13
+   \   0000004A   0x6800             LDR      R0,[R0, #+0]
+   \   0000004C   0x2800             CMP      R0,#+0
+   \   0000004E   0xD104             BNE.N    ??SPI_ReadWrite_5
+    364          					SPI_SendData(SPIx, 0xFF);
+   \   00000050   0x21FF             MOVS     R1,#+255
+   \   00000052   0x0020             MOVS     R0,R4
+   \   00000054   0x.... 0x....      BL       SPI_SendData
+   \   00000058   0xE019             B.N      ??SPI_ReadWrite_6
+    365          				} else {
+    366          					SPI_SendData(SPIx, 0xFFFF);
+   \                     ??SPI_ReadWrite_5: (+1)
+   \   0000005A   0xF64F 0x71FF      MOVW     R1,#+65535
+   \   0000005E   0x0020             MOVS     R0,R4
+   \   00000060   0x.... 0x....      BL       SPI_SendData
+   \   00000064   0xE013             B.N      ??SPI_ReadWrite_6
+    367          				}
+    368          			} else {
+    369          				if (spidat.dataword == 0){
+   \                     ??SPI_ReadWrite_4: (+1)
+   \   00000066   0x....             LDR.N    R0,??DataTable13
+   \   00000068   0x6800             LDR      R0,[R0, #+0]
+   \   0000006A   0x2800             CMP      R0,#+0
+   \   0000006C   0xD108             BNE.N    ??SPI_ReadWrite_7
+    370          					SPI_SendData(SPIx, *wdata8);
+   \   0000006E   0xF89A 0x1000      LDRB     R1,[R10, #+0]
+   \   00000072   0xB289             UXTH     R1,R1            ;; ZeroExt  R1,R1,#+16,#+16
+   \   00000074   0x0020             MOVS     R0,R4
+   \   00000076   0x.... 0x....      BL       SPI_SendData
+    371          					wdata8++;
+   \   0000007A   0xF11A 0x0A01      ADDS     R10,R10,#+1
+   \   0000007E   0xE006             B.N      ??SPI_ReadWrite_6
+    372          				} else {
+    373          					SPI_SendData(SPIx, *wdata16);
+   \                     ??SPI_ReadWrite_7: (+1)
+   \   00000080   0xF8BB 0x1000      LDRH     R1,[R11, #+0]
+   \   00000084   0x0020             MOVS     R0,R4
+   \   00000086   0x.... 0x....      BL       SPI_SendData
+    374          					wdata16++;
+   \   0000008A   0xF11B 0x0B02      ADDS     R11,R11,#+2
+    375          				}
+    376          			}
+    377          			// Wait for transfer complete
+    378          			while (!((stat = SPIx->SPSR) & SPI_SPSR_SPIF));
+   \                     ??SPI_ReadWrite_6: (+1)
+   \   0000008E   0x6860             LDR      R0,[R4, #+4]
+   \   00000090   0x4680             MOV      R8,R0
+   \   00000092   0x0600             LSLS     R0,R0,#+24
+   \   00000094   0xD5FB             BPL.N    ??SPI_ReadWrite_6
+    379          			// Check for error
+    380          			if (stat & (SPI_SPSR_ABRT | SPI_SPSR_MODF | SPI_SPSR_ROVR | SPI_SPSR_WCOL)){
+   \   00000096   0xF018 0x0F78      TST      R8,#0x78
+   \   0000009A   0xD004             BEQ.N    ??SPI_ReadWrite_8
+    381          				// save status
+    382          				dataCfg->status = stat | SPI_STAT_ERROR;
+   \   0000009C   0xF458 0x7000      ORRS     R0,R8,#0x200
+   \   000000A0   0x6128             STR      R0,[R5, #+16]
+    383          				return (dataCfg->counter);
+   \   000000A2   0x68E8             LDR      R0,[R5, #+12]
+   \   000000A4   0xE05B             B.N      ??SPI_ReadWrite_9
+    384          			}
+    385          			// Read data from SPI dat
+    386          			temp = (uint32_t) SPI_ReceiveData(SPIx);
+   \                     ??SPI_ReadWrite_8: (+1)
+   \   000000A6   0x0020             MOVS     R0,R4
+   \   000000A8   0x.... 0x....      BL       SPI_ReceiveData
+   \   000000AC   0x4681             MOV      R9,R0
+    387          
+    388          			// Store data to destination
+    389          			if (dataCfg->rx_data != NULL)
+   \   000000AE   0x6868             LDR      R0,[R5, #+4]
+   \   000000B0   0x2800             CMP      R0,#+0
+   \   000000B2   0xD00A             BEQ.N    ??SPI_ReadWrite_10
+    390          			{
+    391          				if (spidat.dataword == 0){
+   \   000000B4   0x....             LDR.N    R0,??DataTable13
+   \   000000B6   0x6800             LDR      R0,[R0, #+0]
+   \   000000B8   0x2800             CMP      R0,#+0
+   \   000000BA   0xD103             BNE.N    ??SPI_ReadWrite_11
+    392          					*(rdata8) = (uint8_t) temp;
+   \   000000BC   0xF886 0x9000      STRB     R9,[R6, #+0]
+    393          					rdata8++;
+   \   000000C0   0x1C76             ADDS     R6,R6,#+1
+   \   000000C2   0xE002             B.N      ??SPI_ReadWrite_10
+    394          				} else {
+    395          					*(rdata16) = (uint16_t) temp;
+   \                     ??SPI_ReadWrite_11: (+1)
+   \   000000C4   0xF8A7 0x9000      STRH     R9,[R7, #+0]
+    396          					rdata16++;
+   \   000000C8   0x1CBF             ADDS     R7,R7,#+2
+    397          				}
+    398          			}
+    399          			// Increase counter
+    400          			if (spidat.dataword == 0){
+   \                     ??SPI_ReadWrite_10: (+1)
+   \   000000CA   0x....             LDR.N    R0,??DataTable13
+   \   000000CC   0x6800             LDR      R0,[R0, #+0]
+   \   000000CE   0x2800             CMP      R0,#+0
+   \   000000D0   0xD103             BNE.N    ??SPI_ReadWrite_12
+    401          				dataCfg->counter++;
+   \   000000D2   0x68E8             LDR      R0,[R5, #+12]
+   \   000000D4   0x1C40             ADDS     R0,R0,#+1
+   \   000000D6   0x60E8             STR      R0,[R5, #+12]
+   \   000000D8   0xE7AF             B.N      ??SPI_ReadWrite_2
+    402          			} else {
+    403          				dataCfg->counter += 2;
+   \                     ??SPI_ReadWrite_12: (+1)
+   \   000000DA   0x68E8             LDR      R0,[R5, #+12]
+   \   000000DC   0x1C80             ADDS     R0,R0,#+2
+   \   000000DE   0x60E8             STR      R0,[R5, #+12]
+   \   000000E0   0xE7AB             B.N      ??SPI_ReadWrite_2
+    404          			}
+    405          		}
+    406          
+    407          		// Return length of actual data transferred
+    408          		// save status
+    409          		dataCfg->status = stat | SPI_STAT_DONE;
+   \                     ??SPI_ReadWrite_3: (+1)
+   \   000000E2   0xF458 0x7080      ORRS     R0,R8,#0x100
+   \   000000E6   0x6128             STR      R0,[R5, #+16]
+    410          		return (dataCfg->counter);
+   \   000000E8   0x68E8             LDR      R0,[R5, #+12]
+   \   000000EA   0xE038             B.N      ??SPI_ReadWrite_9
+    411          	}
+    412          	// Interrupt mode
+    413          	else {
+    414          		spidat.txrx_setup = (uint32_t)dataCfg;
+   \                     ??SPI_ReadWrite_0: (+1)
+   \   000000EC   0x....             LDR.N    R0,??DataTable13
+   \   000000EE   0x6045             STR      R5,[R0, #+4]
+    415          		spidat.inthandler = SPI_IntHandler;
+   \   000000F0   0x....             LDR.N    R0,??DataTable13_6
+   \   000000F2   0x....             LDR.N    R1,??DataTable13
+   \   000000F4   0x6088             STR      R0,[R1, #+8]
+    416          
+    417          		// Check if interrupt flag is already set
+    418          		if(SPIx->SPINT & SPI_SPINT_INTFLAG){
+   \   000000F6   0x69E0             LDR      R0,[R4, #+28]
+   \   000000F8   0x07C0             LSLS     R0,R0,#+31
+   \   000000FA   0xD501             BPL.N    ??SPI_ReadWrite_13
+    419          			SPIx->SPINT = SPI_SPINT_INTFLAG;
+   \   000000FC   0x2001             MOVS     R0,#+1
+   \   000000FE   0x61E0             STR      R0,[R4, #+28]
+    420          		}
+    421          		if (dataCfg->counter < dataCfg->length){
+   \                     ??SPI_ReadWrite_13: (+1)
+   \   00000100   0x68E8             LDR      R0,[R5, #+12]
+   \   00000102   0x68A9             LDR      R1,[R5, #+8]
+   \   00000104   0x4288             CMP      R0,R1
+   \   00000106   0xD226             BCS.N    ??SPI_ReadWrite_14
+    422          			// Write data to buffer
+    423          			if(dataCfg->tx_data == NULL){
+   \   00000108   0x6828             LDR      R0,[R5, #+0]
+   \   0000010A   0x2800             CMP      R0,#+0
+   \   0000010C   0xD10E             BNE.N    ??SPI_ReadWrite_15
+    424          				if (spidat.dataword == 0){
+   \   0000010E   0x....             LDR.N    R0,??DataTable13
+   \   00000110   0x6800             LDR      R0,[R0, #+0]
+   \   00000112   0x2800             CMP      R0,#+0
+   \   00000114   0xD104             BNE.N    ??SPI_ReadWrite_16
+    425          					SPI_SendData(SPIx, 0xFF);
+   \   00000116   0x21FF             MOVS     R1,#+255
+   \   00000118   0x0020             MOVS     R0,R4
+   \   0000011A   0x.... 0x....      BL       SPI_SendData
+   \   0000011E   0xE015             B.N      ??SPI_ReadWrite_17
+    426          				} else {
+    427          					SPI_SendData(SPIx, 0xFFFF);
+   \                     ??SPI_ReadWrite_16: (+1)
+   \   00000120   0xF64F 0x71FF      MOVW     R1,#+65535
+   \   00000124   0x0020             MOVS     R0,R4
+   \   00000126   0x.... 0x....      BL       SPI_SendData
+   \   0000012A   0xE00F             B.N      ??SPI_ReadWrite_17
+    428          				}
+    429          			} else {
+    430          				if (spidat.dataword == 0){
+   \                     ??SPI_ReadWrite_15: (+1)
+   \   0000012C   0x....             LDR.N    R0,??DataTable13
+   \   0000012E   0x6800             LDR      R0,[R0, #+0]
+   \   00000130   0x2800             CMP      R0,#+0
+   \   00000132   0xD106             BNE.N    ??SPI_ReadWrite_18
+    431          					SPI_SendData(SPIx, (*(uint8_t *)dataCfg->tx_data));
+   \   00000134   0x6828             LDR      R0,[R5, #+0]
+   \   00000136   0x7801             LDRB     R1,[R0, #+0]
+   \   00000138   0xB289             UXTH     R1,R1            ;; ZeroExt  R1,R1,#+16,#+16
+   \   0000013A   0x0020             MOVS     R0,R4
+   \   0000013C   0x.... 0x....      BL       SPI_SendData
+   \   00000140   0xE004             B.N      ??SPI_ReadWrite_17
+    432          				} else {
+    433          					SPI_SendData(SPIx, (*(uint16_t *)dataCfg->tx_data));
+   \                     ??SPI_ReadWrite_18: (+1)
+   \   00000142   0x6828             LDR      R0,[R5, #+0]
+   \   00000144   0x8801             LDRH     R1,[R0, #+0]
+   \   00000146   0x0020             MOVS     R0,R4
+   \   00000148   0x.... 0x....      BL       SPI_SendData
+    434          				}
+    435          			}
+    436          			SPI_IntCmd(SPIx, ENABLE);
+   \                     ??SPI_ReadWrite_17: (+1)
+   \   0000014C   0x2101             MOVS     R1,#+1
+   \   0000014E   0x0020             MOVS     R0,R4
+   \   00000150   0x.... 0x....      BL       SPI_IntCmd
+   \   00000154   0xE002             B.N      ??SPI_ReadWrite_19
+    437          		} else {
+    438          			// Save status
+    439          			dataCfg->status = SPI_STAT_DONE;
+   \                     ??SPI_ReadWrite_14: (+1)
+   \   00000156   0xF44F 0x7080      MOV      R0,#+256
+   \   0000015A   0x6128             STR      R0,[R5, #+16]
+    440          		}
+    441          		return (0);
+   \                     ??SPI_ReadWrite_19: (+1)
+   \   0000015C   0x2000             MOVS     R0,#+0
+   \                     ??SPI_ReadWrite_9: (+1)
+   \   0000015E   0xE8BD 0x8FF2      POP      {R1,R4-R11,PC}   ;; return
+    442          	}
+    443          	return (0);
+    444          }
+    445          
+    446          
+    447          /********************************************************************//**
+    448           * @brief 		Enable or disable SPIx interrupt.
+    449           * @param[in]	SPIx	SPI peripheral selected, should be SPI
+    450           * @param[in]	NewState New state of specified UART interrupt type,
+    451           * 				should be:
+    452           * 				- ENALBE: Enable this SPI interrupt.
+    453          * 				- DISALBE: Disable this SPI interrupt.
+    454           * @return 		None
+    455           *********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    456          void SPI_IntCmd(LPC_SPI_TypeDef *SPIx, FunctionalState NewState)
+    457          {
+   \                     SPI_IntCmd: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    458          	CHECK_PARAM(PARAM_SPIx(SPIx));
+   \   00000006   0x....             LDR.N    R0,??DataTable13_3  ;; 0x40020000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD004             BEQ.N    ??SPI_IntCmd_0
+   \   0000000C   0xF44F 0x71E5      MOV      R1,#+458
+   \   00000010   0x....             LDR.N    R0,??DataTable13_4
+   \   00000012   0x.... 0x....      BL       check_failed
+    459          	CHECK_PARAM(PARAM_FUNCTIONALSTATE(NewState));
+   \                     ??SPI_IntCmd_0: (+1)
+   \   00000016   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000018   0x2D00             CMP      R5,#+0
+   \   0000001A   0xD007             BEQ.N    ??SPI_IntCmd_1
+   \   0000001C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001E   0x2D01             CMP      R5,#+1
+   \   00000020   0xD004             BEQ.N    ??SPI_IntCmd_1
+   \   00000022   0xF240 0x11CB      MOVW     R1,#+459
+   \   00000026   0x....             LDR.N    R0,??DataTable13_4
+   \   00000028   0x.... 0x....      BL       check_failed
+    460          
+    461          	if (NewState == ENABLE)
+   \                     ??SPI_IntCmd_1: (+1)
+   \   0000002C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000002E   0x2D01             CMP      R5,#+1
+   \   00000030   0xD104             BNE.N    ??SPI_IntCmd_2
+    462          	{
+    463          		SPIx->SPCR |= SPI_SPCR_SPIE;
+   \   00000032   0x6820             LDR      R0,[R4, #+0]
+   \   00000034   0xF050 0x0080      ORRS     R0,R0,#0x80
+   \   00000038   0x6020             STR      R0,[R4, #+0]
+   \   0000003A   0xE004             B.N      ??SPI_IntCmd_3
+    464          	}
+    465          	else
+    466          	{
+    467          		SPIx->SPCR &= (~SPI_SPCR_SPIE) & SPI_SPCR_BITMASK;
+   \                     ??SPI_IntCmd_2: (+1)
+   \   0000003C   0x6820             LDR      R0,[R4, #+0]
+   \   0000003E   0xF640 0x717C      MOVW     R1,#+3964
+   \   00000042   0x4008             ANDS     R0,R1,R0
+   \   00000044   0x6020             STR      R0,[R4, #+0]
+    468          	}
+    469          }
+   \                     ??SPI_IntCmd_3: (+1)
+   \   00000046   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    470          
+    471          
+    472          /********************************************************************//**
+    473           * @brief 		Checks whether the SPI interrupt flag is set or not.
+    474           * @param[in]	SPIx	SPI peripheral selected, should be SPI
+    475           * @return 		The new state of SPI Interrupt Flag (SET or RESET)
+    476           *********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    477          IntStatus SPI_GetIntStatus (LPC_SPI_TypeDef *SPIx)
+    478          {
+   \                     SPI_GetIntStatus: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    479          	CHECK_PARAM(PARAM_SPIx(SPIx));
+   \   00000004   0x....             LDR.N    R0,??DataTable13_3  ;; 0x40020000
+   \   00000006   0x4284             CMP      R4,R0
+   \   00000008   0xD004             BEQ.N    ??SPI_GetIntStatus_0
+   \   0000000A   0xF240 0x11DF      MOVW     R1,#+479
+   \   0000000E   0x....             LDR.N    R0,??DataTable13_4
+   \   00000010   0x.... 0x....      BL       check_failed
+    480          
+    481          	return ((SPIx->SPINT & SPI_SPINT_INTFLAG) ? SET : RESET);
+   \                     ??SPI_GetIntStatus_0: (+1)
+   \   00000014   0x69E0             LDR      R0,[R4, #+28]
+   \   00000016   0xF010 0x0001      ANDS     R0,R0,#0x1
+   \   0000001A   0xBD10             POP      {R4,PC}          ;; return
+    482          }
+    483          
+    484          
+    485          /********************************************************************//**
+    486           * @brief 		Clear SPI interrupt flag.
+    487           * @param[in]	SPIx	SPI peripheral selected, should be SPI
+    488           * @return 		None
+    489           *********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    490          void SPI_ClearIntPending(LPC_SPI_TypeDef *SPIx)
+    491          {
+   \                     SPI_ClearIntPending: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    492          	CHECK_PARAM(PARAM_SPIx(SPIx));
+   \   00000004   0x....             LDR.N    R0,??DataTable13_3  ;; 0x40020000
+   \   00000006   0x4284             CMP      R4,R0
+   \   00000008   0xD004             BEQ.N    ??SPI_ClearIntPending_0
+   \   0000000A   0xF44F 0x71F6      MOV      R1,#+492
+   \   0000000E   0x....             LDR.N    R0,??DataTable13_4
+   \   00000010   0x.... 0x....      BL       check_failed
+    493          
+    494          	SPIx->SPINT = SPI_SPINT_INTFLAG;
+   \                     ??SPI_ClearIntPending_0: (+1)
+   \   00000014   0x2001             MOVS     R0,#+1
+   \   00000016   0x61E0             STR      R0,[R4, #+28]
+    495          }
+   \   00000018   0xBD10             POP      {R4,PC}          ;; return
+    496          
+    497          
+    498          /********************************************************************//**
+    499           * @brief 		Get current value of SPI Status register in SPIx peripheral.
+    500           * @param[in]	SPIx	SPI peripheral selected, should be SPI
+    501           * @return		Current value of SPI Status register in SPI peripheral.
+    502           * Note:	The return value of this function must be used with
+    503           * 			SPI_CheckStatus() to determine current flag status
+    504           * 			corresponding to each SPI status type. Because some flags in
+    505           * 			SPI Status register will be cleared after reading, the next reading
+    506           * 			SPI Status register could not be correct. So this function used to
+    507           * 			read SPI status register in one time only, then the return value
+    508           * 			used to check all flags.
+    509           *********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    510          uint32_t SPI_GetStatus(LPC_SPI_TypeDef* SPIx)
+    511          {
+   \                     SPI_GetStatus: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    512          	CHECK_PARAM(PARAM_SPIx(SPIx));
+   \   00000004   0x....             LDR.N    R0,??DataTable13_3  ;; 0x40020000
+   \   00000006   0x4284             CMP      R4,R0
+   \   00000008   0xD004             BEQ.N    ??SPI_GetStatus_0
+   \   0000000A   0xF44F 0x7100      MOV      R1,#+512
+   \   0000000E   0x....             LDR.N    R0,??DataTable13_4
+   \   00000010   0x.... 0x....      BL       check_failed
+    513          
+    514          	return (SPIx->SPSR & SPI_SPSR_BITMASK);
+   \                     ??SPI_GetStatus_0: (+1)
+   \   00000014   0x6860             LDR      R0,[R4, #+4]
+   \   00000016   0xF010 0x00F8      ANDS     R0,R0,#0xF8
+   \   0000001A   0xBD10             POP      {R4,PC}          ;; return
+    515          }
+    516          
+    517          
+    518          
+    519          /********************************************************************//**
+    520           * @brief 		Checks whether the specified SPI Status flag is set or not
+    521           * 				via inputSPIStatus parameter.
+    522           * @param[in]	inputSPIStatus Value to check status of each flag type.
+    523           * 				This value is the return value from SPI_GetStatus().
+    524           * @param[in]	SPIStatus	Specifies the SPI status flag to check,
+    525           * 				should be one of the following:
+    526          				- SPI_STAT_ABRT: Slave abort.
+    527          				- SPI_STAT_MODF: Mode fault.
+    528          				- SPI_STAT_ROVR: Read overrun.
+    529          				- SPI_STAT_WCOL: Write collision.
+    530          				- SPI_STAT_SPIF: SPI transfer complete.
+    531           * @return 		The new state of SPIStatus (SET or RESET)
+    532           *********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    533          FlagStatus SPI_CheckStatus (uint32_t inputSPIStatus,  uint8_t SPIStatus)
+    534          {
+   \                     SPI_CheckStatus: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    535          	CHECK_PARAM(PARAM_SPI_STAT(SPIStatus));
+   \   00000006   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000008   0x2D08             CMP      R5,#+8
+   \   0000000A   0xD010             BEQ.N    ??SPI_CheckStatus_0
+   \   0000000C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000000E   0x2D10             CMP      R5,#+16
+   \   00000010   0xD00D             BEQ.N    ??SPI_CheckStatus_0
+   \   00000012   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000014   0x2D20             CMP      R5,#+32
+   \   00000016   0xD00A             BEQ.N    ??SPI_CheckStatus_0
+   \   00000018   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001A   0x2D40             CMP      R5,#+64
+   \   0000001C   0xD007             BEQ.N    ??SPI_CheckStatus_0
+   \   0000001E   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000020   0x2D80             CMP      R5,#+128
+   \   00000022   0xD004             BEQ.N    ??SPI_CheckStatus_0
+   \   00000024   0xF240 0x2117      MOVW     R1,#+535
+   \   00000028   0x....             LDR.N    R0,??DataTable13_4
+   \   0000002A   0x.... 0x....      BL       check_failed
+    536          
+    537          	return ((inputSPIStatus & SPIStatus) ? SET : RESET);
+   \                     ??SPI_CheckStatus_0: (+1)
+   \   0000002E   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000030   0x422C             TST      R4,R5
+   \   00000032   0xD001             BEQ.N    ??SPI_CheckStatus_1
+   \   00000034   0x2001             MOVS     R0,#+1
+   \   00000036   0xE000             B.N      ??SPI_CheckStatus_2
+   \                     ??SPI_CheckStatus_1: (+1)
+   \   00000038   0x2000             MOVS     R0,#+0
+   \                     ??SPI_CheckStatus_2: (+1)
+   \   0000003A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000003C   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    538          }
+    539          
+    540          /**
+    541           * @brief		Standard SPI Interrupt handler
+    542           * @param[in] 	None
+    543           * @return		None
+    544           */
+
+   \                                 In section .text, align 2, keep-with-next
+    545          void SPI_StdIntHandler(void)
+    546          {
+   \                     SPI_StdIntHandler: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    547          	// Call relevant handler
+    548          	spidat.inthandler();
+   \   00000002   0x....             LDR.N    R0,??DataTable13
+   \   00000004   0x6880             LDR      R0,[R0, #+8]
+   \   00000006   0x4780             BLX      R0
+    549          }
+   \   00000008   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable13:
+   \   00000000   0x........         DC32     spidat
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable13_1:
+   \   00000000   0x4002001C         DC32     0x4002001c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable13_2:
+   \   00000000   0x40020004         DC32     0x40020004
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable13_3:
+   \   00000000   0x40020000         DC32     0x40020000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable13_4:
+   \   00000000   0x........         DC32     ?_0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable13_5:
+   \   00000000   0x000F4240         DC32     0xf4240
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable13_6:
+   \   00000000   0x........         DC32     SPI_IntHandler
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \   00000000   0x45 0x3A          DC8 45H, 3AH, 5CH, 0D0H, 0C2H, 0CFH, 0EEH, 0C4H
+   \              0x5C 0xD0    
+   \              0xC2 0xCF    
+   \              0xEE 0xC4    
+   \   00000008   0xBF 0x5C          DC8 0BFH, 5CH, 0D2H, 0C6H, 0BDH, 0BBH, 0D7H, 0CAH
+   \              0xD2 0xC6    
+   \              0xBD 0xBB    
+   \              0xD7 0xCA    
+   \   00000010   0xC1 0xCF          DC8 0C1H, 0CFH, 4CH, 48H, 54H, 5CH, 0D7H, 0D4H
+   \              0x4C 0x48    
+   \              0x54 0x5C    
+   \              0xD7 0xD4    
+   \   00000018   0xD6 0xFA          DC8 0D6H, 0FAH, 0BDH, 0C9H, 0B7H, 0D1H, 0BBH, 0FAH
+   \              0xBD 0xC9    
+   \              0xB7 0xD1    
+   \              0xBB 0xFA    
+   \   00000020   0x5C 0xC8          DC8 5CH, 0C8H, 0EDH, 0BCH, 0FEH, 5CH, 4DH, 69H
+   \              0xED 0xBC    
+   \              0xFE 0x5C    
+   \              0x4D 0x69    
+   \   00000028   0x63 0x72          DC8 63H, 72H, 69H, 75H, 6DH, 5FH, 4CH, 50H
+   \              0x69 0x75    
+   \              0x6D 0x5F    
+   \              0x4C 0x50    
+   \   00000030   0x43 0x31          DC8 43H, 31H, 37H, 36H, 38H, 2DH, 53H, 4BH
+   \              0x37 0x36    
+   \              0x38 0x2D    
+   \              0x53 0x4B    
+   \   00000038   0x5F 0x75          DC8 5FH, 75H, 43H, 4FH, 53H, 2DH, 49H, 49H
+   \              0x43 0x4F    
+   \              0x53 0x2D    
+   \              0x49 0x49    
+   \   00000040   0x49 0x2D          DC8 49H, 2DH, 52H, 65H, 6CH, 65H, 61H, 73H
+   \              0x52 0x65    
+   \              0x6C 0x65    
+   \              0x61 0x73    
+   \   00000048   0x65 0x5C          DC8 65H, 5CH, 53H, 6FH, 66H, 74H, 77H, 61H
+   \              0x53 0x6F    
+   \              0x66 0x74    
+   \              0x77 0x61    
+   \   00000050   0x72 0x65          DC8 72H, 65H, 5CH, 45H, 76H, 61H, 6CH, 42H
+   \              0x5C 0x45    
+   \              0x76 0x61    
+   \              0x6C 0x42    
+   \   00000058   0x6F 0x61          DC8 6FH, 61H, 72H, 64H, 73H, 5CH, 4EH, 58H
+   \              0x72 0x64    
+   \              0x73 0x5C    
+   \              0x4E 0x58    
+   \   00000060   0x50 0x5C          DC8 50H, 5CH, 4CH, 50H, 43H, 31H, 37H, 36H
+   \              0x4C 0x50    
+   \              0x43 0x31    
+   \              0x37 0x36    
+   \   00000068   0x38 0x2D          DC8 38H, 2DH, 53H, 4BH, 5CH, 4CH, 50H, 43H
+   \              0x53 0x4B    
+   \              0x5C 0x4C    
+   \              0x50 0x43    
+   \   00000070   0x31 0x37          DC8 31H, 37H, 58H, 58H, 43H, 4DH, 53H, 49H
+   \              0x58 0x58    
+   \              0x43 0x4D    
+   \              0x53 0x49    
+   \   00000078   0x53 0x5C          DC8 53H, 5CH, 44H, 72H, 69H, 76H, 65H, 72H
+   \              0x44 0x72    
+   \              0x69 0x76    
+   \              0x65 0x72    
+   \   00000080   0x73 0x5C          DC8 73H, 5CH, 73H, 6FH, 75H, 72H, 63H, 65H
+   \              0x73 0x6F    
+   \              0x75 0x72    
+   \              0x63 0x65    
+   \   00000088   0x5C 0x6C          DC8 5CH, 6CH, 70H, 63H, 31H, 37H, 78H, 78H
+   \              0x70 0x63    
+   \              0x31 0x37    
+   \              0x78 0x78    
+   \   00000090   0x5F 0x73          DC8 5FH, 73H, 70H, 69H, 2EH, 63H, 0
+   \              0x70 0x69    
+   \              0x2E 0x63    
+   \              0x00         
+   \   00000097   0x00               DC8 0
+    550          
+    551          
+    552          /**
+    553           * @}
+    554           */
+    555          
+    556          #endif /* _SPI */
+    557          
+    558          /**
+    559           * @}
+    560           */
+    561          
+    562          /* --------------------------------- End Of File ------------------------------ */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   SPI_CheckStatus
+        16   -> check_failed
+       8   SPI_ClearIntPending
+         8   -> check_failed
+       0   SPI_ConfigStructInit
+       8   SPI_DeInit
+         8   -> CLKPWR_ConfigPPWR
+         8   -> check_failed
+       8   SPI_GetIntStatus
+         8   -> check_failed
+       8   SPI_GetStatus
+         8   -> check_failed
+      16   SPI_Init
+        16   -> CLKPWR_ConfigPPWR
+        16   -> SPI_SetClock
+        16   -> check_failed
+      16   SPI_IntCmd
+        16   -> check_failed
+      16   SPI_IntHandler
+        16   -- Indirect call
+        16   -> SPI_IntCmd
+        16   -> SPI_ReceiveData
+        16   -> SPI_SendData
+      40   SPI_ReadWrite
+        40   -> SPI_IntCmd
+        40   -> SPI_ReceiveData
+        40   -> SPI_SendData
+       8   SPI_ReceiveData
+         8   -> check_failed
+      16   SPI_SendData
+        16   -> check_failed
+      24   SPI_SetClock
+        24   -> CLKPWR_GetPCLK
+        24   -> check_failed
+       8   SPI_StdIntHandler
+         8   -- Indirect call
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable13
+       4  ??DataTable13_1
+       4  ??DataTable13_2
+       4  ??DataTable13_3
+       4  ??DataTable13_4
+       4  ??DataTable13_5
+       4  ??DataTable13_6
+     152  ?_0
+      62  SPI_CheckStatus
+      26  SPI_ClearIntPending
+      28  SPI_ConfigStructInit
+      38  SPI_DeInit
+      28  SPI_GetIntStatus
+      28  SPI_GetStatus
+     114  SPI_Init
+      72  SPI_IntCmd
+     272  SPI_IntHandler
+     354  SPI_ReadWrite
+      26  SPI_ReceiveData
+      28  SPI_SendData
+      76  SPI_SetClock
+      10  SPI_StdIntHandler
+      12  spidat
+
+ 
+    12 bytes in section .bss
+   152 bytes in section .rodata
+ 1 190 bytes in section .text
+ 
+ 1 190 bytes of CODE  memory
+   152 bytes of CONST memory
+    12 bytes of DATA  memory
+
+Errors: none
+Warnings: 1

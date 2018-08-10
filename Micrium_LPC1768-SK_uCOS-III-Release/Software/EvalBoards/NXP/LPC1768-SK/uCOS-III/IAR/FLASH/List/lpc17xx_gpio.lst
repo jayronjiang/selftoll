@@ -1,0 +1,1382 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       06/Apr/2017  11:01:06
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_gpio.c
+#    Command line =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_gpio.c
+#        -lCN
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\List
+#        --diag_suppress Pe174 -o
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files\IAR
+#        Systems\Embedded Workbench 7.5\arm\INC\c\DLib_Config_Normal.h" -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\OS\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\NXP\LPC17xx\LPC1768\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Ports\ARM-Cortex-M3\CSP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Source\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-LIB\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CPU\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Core\CM3\CoreSupport\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Core\CM3\DeviceSupport\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\include\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Driver\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Driver\NXP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Line\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\OS\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\OS\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Source\
+#        -On --use_c++_inline -I "C:\Program Files\IAR Systems\Embedded
+#        Workbench 7.5\arm\CMSIS\Include\"
+#    Locale       =  Chinese (Simplified)_People's Republic of China.936
+#    List file    =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\List\lpc17xx_gpio.lst
+#    Object file  =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\Obj\lpc17xx_gpio.o
+#
+###############################################################################
+
+E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_gpio.c
+      1          /**
+      2           * @file	: lpc17xx_gpio.c
+      3           * @brief	: Contains all functions support for GPIO firmware library on LPC17xx
+      4           * @version	: 1.0
+      5           * @date	: 11. Jun. 2009
+      6           * @author	: HieuNguyen
+      7           **************************************************************************
+      8           * Software that is described herein is for illustrative purposes only
+      9           * which provides customers with programming information regarding the
+     10           * products. This software is supplied "AS IS" without any warranties.
+     11           * NXP Semiconductors assumes no responsibility or liability for the
+     12           * use of the software, conveys no license or title under any patent,
+     13           * copyright, or mask work right to the product. NXP Semiconductors
+     14           * reserves the right to make changes in the software without
+     15           * notification. NXP Semiconductors also make no representation or
+     16           * warranty that such application will be suitable for the specified
+     17           * use without further testing or modification.
+     18           **********************************************************************/
+     19          
+     20          /* Peripheral group ----------------------------------------------------------- */
+     21          /** @addtogroup GPIO
+     22           * @{
+     23           */
+     24          
+     25          /* Includes ------------------------------------------------------------------- */
+     26          #include "lpc17xx_gpio.h"
+     27          
+     28          /* If this source file built with example, the LPC17xx FW library configuration
+     29           * file in each example directory ("lpc17xx_libcfg.h") must be included,
+     30           * otherwise the default FW library configuration file must be included instead
+     31           */
+     32          #ifdef __BUILD_WITH_EXAMPLE__
+     33          #include "lpc17xx_libcfg.h"
+     34          #else
+     35          #include "lpc17xx_libcfg_default.h"
+     36          #endif /* __BUILD_WITH_EXAMPLE__ */
+     37          
+     38          
+     39          #ifdef _GPIO
+     40          
+     41          /* Private Functions ---------------------------------------------------------- */
+     42          /** @addtogroup GPIO_Private_Functions
+     43           * @{
+     44           */
+     45          /*********************************************************************//**
+     46           * @brief		Get pointer to GPIO peripheral due to GPIO port
+     47           * @param[in]	portNum		Port Number value, should be in range from 0 to 4.
+     48           * @return		Pointer to GPIO peripheral
+     49           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     50          static LPC_GPIO_TypeDef *GPIO_GetPointer(uint8_t portNum)
+     51          {
+   \                     GPIO_GetPointer: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+     52          	LPC_GPIO_TypeDef *pGPIO = NULL;
+   \   00000002   0x2000             MOVS     R0,#+0
+     53          
+     54          	switch (portNum) {
+   \   00000004   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD006             BEQ.N    ??GPIO_GetPointer_0
+   \   0000000A   0x2902             CMP      R1,#+2
+   \   0000000C   0xD00A             BEQ.N    ??GPIO_GetPointer_1
+   \   0000000E   0xD306             BCC.N    ??GPIO_GetPointer_2
+   \   00000010   0x2904             CMP      R1,#+4
+   \   00000012   0xD00D             BEQ.N    ??GPIO_GetPointer_3
+   \   00000014   0xD309             BCC.N    ??GPIO_GetPointer_4
+   \   00000016   0xE00E             B.N      ??GPIO_GetPointer_5
+     55          	case 0:
+     56          		pGPIO = LPC_GPIO0;
+   \                     ??GPIO_GetPointer_0: (+1)
+   \   00000018   0x....             LDR.N    R2,??DataTable2  ;; 0x2009c000
+   \   0000001A   0x0010             MOVS     R0,R2
+     57          		break;
+   \   0000001C   0xE00B             B.N      ??GPIO_GetPointer_6
+     58          	case 1:
+     59          		pGPIO = LPC_GPIO1;
+   \                     ??GPIO_GetPointer_2: (+1)
+   \   0000001E   0x....             LDR.N    R2,??DataTable2_1  ;; 0x2009c020
+   \   00000020   0x0010             MOVS     R0,R2
+     60          		break;
+   \   00000022   0xE008             B.N      ??GPIO_GetPointer_6
+     61          	case 2:
+     62          		pGPIO = LPC_GPIO2;
+   \                     ??GPIO_GetPointer_1: (+1)
+   \   00000024   0x....             LDR.N    R2,??DataTable2_2  ;; 0x2009c040
+   \   00000026   0x0010             MOVS     R0,R2
+     63          		break;
+   \   00000028   0xE005             B.N      ??GPIO_GetPointer_6
+     64          	case 3:
+     65          		pGPIO = LPC_GPIO3;
+   \                     ??GPIO_GetPointer_4: (+1)
+   \   0000002A   0x....             LDR.N    R2,??DataTable2_3  ;; 0x2009c060
+   \   0000002C   0x0010             MOVS     R0,R2
+     66          		break;
+   \   0000002E   0xE002             B.N      ??GPIO_GetPointer_6
+     67          	case 4:
+     68          		pGPIO = LPC_GPIO4;
+   \                     ??GPIO_GetPointer_3: (+1)
+   \   00000030   0x....             LDR.N    R2,??DataTable2_4  ;; 0x2009c080
+   \   00000032   0x0010             MOVS     R0,R2
+     69          		break;
+   \   00000034   0xE7FF             B.N      ??GPIO_GetPointer_6
+     70          	default:
+     71          		break;
+     72          	}
+     73          
+     74          	return pGPIO;
+   \                     ??GPIO_GetPointer_5: (+1)
+   \                     ??GPIO_GetPointer_6: (+1)
+   \   00000036   0x4770             BX       LR               ;; return
+     75          }
+     76          
+     77          /*********************************************************************//**
+     78           * @brief		Get pointer to FIO peripheral in halfword accessible style
+     79           * 				due to FIO port
+     80           * @param[in]	portNum		Port Number value, should be in range from 0 to 4.
+     81           * @return		Pointer to FIO peripheral
+     82           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     83          static GPIO_HalfWord_TypeDef *FIO_HalfWordGetPointer(uint8_t portNum)
+     84          {
+   \                     FIO_HalfWordGetPointer: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+     85          	GPIO_HalfWord_TypeDef *pFIO = NULL;
+   \   00000002   0x2000             MOVS     R0,#+0
+     86          
+     87          	switch (portNum) {
+   \   00000004   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD006             BEQ.N    ??FIO_HalfWordGetPointer_0
+   \   0000000A   0x2902             CMP      R1,#+2
+   \   0000000C   0xD00A             BEQ.N    ??FIO_HalfWordGetPointer_1
+   \   0000000E   0xD306             BCC.N    ??FIO_HalfWordGetPointer_2
+   \   00000010   0x2904             CMP      R1,#+4
+   \   00000012   0xD00D             BEQ.N    ??FIO_HalfWordGetPointer_3
+   \   00000014   0xD309             BCC.N    ??FIO_HalfWordGetPointer_4
+   \   00000016   0xE00E             B.N      ??FIO_HalfWordGetPointer_5
+     88          	case 0:
+     89          		pFIO = GPIO0_HalfWord;
+   \                     ??FIO_HalfWordGetPointer_0: (+1)
+   \   00000018   0x....             LDR.N    R2,??DataTable2  ;; 0x2009c000
+   \   0000001A   0x0010             MOVS     R0,R2
+     90          		break;
+   \   0000001C   0xE00B             B.N      ??FIO_HalfWordGetPointer_6
+     91          	case 1:
+     92          		pFIO = GPIO1_HalfWord;
+   \                     ??FIO_HalfWordGetPointer_2: (+1)
+   \   0000001E   0x....             LDR.N    R2,??DataTable2_1  ;; 0x2009c020
+   \   00000020   0x0010             MOVS     R0,R2
+     93          		break;
+   \   00000022   0xE008             B.N      ??FIO_HalfWordGetPointer_6
+     94          	case 2:
+     95          		pFIO = GPIO2_HalfWord;
+   \                     ??FIO_HalfWordGetPointer_1: (+1)
+   \   00000024   0x....             LDR.N    R2,??DataTable2_2  ;; 0x2009c040
+   \   00000026   0x0010             MOVS     R0,R2
+     96          		break;
+   \   00000028   0xE005             B.N      ??FIO_HalfWordGetPointer_6
+     97          	case 3:
+     98          		pFIO = GPIO3_HalfWord;
+   \                     ??FIO_HalfWordGetPointer_4: (+1)
+   \   0000002A   0x....             LDR.N    R2,??DataTable2_3  ;; 0x2009c060
+   \   0000002C   0x0010             MOVS     R0,R2
+     99          		break;
+   \   0000002E   0xE002             B.N      ??FIO_HalfWordGetPointer_6
+    100          	case 4:
+    101          		pFIO = GPIO4_HalfWord;
+   \                     ??FIO_HalfWordGetPointer_3: (+1)
+   \   00000030   0x....             LDR.N    R2,??DataTable2_4  ;; 0x2009c080
+   \   00000032   0x0010             MOVS     R0,R2
+    102          		break;
+   \   00000034   0xE7FF             B.N      ??FIO_HalfWordGetPointer_6
+    103          	default:
+    104          		break;
+    105          	}
+    106          
+    107          	return pFIO;
+   \                     ??FIO_HalfWordGetPointer_5: (+1)
+   \                     ??FIO_HalfWordGetPointer_6: (+1)
+   \   00000036   0x4770             BX       LR               ;; return
+    108          }
+    109          
+    110          /*********************************************************************//**
+    111           * @brief		Get pointer to FIO peripheral in byte accessible style
+    112           * 				due to FIO port
+    113           * @param[in]	portNum		Port Number value, should be in range from 0 to 4.
+    114           * @return		Pointer to FIO peripheral
+    115           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    116          static GPIO_Byte_TypeDef *FIO_ByteGetPointer(uint8_t portNum)
+    117          {
+   \                     FIO_ByteGetPointer: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+    118          	GPIO_Byte_TypeDef *pFIO = NULL;
+   \   00000002   0x2000             MOVS     R0,#+0
+    119          
+    120          	switch (portNum) {
+   \   00000004   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD006             BEQ.N    ??FIO_ByteGetPointer_0
+   \   0000000A   0x2902             CMP      R1,#+2
+   \   0000000C   0xD00A             BEQ.N    ??FIO_ByteGetPointer_1
+   \   0000000E   0xD306             BCC.N    ??FIO_ByteGetPointer_2
+   \   00000010   0x2904             CMP      R1,#+4
+   \   00000012   0xD00D             BEQ.N    ??FIO_ByteGetPointer_3
+   \   00000014   0xD309             BCC.N    ??FIO_ByteGetPointer_4
+   \   00000016   0xE00E             B.N      ??FIO_ByteGetPointer_5
+    121          	case 0:
+    122          		pFIO = GPIO0_Byte;
+   \                     ??FIO_ByteGetPointer_0: (+1)
+   \   00000018   0x....             LDR.N    R2,??DataTable2  ;; 0x2009c000
+   \   0000001A   0x0010             MOVS     R0,R2
+    123          		break;
+   \   0000001C   0xE00B             B.N      ??FIO_ByteGetPointer_6
+    124          	case 1:
+    125          		pFIO = GPIO1_Byte;
+   \                     ??FIO_ByteGetPointer_2: (+1)
+   \   0000001E   0x....             LDR.N    R2,??DataTable2_1  ;; 0x2009c020
+   \   00000020   0x0010             MOVS     R0,R2
+    126          		break;
+   \   00000022   0xE008             B.N      ??FIO_ByteGetPointer_6
+    127          	case 2:
+    128          		pFIO = GPIO2_Byte;
+   \                     ??FIO_ByteGetPointer_1: (+1)
+   \   00000024   0x....             LDR.N    R2,??DataTable2_2  ;; 0x2009c040
+   \   00000026   0x0010             MOVS     R0,R2
+    129          		break;
+   \   00000028   0xE005             B.N      ??FIO_ByteGetPointer_6
+    130          	case 3:
+    131          		pFIO = GPIO3_Byte;
+   \                     ??FIO_ByteGetPointer_4: (+1)
+   \   0000002A   0x....             LDR.N    R2,??DataTable2_3  ;; 0x2009c060
+   \   0000002C   0x0010             MOVS     R0,R2
+    132          		break;
+   \   0000002E   0xE002             B.N      ??FIO_ByteGetPointer_6
+    133          	case 4:
+    134          		pFIO = GPIO4_Byte;
+   \                     ??FIO_ByteGetPointer_3: (+1)
+   \   00000030   0x....             LDR.N    R2,??DataTable2_4  ;; 0x2009c080
+   \   00000032   0x0010             MOVS     R0,R2
+    135          		break;
+   \   00000034   0xE7FF             B.N      ??FIO_ByteGetPointer_6
+    136          	default:
+    137          		break;
+    138          	}
+    139          
+    140          	return pFIO;
+   \                     ??FIO_ByteGetPointer_5: (+1)
+   \                     ??FIO_ByteGetPointer_6: (+1)
+   \   00000036   0x4770             BX       LR               ;; return
+    141          }
+    142          
+    143          /**
+    144           * @}
+    145           */
+    146          
+    147          
+    148          /* Public Functions ----------------------------------------------------------- */
+    149          /** @addtogroup GPIO_Public_Functions
+    150           * @{
+    151           */
+    152          
+    153          
+    154          /* GPIO ------------------------------------------------------------------------------ */
+    155          
+    156          /*********************************************************************//**
+    157           * @brief		Set Direction for GPIO port.
+    158           * @param[in]	portNum		Port Number value, should be in range from 0 to 4
+    159           * @param[in]	bitValue	Value that contains all bits to set direction,
+    160           * 							in range from 0 to 0xFFFFFFFF.
+    161           * 							example: value 0x5 to set direction for bit 0 and bit 1.
+    162           * @param[in]	dir			Direction value, should be:
+    163           * 							- 0: Input.
+    164           * 							- 1: Output.
+    165           * @return		None
+    166           *
+    167           * Note: All remaining bits that are not activated in bitValue (value '0')
+    168           * will not be effected by this function.
+    169           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    170          void GPIO_SetDir(uint8_t portNum, uint32_t bitValue, uint8_t dir)
+    171          {
+   \                     GPIO_SetDir: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    172          	LPC_GPIO_TypeDef *pGPIO = GPIO_GetPointer(portNum);
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000C   0x.... 0x....      BL       GPIO_GetPointer
+    173          
+    174          	if (pGPIO != NULL) {
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD009             BEQ.N    ??GPIO_SetDir_0
+    175          		// Enable Output
+    176          		if (dir) {
+   \   00000014   0xB2F6             UXTB     R6,R6            ;; ZeroExt  R6,R6,#+24,#+24
+   \   00000016   0x2E00             CMP      R6,#+0
+   \   00000018   0xD003             BEQ.N    ??GPIO_SetDir_1
+    177          			pGPIO->FIODIR |= bitValue;
+   \   0000001A   0x6801             LDR      R1,[R0, #+0]
+   \   0000001C   0x4329             ORRS     R1,R5,R1
+   \   0000001E   0x6001             STR      R1,[R0, #+0]
+   \   00000020   0xE002             B.N      ??GPIO_SetDir_0
+    178          		}
+    179          		// Enable Input
+    180          		else {
+    181          			pGPIO->FIODIR &= ~bitValue;
+   \                     ??GPIO_SetDir_1: (+1)
+   \   00000022   0x6801             LDR      R1,[R0, #+0]
+   \   00000024   0x43A9             BICS     R1,R1,R5
+   \   00000026   0x6001             STR      R1,[R0, #+0]
+    182          		}
+    183          	}
+    184          }
+   \                     ??GPIO_SetDir_0: (+1)
+   \   00000028   0xBD70             POP      {R4-R6,PC}       ;; return
+    185          
+    186          
+    187          /*********************************************************************//**
+    188           * @brief		Set Value for bits that have output direction on GPIO port.
+    189           * @param[in]	portNum		Port number value, should be in range from 0 to 4
+    190           * @param[in]	bitValue	Value that contains all bits on GPIO to set,
+    191           * 							in range from 0 to 0xFFFFFFFF.
+    192           * 							example: value 0x5 to set bit 0 and bit 1.
+    193           * @return		None
+    194           *
+    195           * Note:
+    196           * - For all bits that has been set as input direction, this function will
+    197           * not effect.
+    198           * - For all remaining bits that are not activated in bitValue (value '0')
+    199           * will not be effected by this function.
+    200           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    201          void GPIO_SetValue(uint8_t portNum, uint32_t bitValue)
+    202          {
+   \                     GPIO_SetValue: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    203          	LPC_GPIO_TypeDef *pGPIO = GPIO_GetPointer(portNum);
+   \   00000006   0x0020             MOVS     R0,R4
+   \   00000008   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000A   0x.... 0x....      BL       GPIO_GetPointer
+    204          
+    205          	if (pGPIO != NULL) {
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD000             BEQ.N    ??GPIO_SetValue_0
+    206          		pGPIO->FIOSET = bitValue;
+   \   00000012   0x6185             STR      R5,[R0, #+24]
+    207          	}
+    208          }
+   \                     ??GPIO_SetValue_0: (+1)
+   \   00000014   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    209          
+    210          /*********************************************************************//**
+    211           * @brief		Clear Value for bits that have output direction on GPIO port.
+    212           * @param[in]	portNum		Port number value, should be in range from 0 to 4
+    213           * @param[in]	bitValue	Value that contains all bits on GPIO to clear,
+    214           * 							in range from 0 to 0xFFFFFFFF.
+    215           * 							example: value 0x5 to clear bit 0 and bit 1.
+    216           * @return		None
+    217           *
+    218           * Note:
+    219           * - For all bits that has been set as input direction, this function will
+    220           * not effect.
+    221           * - For all remaining bits that are not activated in bitValue (value '0')
+    222           * will not be effected by this function.
+    223           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    224          void GPIO_ClearValue(uint8_t portNum, uint32_t bitValue)
+    225          {
+   \                     GPIO_ClearValue: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    226          	LPC_GPIO_TypeDef *pGPIO = GPIO_GetPointer(portNum);
+   \   00000006   0x0020             MOVS     R0,R4
+   \   00000008   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000A   0x.... 0x....      BL       GPIO_GetPointer
+    227          
+    228          	if (pGPIO != NULL) {
+   \   0000000E   0x2800             CMP      R0,#+0
+   \   00000010   0xD000             BEQ.N    ??GPIO_ClearValue_0
+    229          		pGPIO->FIOCLR = bitValue;
+   \   00000012   0x61C5             STR      R5,[R0, #+28]
+    230          	}
+    231          }
+   \                     ??GPIO_ClearValue_0: (+1)
+   \   00000014   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    232          
+    233          /*********************************************************************//**
+    234           * @brief		Read Current state on port pin that have input direction of GPIO
+    235           * @param[in]	portNum		Port number to read value, in range from 0 to 4
+    236           * @return		Current value of GPIO port.
+    237           *
+    238           * Note: Return value contain state of each port pin (bit) on that GPIO regardless
+    239           * its direction is input or output.
+    240           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    241          uint32_t GPIO_ReadValue(uint8_t portNum)
+    242          {
+   \                     GPIO_ReadValue: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    243          	LPC_GPIO_TypeDef *pGPIO = GPIO_GetPointer(portNum);
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000008   0x.... 0x....      BL       GPIO_GetPointer
+   \   0000000C   0x0001             MOVS     R1,R0
+    244          
+    245          	if (pGPIO != NULL) {
+   \   0000000E   0x2900             CMP      R1,#+0
+   \   00000010   0xD001             BEQ.N    ??GPIO_ReadValue_0
+    246          		return pGPIO->FIOPIN;
+   \   00000012   0x6948             LDR      R0,[R1, #+20]
+   \   00000014   0xE000             B.N      ??GPIO_ReadValue_1
+    247          	}
+    248          
+    249          	return (0);
+   \                     ??GPIO_ReadValue_0: (+1)
+   \   00000016   0x2000             MOVS     R0,#+0
+   \                     ??GPIO_ReadValue_1: (+1)
+   \   00000018   0xBD10             POP      {R4,PC}          ;; return
+    250          }
+    251          
+    252          /* FIO word accessible ----------------------------------------------------------------- */
+    253          /* Stub function for FIO (word-accessible) style */
+    254          
+    255          /**
+    256           * @brief The same with GPIO_SetDir()
+    257           */
+
+   \                                 In section .text, align 2, keep-with-next
+    258          void FIO_SetDir(uint8_t portNum, uint32_t bitValue, uint8_t dir)
+    259          {
+   \                     FIO_SetDir: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    260          	GPIO_SetDir(portNum, bitValue, dir);
+   \   00000008   0x0032             MOVS     R2,R6
+   \   0000000A   0xB2D2             UXTB     R2,R2            ;; ZeroExt  R2,R2,#+24,#+24
+   \   0000000C   0x0029             MOVS     R1,R5
+   \   0000000E   0x0020             MOVS     R0,R4
+   \   00000010   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000012   0x.... 0x....      BL       GPIO_SetDir
+    261          }
+   \   00000016   0xBD70             POP      {R4-R6,PC}       ;; return
+    262          
+    263          /**
+    264           * @brief The same with GPIO_SetValue()
+    265           */
+
+   \                                 In section .text, align 2, keep-with-next
+    266          void FIO_SetValue(uint8_t portNum, uint32_t bitValue)
+    267          {
+   \                     FIO_SetValue: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    268          	GPIO_SetValue(portNum, bitValue);
+   \   00000006   0x0029             MOVS     R1,R5
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000C   0x.... 0x....      BL       GPIO_SetValue
+    269          }
+   \   00000010   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    270          
+    271          /**
+    272           * @brief The same with GPIO_ClearValue()
+    273           */
+
+   \                                 In section .text, align 2, keep-with-next
+    274          void FIO_ClearValue(uint8_t portNum, uint32_t bitValue)
+    275          {
+   \                     FIO_ClearValue: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    276          	GPIO_ClearValue(portNum, bitValue);
+   \   00000006   0x0029             MOVS     R1,R5
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000C   0x.... 0x....      BL       GPIO_ClearValue
+    277          }
+   \   00000010   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    278          
+    279          /**
+    280           * @brief The same with GPIO_ReadValue()
+    281           */
+
+   \                                 In section .text, align 2, keep-with-next
+    282          uint32_t FIO_ReadValue(uint8_t portNum)
+    283          {
+   \                     FIO_ReadValue: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    284          	return (GPIO_ReadValue(portNum));
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000008   0x.... 0x....      BL       GPIO_ReadValue
+   \   0000000C   0xBD10             POP      {R4,PC}          ;; return
+    285          }
+    286          
+    287          
+    288          /*********************************************************************//**
+    289           * @brief		Set mask value for bits in FIO port
+    290           * @param[in]	portNum		Port number, in range from 0 to 4
+    291           * @param[in]	bitValue	Value that contains all bits in to set,
+    292           * 							in range from 0 to 0xFFFFFFFF.
+    293           * @param[in]	maskValue	Mask value contains state value for each bit:
+    294           * 							- 0: not mask.
+    295           * 							- 1: mask.
+    296           * @return		None
+    297           *
+    298           * Note:
+    299           * - All remaining bits that are not activated in bitValue (value '0')
+    300           * will not be effected by this function.
+    301           * - After executing this function, in mask register, value '0' on each bit
+    302           * enables an access to the corresponding physical pin via a read or write access,
+    303           * while value '1' on bit (masked) that corresponding pin will not be changed
+    304           * with write access and if read, will not be reflected in the updated pin.
+    305           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    306          void FIO_SetMask(uint8_t portNum, uint32_t bitValue, uint8_t maskValue)
+    307          {
+   \                     FIO_SetMask: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    308          	LPC_GPIO_TypeDef *pFIO = GPIO_GetPointer(portNum);
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000C   0x.... 0x....      BL       GPIO_GetPointer
+    309          	if(pFIO != NULL) {
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD009             BEQ.N    ??FIO_SetMask_0
+    310          		// Mask
+    311          		if (maskValue){
+   \   00000014   0xB2F6             UXTB     R6,R6            ;; ZeroExt  R6,R6,#+24,#+24
+   \   00000016   0x2E00             CMP      R6,#+0
+   \   00000018   0xD003             BEQ.N    ??FIO_SetMask_1
+    312          			pFIO->FIOMASK |= bitValue;
+   \   0000001A   0x6901             LDR      R1,[R0, #+16]
+   \   0000001C   0x4329             ORRS     R1,R5,R1
+   \   0000001E   0x6101             STR      R1,[R0, #+16]
+   \   00000020   0xE002             B.N      ??FIO_SetMask_0
+    313          		}
+    314          		// Un-mask
+    315          		else {
+    316          			pFIO->FIOMASK &= ~bitValue;
+   \                     ??FIO_SetMask_1: (+1)
+   \   00000022   0x6901             LDR      R1,[R0, #+16]
+   \   00000024   0x43A9             BICS     R1,R1,R5
+   \   00000026   0x6101             STR      R1,[R0, #+16]
+    317          		}
+    318          	}
+    319          }
+   \                     ??FIO_SetMask_0: (+1)
+   \   00000028   0xBD70             POP      {R4-R6,PC}       ;; return
+    320          
+    321          
+    322          /* FIO halfword accessible ------------------------------------------------------------- */
+    323          
+    324          /*********************************************************************//**
+    325           * @brief		Set direction for FIO port in halfword accessible style
+    326           * @param[in]	portNum		Port number, in range from 0 to 4
+    327           * @param[in]	halfwordNum	HalfWord part number, should be 0 (lower) or 1(upper)
+    328           * @param[in]	bitValue	Value that contains all bits in to set direction,
+    329           * 							in range from 0 to 0xFFFF.
+    330           * @param[in]	dir			Direction value, should be:
+    331           * 							- 0: Input.
+    332           * 							- 1: Output.
+    333           * @return		None
+    334           *
+    335           * Note: All remaining bits that are not activated in bitValue (value '0')
+    336           * will not be effected by this function.
+    337           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    338          void FIO_HalfWordSetDir(uint8_t portNum, uint8_t halfwordNum, uint16_t bitValue, uint8_t dir)
+    339          {
+   \                     FIO_HalfWordSetDir: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+   \   00000008   0x001F             MOVS     R7,R3
+    340          	GPIO_HalfWord_TypeDef *pFIO = FIO_HalfWordGetPointer(portNum);
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000E   0x.... 0x....      BL       FIO_HalfWordGetPointer
+    341          	if(pFIO != NULL) {
+   \   00000012   0x2800             CMP      R0,#+0
+   \   00000014   0xD017             BEQ.N    ??FIO_HalfWordSetDir_0
+    342          		// Output direction
+    343          		if (dir) {
+   \   00000016   0xB2FF             UXTB     R7,R7            ;; ZeroExt  R7,R7,#+24,#+24
+   \   00000018   0x2F00             CMP      R7,#+0
+   \   0000001A   0xD00A             BEQ.N    ??FIO_HalfWordSetDir_1
+    344          			// Upper
+    345          			if(halfwordNum) {
+   \   0000001C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001E   0x2D00             CMP      R5,#+0
+   \   00000020   0xD003             BEQ.N    ??FIO_HalfWordSetDir_2
+    346          				pFIO->FIODIRU |= bitValue;
+   \   00000022   0x8841             LDRH     R1,[R0, #+2]
+   \   00000024   0x4331             ORRS     R1,R6,R1
+   \   00000026   0x8041             STRH     R1,[R0, #+2]
+   \   00000028   0xE00D             B.N      ??FIO_HalfWordSetDir_0
+    347          			}
+    348          			// lower
+    349          			else {
+    350          				pFIO->FIODIRL |= bitValue;
+   \                     ??FIO_HalfWordSetDir_2: (+1)
+   \   0000002A   0x8801             LDRH     R1,[R0, #+0]
+   \   0000002C   0x4331             ORRS     R1,R6,R1
+   \   0000002E   0x8001             STRH     R1,[R0, #+0]
+   \   00000030   0xE009             B.N      ??FIO_HalfWordSetDir_0
+    351          			}
+    352          		}
+    353          		// Input direction
+    354          		else {
+    355          			// Upper
+    356          			if(halfwordNum) {
+   \                     ??FIO_HalfWordSetDir_1: (+1)
+   \   00000032   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000034   0x2D00             CMP      R5,#+0
+   \   00000036   0xD003             BEQ.N    ??FIO_HalfWordSetDir_3
+    357          				pFIO->FIODIRU &= ~bitValue;
+   \   00000038   0x8841             LDRH     R1,[R0, #+2]
+   \   0000003A   0x43B1             BICS     R1,R1,R6
+   \   0000003C   0x8041             STRH     R1,[R0, #+2]
+   \   0000003E   0xE002             B.N      ??FIO_HalfWordSetDir_0
+    358          			}
+    359          			// lower
+    360          			else {
+    361          				pFIO->FIODIRL &= ~bitValue;
+   \                     ??FIO_HalfWordSetDir_3: (+1)
+   \   00000040   0x8801             LDRH     R1,[R0, #+0]
+   \   00000042   0x43B1             BICS     R1,R1,R6
+   \   00000044   0x8001             STRH     R1,[R0, #+0]
+    362          			}
+    363          		}
+    364          	}
+    365          }
+   \                     ??FIO_HalfWordSetDir_0: (+1)
+   \   00000046   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+    366          
+    367          
+    368          /*********************************************************************//**
+    369           * @brief		Set mask value for bits in FIO port in halfword accessible style
+    370           * @param[in]	portNum		Port number, in range from 0 to 4
+    371           * @param[in]	halfwordNum	HalfWord part number, should be 0 (lower) or 1(upper)
+    372           * @param[in]	bitValue	Value that contains all bits in to set,
+    373           * 							in range from 0 to 0xFFFF.
+    374           * @param[in]	maskValue	Mask value contains state value for each bit:
+    375           * 					- 0: not mask.
+    376           * 					- 1: mask.
+    377           * @return		None
+    378           *
+    379           * Note:
+    380           * - All remaining bits that are not activated in bitValue (value '0')
+    381           * will not be effected by this function.
+    382           * - After executing this function, in mask register, value '0' on each bit
+    383           * enables an access to the corresponding physical pin via a read or write access,
+    384           * while value '1' on bit (masked) that corresponding pin will not be changed
+    385           * with write access and if read, will not be reflected in the updated pin.
+    386           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    387          void FIO_HalfWordSetMask(uint8_t portNum, uint8_t halfwordNum, uint16_t bitValue, uint8_t maskValue)
+    388          {
+   \                     FIO_HalfWordSetMask: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+   \   00000008   0x001F             MOVS     R7,R3
+    389          	GPIO_HalfWord_TypeDef *pFIO = FIO_HalfWordGetPointer(portNum);
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000E   0x.... 0x....      BL       FIO_HalfWordGetPointer
+    390          	if(pFIO != NULL) {
+   \   00000012   0x2800             CMP      R0,#+0
+   \   00000014   0xD017             BEQ.N    ??FIO_HalfWordSetMask_0
+    391          		// Mask
+    392          		if (maskValue){
+   \   00000016   0xB2FF             UXTB     R7,R7            ;; ZeroExt  R7,R7,#+24,#+24
+   \   00000018   0x2F00             CMP      R7,#+0
+   \   0000001A   0xD00A             BEQ.N    ??FIO_HalfWordSetMask_1
+    393          			// Upper
+    394          			if(halfwordNum) {
+   \   0000001C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001E   0x2D00             CMP      R5,#+0
+   \   00000020   0xD003             BEQ.N    ??FIO_HalfWordSetMask_2
+    395          				pFIO->FIOMASKU |= bitValue;
+   \   00000022   0x8A41             LDRH     R1,[R0, #+18]
+   \   00000024   0x4331             ORRS     R1,R6,R1
+   \   00000026   0x8241             STRH     R1,[R0, #+18]
+   \   00000028   0xE00D             B.N      ??FIO_HalfWordSetMask_0
+    396          			}
+    397          			// lower
+    398          			else {
+    399          				pFIO->FIOMASKL |= bitValue;
+   \                     ??FIO_HalfWordSetMask_2: (+1)
+   \   0000002A   0x8A01             LDRH     R1,[R0, #+16]
+   \   0000002C   0x4331             ORRS     R1,R6,R1
+   \   0000002E   0x8201             STRH     R1,[R0, #+16]
+   \   00000030   0xE009             B.N      ??FIO_HalfWordSetMask_0
+    400          			}
+    401          		}
+    402          		// Un-mask
+    403          		else {
+    404          			// Upper
+    405          			if(halfwordNum) {
+   \                     ??FIO_HalfWordSetMask_1: (+1)
+   \   00000032   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000034   0x2D00             CMP      R5,#+0
+   \   00000036   0xD003             BEQ.N    ??FIO_HalfWordSetMask_3
+    406          				pFIO->FIOMASKU &= ~bitValue;
+   \   00000038   0x8A41             LDRH     R1,[R0, #+18]
+   \   0000003A   0x43B1             BICS     R1,R1,R6
+   \   0000003C   0x8241             STRH     R1,[R0, #+18]
+   \   0000003E   0xE002             B.N      ??FIO_HalfWordSetMask_0
+    407          			}
+    408          			// lower
+    409          			else {
+    410          				pFIO->FIOMASKL &= ~bitValue;
+   \                     ??FIO_HalfWordSetMask_3: (+1)
+   \   00000040   0x8A01             LDRH     R1,[R0, #+16]
+   \   00000042   0x43B1             BICS     R1,R1,R6
+   \   00000044   0x8201             STRH     R1,[R0, #+16]
+    411          			}
+    412          		}
+    413          	}
+    414          }
+   \                     ??FIO_HalfWordSetMask_0: (+1)
+   \   00000046   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+    415          
+    416          
+    417          /*********************************************************************//**
+    418           * @brief		Set bits for FIO port in halfword accessible style
+    419           * @param[in]	portNum		Port number, in range from 0 to 4
+    420           * @param[in]	halfwordNum	HalfWord part number, should be 0 (lower) or 1(upper)
+    421           * @param[in]	bitValue	Value that contains all bits in to set,
+    422           * 							in range from 0 to 0xFFFF.
+    423           * @return		None
+    424           *
+    425           * Note:
+    426           * - For all bits that has been set as input direction, this function will
+    427           * not effect.
+    428           * - For all remaining bits that are not activated in bitValue (value '0')
+    429           * will not be effected by this function.
+    430           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    431          void FIO_HalfWordSetValue(uint8_t portNum, uint8_t halfwordNum, uint16_t bitValue)
+    432          {
+   \                     FIO_HalfWordSetValue: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    433          	GPIO_HalfWord_TypeDef *pFIO = FIO_HalfWordGetPointer(portNum);
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000C   0x.... 0x....      BL       FIO_HalfWordGetPointer
+    434          	if(pFIO != NULL) {
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD005             BEQ.N    ??FIO_HalfWordSetValue_0
+    435          		// Upper
+    436          		if(halfwordNum) {
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0x2D00             CMP      R5,#+0
+   \   00000018   0xD001             BEQ.N    ??FIO_HalfWordSetValue_1
+    437          			pFIO->FIOSETU = bitValue;
+   \   0000001A   0x8346             STRH     R6,[R0, #+26]
+   \   0000001C   0xE000             B.N      ??FIO_HalfWordSetValue_0
+    438          		}
+    439          		// lower
+    440          		else {
+    441          			pFIO->FIOSETL = bitValue;
+   \                     ??FIO_HalfWordSetValue_1: (+1)
+   \   0000001E   0x8306             STRH     R6,[R0, #+24]
+    442          		}
+    443          	}
+    444          }
+   \                     ??FIO_HalfWordSetValue_0: (+1)
+   \   00000020   0xBD70             POP      {R4-R6,PC}       ;; return
+    445          
+    446          
+    447          /*********************************************************************//**
+    448           * @brief		Clear bits for FIO port in halfword accessible style
+    449           * @param[in]	portNum		Port number, in range from 0 to 4
+    450           * @param[in]	halfwordNum	HalfWord part number, should be 0 (lower) or 1(upper)
+    451           * @param[in]	bitValue	Value that contains all bits in to clear,
+    452           * 							in range from 0 to 0xFFFF.
+    453           * @return		None
+    454           *
+    455           * Note:
+    456           * - For all bits that has been set as input direction, this function will
+    457           * not effect.
+    458           * - For all remaining bits that are not activated in bitValue (value '0')
+    459           * will not be effected by this function.
+    460           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    461          void FIO_HalfWordClearValue(uint8_t portNum, uint8_t halfwordNum, uint16_t bitValue)
+    462          {
+   \                     FIO_HalfWordClearValue: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    463          	GPIO_HalfWord_TypeDef *pFIO = FIO_HalfWordGetPointer(portNum);
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000C   0x.... 0x....      BL       FIO_HalfWordGetPointer
+    464          	if(pFIO != NULL) {
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD005             BEQ.N    ??FIO_HalfWordClearValue_0
+    465          		// Upper
+    466          		if(halfwordNum) {
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0x2D00             CMP      R5,#+0
+   \   00000018   0xD001             BEQ.N    ??FIO_HalfWordClearValue_1
+    467          			pFIO->FIOCLRU = bitValue;
+   \   0000001A   0x83C6             STRH     R6,[R0, #+30]
+   \   0000001C   0xE000             B.N      ??FIO_HalfWordClearValue_0
+    468          		}
+    469          		// lower
+    470          		else {
+    471          			pFIO->FIOCLRL = bitValue;
+   \                     ??FIO_HalfWordClearValue_1: (+1)
+   \   0000001E   0x8386             STRH     R6,[R0, #+28]
+    472          		}
+    473          	}
+    474          }
+   \                     ??FIO_HalfWordClearValue_0: (+1)
+   \   00000020   0xBD70             POP      {R4-R6,PC}       ;; return
+    475          
+    476          
+    477          /*********************************************************************//**
+    478           * @brief		Read Current state on port pin that have input direction of GPIO
+    479           * 				in halfword accessible style.
+    480           * @param[in]	portNum		Port number, in range from 0 to 4
+    481           * @param[in]	halfwordNum	HalfWord part number, should be 0 (lower) or 1(upper)
+    482           * @return		Current value of FIO port pin of specified halfword.
+    483           * Note: Return value contain state of each port pin (bit) on that FIO regardless
+    484           * its direction is input or output.
+    485           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    486          uint16_t FIO_HalfWordReadValue(uint8_t portNum, uint8_t halfwordNum)
+    487          {
+   \                     FIO_HalfWordReadValue: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    488          	GPIO_HalfWord_TypeDef *pFIO = FIO_HalfWordGetPointer(portNum);
+   \   00000006   0x0020             MOVS     R0,R4
+   \   00000008   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000A   0x.... 0x....      BL       FIO_HalfWordGetPointer
+   \   0000000E   0x0001             MOVS     R1,R0
+    489          	if(pFIO != NULL) {
+   \   00000010   0x2900             CMP      R1,#+0
+   \   00000012   0xD006             BEQ.N    ??FIO_HalfWordReadValue_0
+    490          		// Upper
+    491          		if(halfwordNum) {
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0x2D00             CMP      R5,#+0
+   \   00000018   0xD001             BEQ.N    ??FIO_HalfWordReadValue_1
+    492          			return (pFIO->FIOPINU);
+   \   0000001A   0x8AC8             LDRH     R0,[R1, #+22]
+   \   0000001C   0xE002             B.N      ??FIO_HalfWordReadValue_2
+    493          		}
+    494          		// lower
+    495          		else {
+    496          			return (pFIO->FIOPINL);
+   \                     ??FIO_HalfWordReadValue_1: (+1)
+   \   0000001E   0x8A88             LDRH     R0,[R1, #+20]
+   \   00000020   0xE000             B.N      ??FIO_HalfWordReadValue_2
+    497          		}
+    498          	}
+    499          	return (0);
+   \                     ??FIO_HalfWordReadValue_0: (+1)
+   \   00000022   0x2000             MOVS     R0,#+0
+   \                     ??FIO_HalfWordReadValue_2: (+1)
+   \   00000024   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    500          }
+    501          
+    502          
+    503          /* FIO Byte accessible ------------------------------------------------------------ */
+    504          
+    505          /*********************************************************************//**
+    506           * @brief		Set direction for FIO port in byte accessible style
+    507           * @param[in]	portNum		Port number, in range from 0 to 4
+    508           * @param[in]	byteNum		Byte part number, should be in range from 0 to 3
+    509           * @param[in]	bitValue	Value that contains all bits in to set direction,
+    510           * 							in range from 0 to 0xFF.
+    511           * @param[in]	dir			Direction value, should be:
+    512           * 							- 0: Input.
+    513           * 							- 1: Output.
+    514           * @return		None
+    515           *
+    516           * Note: All remaining bits that are not activated in bitValue (value '0')
+    517           * will not be effected by this function.
+    518           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    519          void FIO_ByteSetDir(uint8_t portNum, uint8_t byteNum, uint8_t bitValue, uint8_t dir)
+    520          {
+   \                     FIO_ByteSetDir: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+   \   00000008   0x001F             MOVS     R7,R3
+    521          	GPIO_Byte_TypeDef *pFIO = FIO_ByteGetPointer(portNum);
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000E   0x.... 0x....      BL       FIO_ByteGetPointer
+    522          	if(pFIO != NULL) {
+   \   00000012   0x2800             CMP      R0,#+0
+   \   00000014   0xD013             BEQ.N    ??FIO_ByteSetDir_0
+    523          		// Output direction
+    524          		if (dir) {
+   \   00000016   0xB2FF             UXTB     R7,R7            ;; ZeroExt  R7,R7,#+24,#+24
+   \   00000018   0x2F00             CMP      R7,#+0
+   \   0000001A   0xD008             BEQ.N    ??FIO_ByteSetDir_1
+    525          			if ((byteNum >= 0) && (byteNum <= 3)) {
+   \   0000001C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001E   0x2D04             CMP      R5,#+4
+   \   00000020   0xDA0D             BGE.N    ??FIO_ByteSetDir_0
+    526          				pFIO->FIODIR[byteNum] |= bitValue;
+   \   00000022   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000024   0x5D41             LDRB     R1,[R0, R5]
+   \   00000026   0x4331             ORRS     R1,R6,R1
+   \   00000028   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000002A   0x5541             STRB     R1,[R0, R5]
+   \   0000002C   0xE007             B.N      ??FIO_ByteSetDir_0
+    527          			}
+    528          		}
+    529          		// Input direction
+    530          		else {
+    531          			if ((byteNum >= 0) && (byteNum <= 3)) {
+   \                     ??FIO_ByteSetDir_1: (+1)
+   \   0000002E   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000030   0x2D04             CMP      R5,#+4
+   \   00000032   0xDA04             BGE.N    ??FIO_ByteSetDir_0
+    532          				pFIO->FIODIR[byteNum] &= ~bitValue;
+   \   00000034   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000036   0x5D41             LDRB     R1,[R0, R5]
+   \   00000038   0x43B1             BICS     R1,R1,R6
+   \   0000003A   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000003C   0x5541             STRB     R1,[R0, R5]
+    533          			}
+    534          		}
+    535          	}
+    536          }
+   \                     ??FIO_ByteSetDir_0: (+1)
+   \   0000003E   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+    537          
+    538          /*********************************************************************//**
+    539           * @brief		Set mask value for bits in FIO port in byte accessible style
+    540           * @param[in]	portNum		Port number, in range from 0 to 4
+    541           * @param[in]	byteNum		Byte part number, should be in range from 0 to 3
+    542           * @param[in]	bitValue	Value that contains all bits in to set mask,
+    543           * 							in range from 0 to 0xFF.
+    544           * @param[in]	maskValue	Mask value contains state value for each bit:
+    545           * 							- 0: not mask.
+    546           * 							- 1: mask.
+    547           * @return		None
+    548           *
+    549           * Note:
+    550           * - All remaining bits that are not activated in bitValue (value '0')
+    551           * will not be effected by this function.
+    552           * - After executing this function, in mask register, value '0' on each bit
+    553           * enables an access to the corresponding physical pin via a read or write access,
+    554           * while value '1' on bit (masked) that corresponding pin will not be changed
+    555           * with write access and if read, will not be reflected in the updated pin.
+    556           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    557          void FIO_ByteSetMask(uint8_t portNum, uint8_t byteNum, uint8_t bitValue, uint8_t maskValue)
+    558          {
+   \                     FIO_ByteSetMask: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+   \   00000008   0x001F             MOVS     R7,R3
+    559          	GPIO_Byte_TypeDef *pFIO = FIO_ByteGetPointer(portNum);
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000E   0x.... 0x....      BL       FIO_ByteGetPointer
+    560          	if(pFIO != NULL) {
+   \   00000012   0x2800             CMP      R0,#+0
+   \   00000014   0xD01B             BEQ.N    ??FIO_ByteSetMask_0
+    561          		// Mask
+    562          		if (maskValue) {
+   \   00000016   0xB2FF             UXTB     R7,R7            ;; ZeroExt  R7,R7,#+24,#+24
+   \   00000018   0x2F00             CMP      R7,#+0
+   \   0000001A   0xD00C             BEQ.N    ??FIO_ByteSetMask_1
+    563          			if ((byteNum >= 0) && (byteNum <= 3)) {
+   \   0000001C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001E   0x2D04             CMP      R5,#+4
+   \   00000020   0xDA15             BGE.N    ??FIO_ByteSetMask_0
+    564          				pFIO->FIOMASK[byteNum] |= bitValue;
+   \   00000022   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000024   0xEB00 0x0105      ADD      R1,R0,R5
+   \   00000028   0x7C09             LDRB     R1,[R1, #+16]
+   \   0000002A   0x4331             ORRS     R1,R6,R1
+   \   0000002C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000002E   0xEB00 0x0205      ADD      R2,R0,R5
+   \   00000032   0x7411             STRB     R1,[R2, #+16]
+   \   00000034   0xE00B             B.N      ??FIO_ByteSetMask_0
+    565          			}
+    566          		}
+    567          		// Un-mask
+    568          		else {
+    569          			if ((byteNum >= 0) && (byteNum <= 3)) {
+   \                     ??FIO_ByteSetMask_1: (+1)
+   \   00000036   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000038   0x2D04             CMP      R5,#+4
+   \   0000003A   0xDA08             BGE.N    ??FIO_ByteSetMask_0
+    570          				pFIO->FIOMASK[byteNum] &= ~bitValue;
+   \   0000003C   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000003E   0xEB00 0x0105      ADD      R1,R0,R5
+   \   00000042   0x7C09             LDRB     R1,[R1, #+16]
+   \   00000044   0x43B1             BICS     R1,R1,R6
+   \   00000046   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000048   0xEB00 0x0205      ADD      R2,R0,R5
+   \   0000004C   0x7411             STRB     R1,[R2, #+16]
+    571          			}
+    572          		}
+    573          	}
+    574          }
+   \                     ??FIO_ByteSetMask_0: (+1)
+   \   0000004E   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+    575          
+    576          
+    577          /*********************************************************************//**
+    578           * @brief		Set bits for FIO port in byte accessible style
+    579           * @param[in]	portNum		Port number, in range from 0 to 4
+    580           * @param[in]	byteNum		Byte part number, should be in range from 0 to 3
+    581           * @param[in]	bitValue	Value that contains all bits in to set,
+    582           * 							in range from 0 to 0xFF.
+    583           * @return		None
+    584           *
+    585           * Note:
+    586           * - For all bits that has been set as input direction, this function will
+    587           * not effect.
+    588           * - For all remaining bits that are not activated in bitValue (value '0')
+    589           * will not be effected by this function.
+    590           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    591          void FIO_ByteSetValue(uint8_t portNum, uint8_t byteNum, uint8_t bitValue)
+    592          {
+   \                     FIO_ByteSetValue: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    593          	GPIO_Byte_TypeDef *pFIO = FIO_ByteGetPointer(portNum);
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000C   0x.... 0x....      BL       FIO_ByteGetPointer
+    594          	if (pFIO != NULL) {
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD006             BEQ.N    ??FIO_ByteSetValue_0
+    595          		if ((byteNum >= 0) && (byteNum <= 3)){
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0x2D04             CMP      R5,#+4
+   \   00000018   0xDA03             BGE.N    ??FIO_ByteSetValue_0
+    596          			pFIO->FIOSET[byteNum] = bitValue;
+   \   0000001A   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001C   0xEB00 0x0105      ADD      R1,R0,R5
+   \   00000020   0x760E             STRB     R6,[R1, #+24]
+    597          		}
+    598          	}
+    599          }
+   \                     ??FIO_ByteSetValue_0: (+1)
+   \   00000022   0xBD70             POP      {R4-R6,PC}       ;; return
+    600          
+    601          
+    602          /*********************************************************************//**
+    603           * @brief		Clear bits for FIO port in byte accessible style
+    604           * @param[in]	portNum		Port number, in range from 0 to 4
+    605           * @param[in]	byteNum		Byte part number, should be in range from 0 to 3
+    606           * @param[in]	bitValue	Value that contains all bits in to clear,
+    607           * 							in range from 0 to 0xFF.
+    608           * @return		None
+    609           *
+    610           * Note:
+    611           * - For all bits that has been set as input direction, this function will
+    612           * not effect.
+    613           * - For all remaining bits that are not activated in bitValue (value '0')
+    614           * will not be effected by this function.
+    615           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    616          void FIO_ByteClearValue(uint8_t portNum, uint8_t byteNum, uint8_t bitValue)
+    617          {
+   \                     FIO_ByteClearValue: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    618          	GPIO_Byte_TypeDef *pFIO = FIO_ByteGetPointer(portNum);
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000C   0x.... 0x....      BL       FIO_ByteGetPointer
+    619          	if (pFIO != NULL) {
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD006             BEQ.N    ??FIO_ByteClearValue_0
+    620          		if ((byteNum >= 0) && (byteNum <= 3)){
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0x2D04             CMP      R5,#+4
+   \   00000018   0xDA03             BGE.N    ??FIO_ByteClearValue_0
+    621          			pFIO->FIOCLR[byteNum] = bitValue;
+   \   0000001A   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001C   0xEB00 0x0105      ADD      R1,R0,R5
+   \   00000020   0x770E             STRB     R6,[R1, #+28]
+    622          		}
+    623          	}
+    624          }
+   \                     ??FIO_ByteClearValue_0: (+1)
+   \   00000022   0xBD70             POP      {R4-R6,PC}       ;; return
+    625          
+    626          
+    627          /*********************************************************************//**
+    628           * @brief		Read Current state on port pin that have input direction of GPIO
+    629           * 				in byte accessible style.
+    630           * @param[in]	portNum		Port number, in range from 0 to 4
+    631           * @param[in]	byteNum		Byte part number, should be in range from 0 to 3
+    632           * @return		Current value of FIO port pin of specified byte part.
+    633           * Note: Return value contain state of each port pin (bit) on that FIO regardless
+    634           * its direction is input or output.
+    635           **********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    636          uint8_t FIO_ByteReadValue(uint8_t portNum, uint8_t byteNum)
+    637          {
+   \                     FIO_ByteReadValue: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    638          	GPIO_Byte_TypeDef *pFIO = FIO_ByteGetPointer(portNum);
+   \   00000006   0x0020             MOVS     R0,R4
+   \   00000008   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000A   0x.... 0x....      BL       FIO_ByteGetPointer
+   \   0000000E   0x0001             MOVS     R1,R0
+    639          	if (pFIO != NULL) {
+   \   00000010   0x2900             CMP      R1,#+0
+   \   00000012   0xD007             BEQ.N    ??FIO_ByteReadValue_0
+    640          		if ((byteNum >= 0) && (byteNum <= 3)){
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0x2D04             CMP      R5,#+4
+   \   00000018   0xDA04             BGE.N    ??FIO_ByteReadValue_0
+    641          			return (pFIO->FIOPIN[byteNum]);
+   \   0000001A   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001C   0xEB01 0x0005      ADD      R0,R1,R5
+   \   00000020   0x7D00             LDRB     R0,[R0, #+20]
+   \   00000022   0xE000             B.N      ??FIO_ByteReadValue_1
+    642          		}
+    643          	}
+    644          	return (0);
+   \                     ??FIO_ByteReadValue_0: (+1)
+   \   00000024   0x2000             MOVS     R0,#+0
+   \                     ??FIO_ByteReadValue_1: (+1)
+   \   00000026   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    645          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \   00000000   0x2009C000         DC32     0x2009c000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \   00000000   0x2009C020         DC32     0x2009c020
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \   00000000   0x2009C040         DC32     0x2009c040
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \   00000000   0x2009C060         DC32     0x2009c060
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_4:
+   \   00000000   0x2009C080         DC32     0x2009c080
+    646          
+    647          /**
+    648           * @}
+    649           */
+    650          
+    651          #endif /* _GPIO */
+    652          
+    653          /**
+    654           * @}
+    655           */
+    656          
+    657          /* --------------------------------- End Of File ------------------------------ */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   FIO_ByteClearValue
+        16   -> FIO_ByteGetPointer
+       0   FIO_ByteGetPointer
+      16   FIO_ByteReadValue
+        16   -> FIO_ByteGetPointer
+      24   FIO_ByteSetDir
+        24   -> FIO_ByteGetPointer
+      24   FIO_ByteSetMask
+        24   -> FIO_ByteGetPointer
+      16   FIO_ByteSetValue
+        16   -> FIO_ByteGetPointer
+      16   FIO_ClearValue
+        16   -> GPIO_ClearValue
+      16   FIO_HalfWordClearValue
+        16   -> FIO_HalfWordGetPointer
+       0   FIO_HalfWordGetPointer
+      16   FIO_HalfWordReadValue
+        16   -> FIO_HalfWordGetPointer
+      24   FIO_HalfWordSetDir
+        24   -> FIO_HalfWordGetPointer
+      24   FIO_HalfWordSetMask
+        24   -> FIO_HalfWordGetPointer
+      16   FIO_HalfWordSetValue
+        16   -> FIO_HalfWordGetPointer
+       8   FIO_ReadValue
+         8   -> GPIO_ReadValue
+      16   FIO_SetDir
+        16   -> GPIO_SetDir
+      16   FIO_SetMask
+        16   -> GPIO_GetPointer
+      16   FIO_SetValue
+        16   -> GPIO_SetValue
+      16   GPIO_ClearValue
+        16   -> GPIO_GetPointer
+       0   GPIO_GetPointer
+       8   GPIO_ReadValue
+         8   -> GPIO_GetPointer
+      16   GPIO_SetDir
+        16   -> GPIO_GetPointer
+      16   GPIO_SetValue
+        16   -> GPIO_GetPointer
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+      36  FIO_ByteClearValue
+      56  FIO_ByteGetPointer
+      40  FIO_ByteReadValue
+      64  FIO_ByteSetDir
+      80  FIO_ByteSetMask
+      36  FIO_ByteSetValue
+      18  FIO_ClearValue
+      34  FIO_HalfWordClearValue
+      56  FIO_HalfWordGetPointer
+      38  FIO_HalfWordReadValue
+      72  FIO_HalfWordSetDir
+      72  FIO_HalfWordSetMask
+      34  FIO_HalfWordSetValue
+      14  FIO_ReadValue
+      24  FIO_SetDir
+      42  FIO_SetMask
+      18  FIO_SetValue
+      22  GPIO_ClearValue
+      56  GPIO_GetPointer
+      26  GPIO_ReadValue
+      42  GPIO_SetDir
+      22  GPIO_SetValue
+
+ 
+ 922 bytes in section .text
+ 
+ 922 bytes of CODE memory
+
+Errors: none
+Warnings: 7

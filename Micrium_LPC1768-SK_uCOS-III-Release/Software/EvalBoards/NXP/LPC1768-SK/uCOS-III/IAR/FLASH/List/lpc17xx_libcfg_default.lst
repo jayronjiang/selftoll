@@ -1,0 +1,165 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       06/Apr/2017  11:01:07
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_libcfg_default.c
+#    Command line =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_libcfg_default.c
+#        -lCN
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\List
+#        --diag_suppress Pe174 -o
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files\IAR
+#        Systems\Embedded Workbench 7.5\arm\INC\c\DLib_Config_Normal.h" -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\OS\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\NXP\LPC17xx\LPC1768\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Ports\ARM-Cortex-M3\CSP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Source\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-LIB\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CPU\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Core\CM3\CoreSupport\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Core\CM3\DeviceSupport\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\include\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Driver\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Driver\NXP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Line\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\OS\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\OS\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Source\
+#        -On --use_c++_inline -I "C:\Program Files\IAR Systems\Embedded
+#        Workbench 7.5\arm\CMSIS\Include\"
+#    Locale       =  Chinese (Simplified)_People's Republic of China.936
+#    List file    =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\List\lpc17xx_libcfg_default.lst
+#    Object file  =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\Obj\lpc17xx_libcfg_default.o
+#
+###############################################################################
+
+E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_libcfg_default.c
+      1          /***********************************************************************//**
+      2           * @file	: lpc17xx_libcfg_default.c
+      3           * @brief	: Library configuration source file (default),
+      4           * 				used to build library without examples.
+      5           * @version	: 1.0
+      6           * @date	: 26. Mar. 2009
+      7           * @author	: HieuNguyen
+      8           **************************************************************************
+      9           * Software that is described herein is for illustrative purposes only
+     10           * which provides customers with programming information regarding the
+     11           * products. This software is supplied "AS IS" without any warranties.
+     12           * NXP Semiconductors assumes no responsibility or liability for the
+     13           * use of the software, conveys no license or title under any patent,
+     14           * copyright, or mask work right to the product. NXP Semiconductors
+     15           * reserves the right to make changes in the software without
+     16           * notification. NXP Semiconductors also make no representation or
+     17           * warranty that such application will be suitable for the specified
+     18           * use without further testing or modification.
+     19           **************************************************************************/
+     20          
+     21          /* Library group ----------------------------------------------------------- */
+     22          /** @addtogroup LIBCFG_DEFAULT
+     23           * @{
+     24           */
+     25          
+     26          /* Includes ------------------------------------------------------------------- */
+     27          #include "lpc17xx_libcfg_default.h"
+     28          
+     29          /* Public Functions ----------------------------------------------------------- */
+     30          /** @addtogroup LIBCFG_DEFAULT_Public_Functions
+     31           * @{
+     32           */
+     33          
+     34          #ifndef __BUILD_WITH_EXAMPLE__
+     35          
+     36          #ifdef  DEBUG
+     37          /*******************************************************************************
+     38          * @brief		Reports the name of the source file and the source line number
+     39          * 				where the CHECK_PARAM error has occurred.
+     40          * @param[in]	file Pointer to the source file name
+     41          * @param[in]    line assert_param error line source number
+     42          * @return		None
+     43          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     44          void check_failed(uint8_t *file, uint32_t line)
+     45          {
+     46          	/* User can add his own implementation to report the file name and line number,
+     47          	 ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+     48          
+     49          	/* Infinite loop */
+     50          	while(1);
+   \                     check_failed: (+1)
+   \                     ??check_failed_0: (+1)
+   \   00000000   0xE7FE             B.N      ??check_failed_0
+     51          }
+     52          #endif /* DEBUG */
+     53          
+     54          #endif /* __BUILD_WITH_EXAMPLE__ */
+     55          
+     56          /**
+     57           * @}
+     58           */
+     59          
+     60          /**
+     61           * @}
+     62           */
+     63          
+     64          /* --------------------------------- End Of File ------------------------------ */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   check_failed
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       2  check_failed
+
+ 
+ 2 bytes in section .text
+ 
+ 2 bytes of CODE memory
+
+Errors: none
+Warnings: none

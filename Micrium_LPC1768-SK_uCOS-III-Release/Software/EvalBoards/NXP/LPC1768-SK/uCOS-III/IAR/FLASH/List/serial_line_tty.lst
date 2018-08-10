@@ -1,0 +1,792 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       06/Apr/2017  11:01:13
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\uC-Serial\Line\serial_line_tty.c
+#    Command line =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\uC-Serial\Line\serial_line_tty.c
+#        -lCN
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\List
+#        --diag_suppress Pe174 -o
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files\IAR
+#        Systems\Embedded Workbench 7.5\arm\INC\c\DLib_Config_Normal.h" -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\OS\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\NXP\LPC17xx\LPC1768\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Ports\ARM-Cortex-M3\CSP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Source\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-LIB\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CPU\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Core\CM3\CoreSupport\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Core\CM3\DeviceSupport\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\include\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Driver\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Driver\NXP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Line\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\OS\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\OS\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Source\
+#        -On --use_c++_inline -I "C:\Program Files\IAR Systems\Embedded
+#        Workbench 7.5\arm\CMSIS\Include\"
+#    Locale       =  Chinese (Simplified)_People's Republic of China.936
+#    List file    =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\List\serial_line_tty.lst
+#    Object file  =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\Obj\serial_line_tty.o
+#
+###############################################################################
+
+E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\uC-Serial\Line\serial_line_tty.c
+      1          /*
+      2          *********************************************************************************************************
+      3          *                                     SERIAL (BYTE) COMMUNICATION
+      4          *
+      5          *                         (c) Copyright 2007-2009; Micrium, Inc.; Weston, FL
+      6          *
+      7          *               All rights reserved.  Protected by international copyright laws.
+      8          *               Knowledge of the source code may NOT be used to develop a similar product.
+      9          *               Please help us continue to provide the Embedded community with the finest
+     10          *               software available.  Your honesty is greatly appreciated.
+     11          *********************************************************************************************************
+     12          */
+     13          
+     14          /*
+     15          *********************************************************************************************************
+     16          *
+     17          *                                     SERIAL (BYTE) COMMUNICATION
+     18          *
+     19          *                                         SERIAL LINE DRIVER
+     20          *                                       TELETYPE TERMINAL (TTY)
+     21          *
+     22          * Filename      : serial_line_tty.c
+     23          * Version       : V2.00
+     24          * Programmer(s) : FGK
+     25          *********************************************************************************************************
+     26          */
+     27          
+     28          /*
+     29          *********************************************************************************************************
+     30          *                                            INCLUDE FILES
+     31          *********************************************************************************************************
+     32          */
+     33          
+     34          #define   SERIAL_LINE_TTY_MODULE
+     35          #include  <serial.h>
+     36          #include  <serial_line_tty.h>
+     37          
+     38          
+     39          /*
+     40          *********************************************************************************************************
+     41          *                                            LOCAL DEFINES
+     42          *********************************************************************************************************
+     43          */
+     44          
+     45          #define  SERIAL_LINE_TTY_TX_STATE_NORMAL                   0u
+     46          #define  SERIAL_LINE_TTY_TX_STATE_CR                       1u
+     47          
+     48          
+     49          /*
+     50          *********************************************************************************************************
+     51          *                                        FORWARD DECLARATIONS
+     52          *********************************************************************************************************
+     53          */
+     54          
+     55          typedef  struct  serial_line_tty_info  SERIAL_LINE_INFO;
+     56          
+     57          
+     58          /*
+     59          *********************************************************************************************************
+     60          *                                          LOCAL DATA TYPES
+     61          *********************************************************************************************************
+     62          */
+     63          
+     64          struct  serial_line_tty_info {
+     65              SERIAL_LINE_INFO  *NextPtr;                                 /* Ptr to next serial line info struct.                 */
+     66          
+     67              CPU_INT08U         TxState;                                 /* Tx state machine state.                              */
+     68          
+     69              CPU_BOOLEAN        EchoRx;                                  /* Echo rx'd octet.                                     */
+     70              CPU_BOOLEAN        EchoTx;                                  /* Echo tx'd octet.                                     */
+     71          };
+     72          
+     73          
+     74          /*
+     75          *********************************************************************************************************
+     76          *                                       LOCAL GLOBAL VARIABLES
+     77          *********************************************************************************************************
+     78          */
+     79          
+
+   \                                 In section .bss, align 4
+     80          static  SERIAL_LINE_INFO  *SerialLine_TTY_Info = (SERIAL_LINE_INFO *)0;
+   \                     SerialLine_TTY_Info:
+   \   00000000                      DS8 4
+     81          
+     82          
+     83          /*
+     84          *********************************************************************************************************
+     85          *                                      LOCAL FUNCTION PROTOTYPES
+     86          *********************************************************************************************************
+     87          */
+     88                                                                          /* Open  line driver.                                   */
+     89          static  void  *SerialLine_Open   (SERIAL_DEV  *pdev,
+     90                                            SERIAL_ERR  *perr);
+     91                                                                          /* Close line driver.                                   */
+     92          static  void   SerialLine_Close  (SERIAL_DEV  *pdev,
+     93                                            void        *pline_data,
+     94                                            SERIAL_ERR  *perr);
+     95                                                                          /* Rd octet from buf via protocol.                      */
+     96          static  void   SerialLine_RdOctet(SERIAL_DEV  *pdev,
+     97                                            SERIAL_BUF  *pbuf,
+     98                                            CPU_INT08U  *pdatum,
+     99                                            SERIAL_ERR  *perr);
+    100                                                                          /* Wr octet into buf via protocol.                      */
+    101          static  void   SerialLine_WrOctet(SERIAL_DEV  *pdev,
+    102                                            SERIAL_BUF  *pbuf,
+    103                                            CPU_INT08U   datum,
+    104                                            SERIAL_ERR  *perr);
+    105          
+    106          
+    107          /*
+    108          *********************************************************************************************************
+    109          *********************************************************************************************************
+    110          *                                  SERIAL INTERFACE LINE DRIVER API
+    111          *********************************************************************************************************
+    112          *********************************************************************************************************
+    113          */
+    114          
+
+   \                                 In section .rodata, align 4
+    115          SERIAL_LINE_DRV_API  SerialLine_TTY = {
+   \                     SerialLine_TTY:
+   \   00000000   0x........         DC32 SerialLine_Open, SerialLine_Close, SerialLine_RdOctet
+   \              0x........   
+   \              0x........   
+   \   0000000C   0x........         DC32 SerialLine_WrOctet
+    116              SerialLine_Open,
+    117              SerialLine_Close,
+    118              SerialLine_RdOctet,
+    119              SerialLine_WrOctet
+    120          };
+    121          
+    122          
+    123          /*$PAGE*/
+    124          /*
+    125          *********************************************************************************************************
+    126          *********************************************************************************************************
+    127          *                                     DRIVER AUXILIARY FUNCTIONS
+    128          *********************************************************************************************************
+    129          *********************************************************************************************************
+    130          */
+    131          
+    132          /*
+    133          *********************************************************************************************************
+    134          *                                       SerialLine_TTY_EchoRx()
+    135          *
+    136          * Description : Set receive echo control.
+    137          *
+    138          * Argument(s) : if_nbr      Interface number.
+    139          *
+    140          *               echo        Echo control enable or disable: DEF_ENABLED, DEF_DISABLED.
+    141          *
+    142          * Return(s)   : None.
+    143          *
+    144          * Caller(s)   : Application.
+    145          *
+    146          * Note(s)     : None.
+    147          *********************************************************************************************************
+    148          */
+    149          
+
+   \                                 In section .text, align 2, keep-with-next
+    150          void  SerialLine_TTY_EchoRx (SERIAL_IF_NBR  if_nbr,
+    151                                       CPU_BOOLEAN    echo)
+    152          {
+   \                     SerialLine_TTY_EchoRx: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    153              SERIAL_DEV        *pdev;
+    154              SERIAL_LINE_INFO  *pinfo;
+    155              SERIAL_ERR         err;
+    156          
+    157          
+    158              pdev = SerialIF_GetDevPtr(if_nbr, &err);
+   \   00000006   0x4669             MOV      R1,SP
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000C   0x.... 0x....      BL       SerialIF_GetDevPtr
+   \   00000010   0x0006             MOVS     R6,R0
+    159              if (err != SERIAL_ERR_NONE) {
+   \   00000012   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD106             BNE.N    ??SerialLine_TTY_EchoRx_0
+    160                  return;
+    161              }
+    162          
+    163                                                                          /* -------------- VALIDATE LINE DRV TYPE -------------- */
+    164              if (pdev->LineDrv_API != &SerialLine_TTY) {
+   \                     ??SerialLine_TTY_EchoRx_1: (+1)
+   \   0000001A   0x68F0             LDR      R0,[R6, #+12]
+   \   0000001C   0x....             LDR.N    R1,??DataTable3
+   \   0000001E   0x4288             CMP      R0,R1
+   \   00000020   0xD102             BNE.N    ??SerialLine_TTY_EchoRx_0
+    165                  return;
+    166              }
+    167          
+    168              pinfo = (SERIAL_LINE_INFO *)pdev->LineDrv_Data;
+   \                     ??SerialLine_TTY_EchoRx_2: (+1)
+   \   00000022   0x6930             LDR      R0,[R6, #+16]
+   \   00000024   0x0007             MOVS     R7,R0
+    169              pinfo->EchoRx = echo;
+   \   00000026   0x717D             STRB     R5,[R7, #+5]
+    170          }
+   \                     ??SerialLine_TTY_EchoRx_0: (+1)
+   \   00000028   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+    171          
+    172          
+    173          /*
+    174          *********************************************************************************************************
+    175          *                                       SerialLine_TTY_EchoTx()
+    176          *
+    177          * Description : Set transmit echo control.
+    178          *
+    179          * Argument(s) : if_nbr      Interface number.
+    180          *
+    181          *               echo        Echo control enable or disable: DEF_ENABLED, DEF_DISABLED.
+    182          *
+    183          * Return(s)   : None.
+    184          *
+    185          * Caller(s)   : Application.
+    186          *
+    187          * Note(s)     : None.
+    188          *********************************************************************************************************
+    189          */
+    190          
+
+   \                                 In section .text, align 2, keep-with-next
+    191          void  SerialLine_TTY_EchoTx (SERIAL_IF_NBR  if_nbr,
+    192                                       CPU_BOOLEAN    echo)
+    193          {
+   \                     SerialLine_TTY_EchoTx: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    194              SERIAL_DEV        *pdev;
+    195              SERIAL_LINE_INFO  *pinfo;
+    196              SERIAL_ERR         err;
+    197          
+    198          
+    199              pdev = SerialIF_GetDevPtr(if_nbr, &err);
+   \   00000006   0x4669             MOV      R1,SP
+   \   00000008   0x0020             MOVS     R0,R4
+   \   0000000A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000C   0x.... 0x....      BL       SerialIF_GetDevPtr
+   \   00000010   0x0006             MOVS     R6,R0
+    200              if (err != SERIAL_ERR_NONE) {
+   \   00000012   0xF8BD 0x0000      LDRH     R0,[SP, #+0]
+   \   00000016   0x2800             CMP      R0,#+0
+   \   00000018   0xD106             BNE.N    ??SerialLine_TTY_EchoTx_0
+    201                  return;
+    202              }
+    203          
+    204                                                                          /* -------------- VALIDATE LINE DRV TYPE -------------- */
+    205              if (pdev->LineDrv_API != &SerialLine_TTY) {
+   \                     ??SerialLine_TTY_EchoTx_1: (+1)
+   \   0000001A   0x68F0             LDR      R0,[R6, #+12]
+   \   0000001C   0x....             LDR.N    R1,??DataTable3
+   \   0000001E   0x4288             CMP      R0,R1
+   \   00000020   0xD102             BNE.N    ??SerialLine_TTY_EchoTx_0
+    206                  return;
+    207              }
+    208          
+    209              pinfo = (SERIAL_LINE_INFO *)pdev->LineDrv_Data;
+   \                     ??SerialLine_TTY_EchoTx_2: (+1)
+   \   00000022   0x6930             LDR      R0,[R6, #+16]
+   \   00000024   0x0007             MOVS     R7,R0
+    210              pinfo->EchoTx = echo;
+   \   00000026   0x71BD             STRB     R5,[R7, #+6]
+    211          }
+   \                     ??SerialLine_TTY_EchoTx_0: (+1)
+   \   00000028   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+    212          
+    213          
+    214          /*$PAGE*/
+    215          /*
+    216          *********************************************************************************************************
+    217          *********************************************************************************************************
+    218          *                                     DRIVER INTERFACE FUNCTIONS
+    219          *********************************************************************************************************
+    220          *********************************************************************************************************
+    221          */
+    222          
+    223          /*
+    224          *********************************************************************************************************
+    225          *                                          SerialLine_Open()
+    226          *
+    227          * Description : Open serial line driver.
+    228          *
+    229          * Argument(s) : pdev        Pointer to device.
+    230          *
+    231          *               perr        Pointer to variable that will receive the return error code from this function :
+    232          *
+    233          *                               SERIAL_ERR_NONE                 Serial line driver              opened.
+    234          *                               SERIAL_ERR_LINE_OPEN            Serial line driver could NOT be opened.
+    235          *
+    236          * Return(s)   : Pointer to line driver data structure.
+    237          *
+    238          * Caller(s)   : Serial_Open().
+    239          *
+    240          * Note(s)     : (1) Interrupts are assumed to be disabled when this function is called.
+    241          *********************************************************************************************************
+    242          */
+    243          
+
+   \                                 In section .text, align 2, keep-with-next
+    244          static  void  *SerialLine_Open (SERIAL_DEV  *pdev,
+    245                                          SERIAL_ERR  *perr)
+    246          {
+   \                     SerialLine_Open: (+1)
+   \   00000000   0xB531             PUSH     {R0,R4,R5,LR}
+   \   00000002   0xB082             SUB      SP,SP,#+8
+   \   00000004   0x000C             MOVS     R4,R1
+    247              SERIAL_LINE_INFO  *pinfo;
+    248              CPU_SIZE_T         octets_reqd;
+    249              LIB_ERR            lib_err;
+    250          
+    251          
+    252             (void)&pdev;
+   \   00000006   0xA802             ADD      R0,SP,#+8
+    253          
+    254              pinfo = SerialLine_TTY_Info;
+   \   00000008   0x....             LDR.N    R0,??DataTable3_1
+   \   0000000A   0x6800             LDR      R0,[R0, #+0]
+   \   0000000C   0x0005             MOVS     R5,R0
+    255              if (pinfo == (SERIAL_LINE_INFO *)0) {                       /* Find avail TTY info struct.                          */
+   \   0000000E   0x2D00             CMP      R5,#+0
+   \   00000010   0xD10C             BNE.N    ??SerialLine_Open_0
+    256                  pinfo  = (SERIAL_LINE_INFO *)Mem_HeapAlloc((CPU_SIZE_T  ) sizeof(SERIAL_LINE_INFO),
+    257                                                             (CPU_SIZE_T  ) sizeof(CPU_ALIGN),
+    258                                                             (CPU_SIZE_T *)&octets_reqd,
+    259                                                             (LIB_ERR    *)&lib_err);
+   \   00000012   0x466B             MOV      R3,SP
+   \   00000014   0xAA01             ADD      R2,SP,#+4
+   \   00000016   0x2104             MOVS     R1,#+4
+   \   00000018   0x2008             MOVS     R0,#+8
+   \   0000001A   0x.... 0x....      BL       Mem_HeapAlloc
+   \   0000001E   0x0005             MOVS     R5,R0
+    260                  if (pinfo == (SERIAL_LINE_INFO *)0) {
+   \   00000020   0x2D00             CMP      R5,#+0
+   \   00000022   0xD106             BNE.N    ??SerialLine_Open_1
+    261                     *perr = SERIAL_ERR_LINE_DRV_OPEN;
+   \   00000024   0x2034             MOVS     R0,#+52
+   \   00000026   0x8020             STRH     R0,[R4, #+0]
+    262                      return ((void *)0);
+   \   00000028   0x2000             MOVS     R0,#+0
+   \   0000002A   0xE00D             B.N      ??SerialLine_Open_2
+    263                  }
+    264              } else {
+    265                  SerialLine_TTY_Info = pinfo->NextPtr;
+   \                     ??SerialLine_Open_0: (+1)
+   \   0000002C   0x6828             LDR      R0,[R5, #+0]
+   \   0000002E   0x....             LDR.N    R1,??DataTable3_1
+   \   00000030   0x6008             STR      R0,[R1, #+0]
+    266              }
+    267          
+    268              pinfo->NextPtr = (SERIAL_LINE_INFO *)0;
+   \                     ??SerialLine_Open_1: (+1)
+   \   00000032   0x2000             MOVS     R0,#+0
+   \   00000034   0x6028             STR      R0,[R5, #+0]
+    269              pinfo->TxState =  SERIAL_LINE_TTY_TX_STATE_NORMAL;
+   \   00000036   0x2000             MOVS     R0,#+0
+   \   00000038   0x7128             STRB     R0,[R5, #+4]
+    270              pinfo->EchoRx  =  DEF_ENABLED;
+   \   0000003A   0x2001             MOVS     R0,#+1
+   \   0000003C   0x7168             STRB     R0,[R5, #+5]
+    271              pinfo->EchoTx  =  DEF_DISABLED;
+   \   0000003E   0x2000             MOVS     R0,#+0
+   \   00000040   0x71A8             STRB     R0,[R5, #+6]
+    272          
+    273             *perr = SERIAL_ERR_NONE;
+   \   00000042   0x2000             MOVS     R0,#+0
+   \   00000044   0x8020             STRH     R0,[R4, #+0]
+    274          
+    275              return ((void *)pinfo);
+   \   00000046   0x0028             MOVS     R0,R5
+   \                     ??SerialLine_Open_2: (+1)
+   \   00000048   0xBD3E             POP      {R1-R5,PC}       ;; return
+    276          }
+    277          
+    278          
+    279          /*$PAGE*/
+    280          /*
+    281          *********************************************************************************************************
+    282          *                                         SerialLine_Close()
+    283          *
+    284          * Description : Close serial line driver.
+    285          *
+    286          * Argument(s) : pdev        Pointer to device.
+    287          *
+    288          *               pline_data  Pointer to line driver data structure.
+    289          *
+    290          *               perr        Pointer to variable that will receive the return error code from this function :
+    291          *
+    292          *                               SERIAL_ERR_NONE                 Serial line driver closed.
+    293          *
+    294          * Return(s)   : None.
+    295          *
+    296          * Caller(s)   : Serial_Close().
+    297          *
+    298          * Note(s)     : (1) Interrupts are assumed to be disabled when this function is called.
+    299          *********************************************************************************************************
+    300          */
+    301          
+
+   \                                 In section .text, align 2, keep-with-next
+    302          static  void  SerialLine_Close (SERIAL_DEV  *pdev,
+    303                                          void        *pline_data,
+    304                                          SERIAL_ERR  *perr)
+    305          {
+   \                     SerialLine_Close: (+1)
+   \   00000000   0xB401             PUSH     {R0}
+    306              SERIAL_LINE_INFO  *pinfo;
+    307          
+    308          
+    309             (void)&pdev;
+   \   00000002   0x466B             MOV      R3,SP
+    310          
+    311              pinfo = (SERIAL_LINE_INFO *)pline_data;
+   \   00000004   0x0008             MOVS     R0,R1
+    312          
+    313              pinfo->TxState = SERIAL_LINE_TTY_TX_STATE_NORMAL;
+   \   00000006   0x2300             MOVS     R3,#+0
+   \   00000008   0x7103             STRB     R3,[R0, #+4]
+    314              pinfo->EchoRx  = DEF_DISABLED;
+   \   0000000A   0x2300             MOVS     R3,#+0
+   \   0000000C   0x7143             STRB     R3,[R0, #+5]
+    315              pinfo->EchoTx  = DEF_DISABLED;
+   \   0000000E   0x2300             MOVS     R3,#+0
+   \   00000010   0x7183             STRB     R3,[R0, #+6]
+    316          
+    317              pinfo->NextPtr      = SerialLine_TTY_Info;
+   \   00000012   0x....             LDR.N    R3,??DataTable3_1
+   \   00000014   0x681B             LDR      R3,[R3, #+0]
+   \   00000016   0x6003             STR      R3,[R0, #+0]
+    318              SerialLine_TTY_Info = pinfo;
+   \   00000018   0x....             LDR.N    R3,??DataTable3_1
+   \   0000001A   0x6018             STR      R0,[R3, #+0]
+    319          
+    320             *perr = SERIAL_ERR_NONE;
+   \   0000001C   0x2300             MOVS     R3,#+0
+   \   0000001E   0x8013             STRH     R3,[R2, #+0]
+    321          }
+   \   00000020   0xB001             ADD      SP,SP,#+4
+   \   00000022   0x4770             BX       LR               ;; return
+    322          
+    323          
+    324          /*$PAGE*/
+    325          /*
+    326          *********************************************************************************************************
+    327          *                                        SerialLine_RdOctet()
+    328          *
+    329          * Description : Get next octet to transmit.
+    330          *
+    331          * Argument(s) : pdev        Pointer to device.
+    332          *
+    333          *               pbuf        Pointer to buffer.
+    334          *
+    335          *               pdatum      Pointer to variable that will receive data octet.
+    336          *
+    337          *               perr        Pointer to variable that will receive the return error code from this function :
+    338          *
+    339          *                               SERIAL_ERR_NONE                 Octet supplied.
+    340          *                               SERIAL_ERR_UNDERFLOW            Buffer underflow.
+    341          *
+    342          * Return(s)   : None.
+    343          *
+    344          * Caller(s)   : Serial_IF_Tx().
+    345          *
+    346          * Note(s)     : (1) Interrupts are assumed to be disabled when this function is called.
+    347          *********************************************************************************************************
+    348          */
+    349          
+
+   \                                 In section .text, align 2, keep-with-next
+    350          static  void  SerialLine_RdOctet (SERIAL_DEV  *pdev,
+    351                                            SERIAL_BUF  *pbuf,
+    352                                            CPU_INT08U  *pdatum,
+    353                                            SERIAL_ERR  *perr)
+    354          {
+   \                     SerialLine_RdOctet: (+1)
+   \   00000000   0xE92D 0x43F8      PUSH     {R3-R9,LR}
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+   \   00000008   0x0016             MOVS     R6,R2
+   \   0000000A   0x001F             MOVS     R7,R3
+    355              SERIAL_LINE_INFO  *pinfo;
+    356              CPU_BOOLEAN        rd;
+    357          
+    358          
+    359              pinfo = (SERIAL_LINE_INFO *)pdev->LineDrv_Data;
+   \   0000000C   0x6920             LDR      R0,[R4, #+16]
+   \   0000000E   0x4680             MOV      R8,R0
+    360              switch (pinfo->TxState) {
+   \   00000010   0xF898 0x0004      LDRB     R0,[R8, #+4]
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD009             BEQ.N    ??SerialLine_RdOctet_0
+   \   00000018   0x2801             CMP      R0,#+1
+   \   0000001A   0xD114             BNE.N    ??SerialLine_RdOctet_1
+    361                  case SERIAL_LINE_TTY_TX_STATE_CR:                       /* ---------------- TX CARRIAGE RETURN ---------------- */
+    362                       pinfo->TxState = SERIAL_LINE_TTY_TX_STATE_NORMAL;
+   \                     ??SerialLine_RdOctet_2: (+1)
+   \   0000001C   0x2000             MOVS     R0,#+0
+   \   0000001E   0xF888 0x0004      STRB     R0,[R8, #+4]
+    363                      *pdatum         = ASCII_CHAR_CARRIAGE_RETURN;
+   \   00000022   0x200D             MOVS     R0,#+13
+   \   00000024   0x7030             STRB     R0,[R6, #+0]
+    364                      *perr           = SERIAL_ERR_NONE;
+   \   00000026   0x2000             MOVS     R0,#+0
+   \   00000028   0x8038             STRH     R0,[R7, #+0]
+    365                       return;
+   \   0000002A   0xE018             B.N      ??SerialLine_RdOctet_3
+    366          
+    367          
+    368                  case SERIAL_LINE_TTY_TX_STATE_NORMAL:                   /* --------------------- TX OCTETS -------------------- */
+    369                       rd = SerialBuf_RdOctet(pbuf, pdatum);
+   \                     ??SerialLine_RdOctet_0: (+1)
+   \   0000002C   0x0031             MOVS     R1,R6
+   \   0000002E   0x0028             MOVS     R0,R5
+   \   00000030   0x.... 0x....      BL       SerialBuf_RdOctet
+   \   00000034   0x4681             MOV      R9,R0
+    370                       if (rd == DEF_NO) {
+   \   00000036   0xFA5F 0xF989      UXTB     R9,R9            ;; ZeroExt  R9,R9,#+24,#+24
+   \   0000003A   0xF1B9 0x0F00      CMP      R9,#+0
+   \   0000003E   0xD102             BNE.N    ??SerialLine_RdOctet_4
+    371                          *perr = SERIAL_ERR_UNDERFLOW;
+   \   00000040   0x2004             MOVS     R0,#+4
+   \   00000042   0x8038             STRH     R0,[R7, #+0]
+    372                           return;
+   \   00000044   0xE00B             B.N      ??SerialLine_RdOctet_3
+    373                       }
+    374                       //lht 2015-10-23
+    375                       /*if (*pdatum == ASCII_CHAR_LINE_FEED) {
+    376                           pinfo->TxState = SERIAL_LINE_TTY_TX_STATE_CR;
+    377                       }*/
+    378                       break;
+    379              }
+    380          
+    381          #if (SERIAL_CFG_RD_BUF_EN == DEF_ENABLED)                       /* Echo data.                                           */
+    382              pinfo = (SERIAL_LINE_INFO *)pdev->LineDrv_Data;
+   \                     ??SerialLine_RdOctet_4: (+1)
+   \                     ??SerialLine_RdOctet_1: (+1)
+   \   00000046   0x6920             LDR      R0,[R4, #+16]
+   \   00000048   0x4680             MOV      R8,R0
+    383              if (pinfo->EchoTx == DEF_ENABLED) {
+   \   0000004A   0xF898 0x0006      LDRB     R0,[R8, #+6]
+   \   0000004E   0x2801             CMP      R0,#+1
+   \   00000050   0xD103             BNE.N    ??SerialLine_RdOctet_5
+    384                  SerialIF_Rx(pdev, *pdatum);
+   \   00000052   0x7831             LDRB     R1,[R6, #+0]
+   \   00000054   0x0020             MOVS     R0,R4
+   \   00000056   0x.... 0x....      BL       SerialIF_Rx
+    385              }
+    386          #endif
+    387          
+    388             *perr = SERIAL_ERR_NONE;
+   \                     ??SerialLine_RdOctet_5: (+1)
+   \   0000005A   0x2000             MOVS     R0,#+0
+   \   0000005C   0x8038             STRH     R0,[R7, #+0]
+    389          }
+   \                     ??SerialLine_RdOctet_3: (+1)
+   \   0000005E   0xE8BD 0x83F1      POP      {R0,R4-R9,PC}    ;; return
+    390          
+    391          
+    392          /*$PAGE*/
+    393          /*
+    394          *********************************************************************************************************
+    395          *                                        SerialLine_WrOctet()
+    396          *
+    397          * Description : Handle octet received from serial port.
+    398          *
+    399          * Argument(s) : pdev        Pointer to device.
+    400          *
+    401          *               pbuf        Pointer to buffer.
+    402          *
+    403          *               datum       Data octet to write.
+    404          *
+    405          *               perr        Pointer to variable that will receive the return error code from this function :
+    406          *
+    407          *                               SERIAL_ERR_NONE                 Octet handled.
+    408          *                               SERIAL_ERR_OVERFLOW             Buffer overflow.
+    409          *                               SERIAL_ERR_LINE_END             End of line detected.
+    410          *
+    411          * Return(s)   : None.
+    412          *
+    413          * Caller(s)   : Serial_IF_Rx().
+    414          *
+    415          * Note(s)     : (1) Interrupts are assumed to be disabled when this function is called.
+    416          *********************************************************************************************************
+    417          */
+    418          
+
+   \                                 In section .text, align 2, keep-with-next
+    419          static  void  SerialLine_WrOctet (SERIAL_DEV  *pdev,
+    420                                            SERIAL_BUF  *pbuf,
+    421                                            CPU_INT08U   datum,
+    422                                            SERIAL_ERR  *perr)
+    423          {
+   \                     SerialLine_WrOctet: (+1)
+   \   00000000   0xE92D 0x41F1      PUSH     {R0,R4-R8,LR}
+   \   00000004   0xB081             SUB      SP,SP,#+4
+   \   00000006   0x000C             MOVS     R4,R1
+   \   00000008   0x0015             MOVS     R5,R2
+   \   0000000A   0x001E             MOVS     R6,R3
+    424          #if (SERIAL_CFG_WR_BUF_EN == DEF_ENABLED)
+    425              SERIAL_LINE_INFO  *pinfo;
+    426          #endif
+    427              CPU_BOOLEAN        wr;
+    428          
+    429          
+    430             (void)&pdev;
+   \   0000000C   0xA801             ADD      R0,SP,#+4
+    431            
+    432             //lht 2015-10-23
+    433              /*if ((datum == ASCII_CHAR_LINE_FEED) ||
+    434                  (datum == ASCII_CHAR_CARRIAGE_RETURN)) {
+    435                  wr = SerialBuf_WrOctet(pbuf, ASCII_CHAR_NULL);
+    436                 *perr = SERIAL_ERR_LINE_END;
+    437                  return;
+    438              }*/
+    439          
+    440              wr = SerialBuf_WrOctet(pbuf, datum);
+   \   0000000E   0x0029             MOVS     R1,R5
+   \   00000010   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0x.... 0x....      BL       SerialBuf_WrOctet
+   \   00000018   0x4680             MOV      R8,R0
+    441              if (wr == DEF_NO) {
+   \   0000001A   0xFA5F 0xF888      UXTB     R8,R8            ;; ZeroExt  R8,R8,#+24,#+24
+   \   0000001E   0xF1B8 0x0F00      CMP      R8,#+0
+   \   00000022   0xD102             BNE.N    ??SerialLine_WrOctet_0
+    442                 *perr = SERIAL_ERR_OVERFLOW;
+   \   00000024   0x2005             MOVS     R0,#+5
+   \   00000026   0x8030             STRH     R0,[R6, #+0]
+    443                  return;
+   \   00000028   0xE00C             B.N      ??SerialLine_WrOctet_1
+    444              }
+    445          
+    446          #if (SERIAL_CFG_WR_BUF_EN == DEF_ENABLED)                       /* Echo data.                                           */
+    447              pinfo = (SERIAL_LINE_INFO *)pdev->LineDrv_Data;
+   \                     ??SerialLine_WrOctet_0: (+1)
+   \   0000002A   0x9801             LDR      R0,[SP, #+4]
+   \   0000002C   0x6900             LDR      R0,[R0, #+16]
+   \   0000002E   0x0007             MOVS     R7,R0
+    448              if (pinfo->EchoRx == DEF_ENABLED) {
+   \   00000030   0x7978             LDRB     R0,[R7, #+5]
+   \   00000032   0x2801             CMP      R0,#+1
+   \   00000034   0xD104             BNE.N    ??SerialLine_WrOctet_2
+    449                  SerialIF_TxWrBuf(pdev, datum);
+   \   00000036   0x0029             MOVS     R1,R5
+   \   00000038   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   0000003A   0x9801             LDR      R0,[SP, #+4]
+   \   0000003C   0x.... 0x....      BL       SerialIF_TxWrBuf
+    450              }
+    451          #endif
+    452          
+    453             *perr = SERIAL_ERR_NONE;
+   \                     ??SerialLine_WrOctet_2: (+1)
+   \   00000040   0x2000             MOVS     R0,#+0
+   \   00000042   0x8030             STRH     R0,[R6, #+0]
+    454          }
+   \                     ??SerialLine_WrOctet_1: (+1)
+   \   00000044   0xE8BD 0x81F3      POP      {R0,R1,R4-R8,PC}  ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3:
+   \   00000000   0x........         DC32     SerialLine_TTY
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_1:
+   \   00000000   0x........         DC32     SerialLine_TTY_Info
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   SerialLine_Close
+      24   SerialLine_Open
+        24   -> Mem_HeapAlloc
+      32   SerialLine_RdOctet
+        32   -> SerialBuf_RdOctet
+        32   -> SerialIF_Rx
+      24   SerialLine_TTY_EchoRx
+        24   -> SerialIF_GetDevPtr
+      24   SerialLine_TTY_EchoTx
+        24   -> SerialIF_GetDevPtr
+      32   SerialLine_WrOctet
+        32   -> SerialBuf_WrOctet
+        32   -> SerialIF_TxWrBuf
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+      36  SerialLine_Close
+      74  SerialLine_Open
+      98  SerialLine_RdOctet
+      16  SerialLine_TTY
+      42  SerialLine_TTY_EchoRx
+      42  SerialLine_TTY_EchoTx
+       4  SerialLine_TTY_Info
+      72  SerialLine_WrOctet
+
+ 
+   4 bytes in section .bss
+  16 bytes in section .rodata
+ 372 bytes in section .text
+ 
+ 372 bytes of CODE  memory
+  16 bytes of CONST memory
+   4 bytes of DATA  memory
+
+Errors: none
+Warnings: none

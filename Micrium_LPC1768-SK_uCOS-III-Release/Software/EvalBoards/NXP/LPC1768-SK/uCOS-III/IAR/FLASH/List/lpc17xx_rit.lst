@@ -1,0 +1,608 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       06/Apr/2017  11:01:07
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_rit.c
+#    Command line =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_rit.c
+#        -lCN
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\List
+#        --diag_suppress Pe174 -o
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files\IAR
+#        Systems\Embedded Workbench 7.5\arm\INC\c\DLib_Config_Normal.h" -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\BSP\OS\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\NXP\LPC17xx\LPC1768\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CSP\MCU\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Ports\ARM-Cortex-M3\Generic\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Ports\ARM-Cortex-M3\CSP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uCOS-III\Source\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-LIB\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CPU\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-CPU\ARM-Cortex-M3\IAR\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Core\CM3\CoreSupport\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Core\CM3\DeviceSupport\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\include\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Driver\NXP\LPC17xx\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Driver\NXP\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Line\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\OS\uCOS-III\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\OS\
+#        -I
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\..\..\..\..\..\uC-Serial\Source\
+#        -On --use_c++_inline -I "C:\Program Files\IAR Systems\Embedded
+#        Workbench 7.5\arm\CMSIS\Include\"
+#    Locale       =  Chinese (Simplified)_People's Republic of China.936
+#    List file    =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\List\lpc17xx_rit.lst
+#    Object file  =  
+#        E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\uCOS-III\IAR\FLASH\Obj\lpc17xx_rit.o
+#
+###############################################################################
+
+E:\新项目\移交资料LHT\自助缴费机\软件\Micrium_LPC1768-SK_uCOS-III-Release\Software\EvalBoards\NXP\LPC1768-SK\LPC17XXCMSIS\Drivers\source\lpc17xx_rit.c
+      1          /**
+      2           * @file	: lpc17xx_rit.c
+      3           * @brief	: Contains all functions support for RIT firmware library on LPC17xx
+      4           * @version	: 1.0
+      5           * @date	: 7. May. 2009
+      6           * @author	: NguyenCao
+      7           **************************************************************************
+      8           * Software that is described herein is for illustrative purposes only
+      9           * which provides customers with programming information regarding the
+     10           * products. This software is supplied "AS IS" without any warranties.
+     11           * NXP Semiconductors assumes no responsibility or liability for the
+     12           * use of the software, conveys no license or title under any patent,
+     13           * copyright, or mask work right to the product. NXP Semiconductors
+     14           * reserves the right to make changes in the software without
+     15           * notification. NXP Semiconductors also make no representation or
+     16           * warranty that such application will be suitable for the specified
+     17           * use without further testing or modification.
+     18           **********************************************************************/
+     19          
+     20          /* Peripheral group ----------------------------------------------------------- */
+     21          /** @addtogroup RIT
+     22           * @{
+     23           */
+     24          
+     25          /* Includes ------------------------------------------------------------------- */
+     26          #include "lpc17xx_rit.h"
+     27          #include "lpc17xx_clkpwr.h"
+     28          
+     29          /* If this source file built with example, the LPC17xx FW library configuration
+     30           * file in each example directory ("lpc17xx_libcfg.h") must be included,
+     31           * otherwise the default FW library configuration file must be included instead
+     32           */
+     33          #ifdef __BUILD_WITH_EXAMPLE__
+     34          #include "lpc17xx_libcfg.h"
+     35          #else
+     36          #include "lpc17xx_libcfg_default.h"
+     37          #endif /* __BUILD_WITH_EXAMPLE__ */
+     38          
+     39          #ifdef _RIT
+     40          
+     41          /* Public Functions ----------------------------------------------------------- */
+     42          /** @addtogroup RIT_Public_Functions
+     43           * @{
+     44           */
+     45          
+     46          /******************************************************************************//*
+     47           * @brief 		Initial for RIT
+     48           * 					- Turn on power and clock
+     49           * 					- Setup default register values
+     50           * @param[in]	RITx is RIT peripheral selected, should be: RIT
+     51           * @return 		None
+     52           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     53          void RIT_Init(LPC_RIT_TypeDef *RITx)
+     54          {
+   \                     RIT_Init: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     55          	CHECK_PARAM(PARAM_RITx(RITx));
+   \   00000004   0x....             LDR.N    R0,??DataTable6  ;; 0x400b0000
+   \   00000006   0x4284             CMP      R4,R0
+   \   00000008   0xD003             BEQ.N    ??RIT_Init_0
+   \   0000000A   0x2137             MOVS     R1,#+55
+   \   0000000C   0x....             LDR.N    R0,??DataTable6_1
+   \   0000000E   0x.... 0x....      BL       check_failed
+     56          	CLKPWR_ConfigPPWR (CLKPWR_PCONP_PCRIT, ENABLE);
+   \                     ??RIT_Init_0: (+1)
+   \   00000012   0x2101             MOVS     R1,#+1
+   \   00000014   0xF45F 0x3080      MOVS     R0,#+65536
+   \   00000018   0x.... 0x....      BL       CLKPWR_ConfigPPWR
+     57          	//Set up default register values
+     58          	RITx->RICOMPVAL = 0xFFFFFFFF;
+   \   0000001C   0xF05F 0x30FF      MOVS     R0,#-1
+   \   00000020   0x6020             STR      R0,[R4, #+0]
+     59          	RITx->RIMASK	= 0x00000000;
+   \   00000022   0x2000             MOVS     R0,#+0
+   \   00000024   0x6060             STR      R0,[R4, #+4]
+     60          	RITx->RICTRL	= 0x0C;
+   \   00000026   0x200C             MOVS     R0,#+12
+   \   00000028   0x7220             STRB     R0,[R4, #+8]
+     61          	RITx->RICOUNTER	= 0x00000000;
+   \   0000002A   0x2000             MOVS     R0,#+0
+   \   0000002C   0x60E0             STR      R0,[R4, #+12]
+     62          	// Turn on power and clock
+     63          
+     64          }
+   \   0000002E   0xBD10             POP      {R4,PC}          ;; return
+     65          /******************************************************************************//*
+     66           * @brief 		DeInitial for RIT
+     67           * 					- Turn off power and clock
+     68           * 					- ReSetup default register values
+     69           * @param[in]	RITx is RIT peripheral selected, should be: RIT
+     70           * @return 		None
+     71           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     72          void RIT_DeInit(LPC_RIT_TypeDef *RITx)
+     73          {
+   \                     RIT_DeInit: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     74          	CHECK_PARAM(PARAM_RITx(RITx));
+   \   00000004   0x....             LDR.N    R0,??DataTable6  ;; 0x400b0000
+   \   00000006   0x4284             CMP      R4,R0
+   \   00000008   0xD003             BEQ.N    ??RIT_DeInit_0
+   \   0000000A   0x214A             MOVS     R1,#+74
+   \   0000000C   0x....             LDR.N    R0,??DataTable6_1
+   \   0000000E   0x.... 0x....      BL       check_failed
+     75          
+     76          	// Turn off power and clock
+     77          	CLKPWR_ConfigPPWR (CLKPWR_PCONP_PCRIT, DISABLE);
+   \                     ??RIT_DeInit_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0xF45F 0x3080      MOVS     R0,#+65536
+   \   00000018   0x.... 0x....      BL       CLKPWR_ConfigPPWR
+     78          	//ReSetup default register values
+     79          	RITx->RICOMPVAL = 0xFFFFFFFF;
+   \   0000001C   0xF05F 0x30FF      MOVS     R0,#-1
+   \   00000020   0x6020             STR      R0,[R4, #+0]
+     80          	RITx->RIMASK	= 0x00000000;
+   \   00000022   0x2000             MOVS     R0,#+0
+   \   00000024   0x6060             STR      R0,[R4, #+4]
+     81          	RITx->RICTRL	= 0x0C;
+   \   00000026   0x200C             MOVS     R0,#+12
+   \   00000028   0x7220             STRB     R0,[R4, #+8]
+     82          	RITx->RICOUNTER	= 0x00000000;
+   \   0000002A   0x2000             MOVS     R0,#+0
+   \   0000002C   0x60E0             STR      R0,[R4, #+12]
+     83          }
+   \   0000002E   0xBD10             POP      {R4,PC}          ;; return
+     84          /******************************************************************************//*
+     85           * @brief 		Set compare value, mask value and time counter value
+     86           * @param[in]	RITx is RIT peripheral selected, should be: RIT
+     87           * @param[in]	value: pointer to RIT_CMP_VAL Structure
+     88           * @return 		None
+     89           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     90          void RIT_TimerConfig(LPC_RIT_TypeDef *RITx, RIT_CMP_VAL *value)
+     91          {
+   \                     RIT_TimerConfig: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     92          	CHECK_PARAM(PARAM_RITx(RITx));
+   \   00000006   0x....             LDR.N    R0,??DataTable6  ;; 0x400b0000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD003             BEQ.N    ??RIT_TimerConfig_0
+   \   0000000C   0x215C             MOVS     R1,#+92
+   \   0000000E   0x....             LDR.N    R0,??DataTable6_1
+   \   00000010   0x.... 0x....      BL       check_failed
+     93          
+     94          	RITx->RICOMPVAL	= value->CMPVAL;
+   \                     ??RIT_TimerConfig_0: (+1)
+   \   00000014   0x6828             LDR      R0,[R5, #+0]
+   \   00000016   0x6020             STR      R0,[R4, #+0]
+     95          	RITx->RIMASK	= value->MASKVAL;
+   \   00000018   0x6868             LDR      R0,[R5, #+4]
+   \   0000001A   0x6060             STR      R0,[R4, #+4]
+     96          	RITx->RICOUNTER	= value->COUNTVAL;
+   \   0000001C   0x68A8             LDR      R0,[R5, #+8]
+   \   0000001E   0x60E0             STR      R0,[R4, #+12]
+     97          }
+   \   00000020   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     98          /******************************************************************************//*
+     99           * @brief 		Enable/Disable Timer
+    100           * @param[in]	RITx is RIT peripheral selected, should be: RIT
+    101           * @param[in]	NewState 	New State of this function
+    102           * 					-ENABLE: Enable Timer
+    103           * 					-DISABLE: Disable Timer
+    104           * @return 		None
+    105           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    106          void RIT_Cmd(LPC_RIT_TypeDef *RITx, FunctionalState NewState)
+    107          {
+   \                     RIT_Cmd: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    108          	CHECK_PARAM(PARAM_RITx(RITx));
+   \   00000006   0x....             LDR.N    R0,??DataTable6  ;; 0x400b0000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD003             BEQ.N    ??RIT_Cmd_0
+   \   0000000C   0x216C             MOVS     R1,#+108
+   \   0000000E   0x....             LDR.N    R0,??DataTable6_1
+   \   00000010   0x.... 0x....      BL       check_failed
+    109          	CHECK_PARAM(PARAM_FUNCTIONALSTATE(NewState));
+   \                     ??RIT_Cmd_0: (+1)
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0x2D00             CMP      R5,#+0
+   \   00000018   0xD006             BEQ.N    ??RIT_Cmd_1
+   \   0000001A   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001C   0x2D01             CMP      R5,#+1
+   \   0000001E   0xD003             BEQ.N    ??RIT_Cmd_1
+   \   00000020   0x216D             MOVS     R1,#+109
+   \   00000022   0x....             LDR.N    R0,??DataTable6_1
+   \   00000024   0x.... 0x....      BL       check_failed
+    110          
+    111          	//Enable or Disable Timer
+    112          	if(NewState==ENABLE)
+   \                     ??RIT_Cmd_1: (+1)
+   \   00000028   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000002A   0x2D01             CMP      R5,#+1
+   \   0000002C   0xD104             BNE.N    ??RIT_Cmd_2
+    113          	{
+    114          		RITx->RICTRL |= RIT_CTRL_TEN;
+   \   0000002E   0x7A20             LDRB     R0,[R4, #+8]
+   \   00000030   0xF050 0x0008      ORRS     R0,R0,#0x8
+   \   00000034   0x7220             STRB     R0,[R4, #+8]
+   \   00000036   0xE003             B.N      ??RIT_Cmd_3
+    115          	}
+    116          	else
+    117          	{
+    118          		RITx->RICTRL &= ~RIT_CTRL_TEN;
+   \                     ??RIT_Cmd_2: (+1)
+   \   00000038   0x7A20             LDRB     R0,[R4, #+8]
+   \   0000003A   0xF010 0x00F7      ANDS     R0,R0,#0xF7
+   \   0000003E   0x7220             STRB     R0,[R4, #+8]
+    119          	}
+    120          }
+   \                     ??RIT_Cmd_3: (+1)
+   \   00000040   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    121          /******************************************************************************//*
+    122           * @brief 		Timer Enable/Disable Clear
+    123           * @param[in]	RITx is RIT peripheral selected, should be: RIT
+    124           * @param[in]	NewState 	New State of this function
+    125           * 						-ENABLE: The timer will be cleared to 0 whenever
+    126           * 				the counter value equals the masked compare value specified
+    127           * 				by the contents of RICOMPVAL and RIMASK register
+    128           * 						-DISABLE: The timer will not be clear to 0
+    129           * @return 		None
+    130           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    131          void RIT_TimerClearCmd(LPC_RIT_TypeDef *RITx, FunctionalState NewState)
+    132          {
+   \                     RIT_TimerClearCmd: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    133          	CHECK_PARAM(PARAM_RITx(RITx));
+   \   00000006   0x....             LDR.N    R0,??DataTable6  ;; 0x400b0000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD003             BEQ.N    ??RIT_TimerClearCmd_0
+   \   0000000C   0x2185             MOVS     R1,#+133
+   \   0000000E   0x....             LDR.N    R0,??DataTable6_1
+   \   00000010   0x.... 0x....      BL       check_failed
+    134          	CHECK_PARAM(PARAM_FUNCTIONALSTATE(NewState));
+   \                     ??RIT_TimerClearCmd_0: (+1)
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0x2D00             CMP      R5,#+0
+   \   00000018   0xD006             BEQ.N    ??RIT_TimerClearCmd_1
+   \   0000001A   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001C   0x2D01             CMP      R5,#+1
+   \   0000001E   0xD003             BEQ.N    ??RIT_TimerClearCmd_1
+   \   00000020   0x2186             MOVS     R1,#+134
+   \   00000022   0x....             LDR.N    R0,??DataTable6_1
+   \   00000024   0x.... 0x....      BL       check_failed
+    135          
+    136          	//Timer Enable/Disable Clear
+    137          	if(NewState==ENABLE)
+   \                     ??RIT_TimerClearCmd_1: (+1)
+   \   00000028   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000002A   0x2D01             CMP      R5,#+1
+   \   0000002C   0xD104             BNE.N    ??RIT_TimerClearCmd_2
+    138          	{
+    139          		RITx->RICTRL |= RIT_CTRL_ENCLR;
+   \   0000002E   0x7A20             LDRB     R0,[R4, #+8]
+   \   00000030   0xF050 0x0002      ORRS     R0,R0,#0x2
+   \   00000034   0x7220             STRB     R0,[R4, #+8]
+   \   00000036   0xE003             B.N      ??RIT_TimerClearCmd_3
+    140          	}
+    141          	else
+    142          	{
+    143          		RITx->RICTRL &= ~RIT_CTRL_ENCLR;
+   \                     ??RIT_TimerClearCmd_2: (+1)
+   \   00000038   0x7A20             LDRB     R0,[R4, #+8]
+   \   0000003A   0xF010 0x00FD      ANDS     R0,R0,#0xFD
+   \   0000003E   0x7220             STRB     R0,[R4, #+8]
+    144          	}
+    145          }
+   \                     ??RIT_TimerClearCmd_3: (+1)
+   \   00000040   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    146          /******************************************************************************//*
+    147           * @brief 		Timer Enable/Disable on break
+    148           * @param[in]	RITx is RIT peripheral selected, should be: RIT
+    149           * @param[in]	NewState 	New State of this function
+    150           * 					-ENABLE: The timer is halted whenever a hardware break condition occurs
+    151           * 					-DISABLE: Hardware break has no effect on the timer operation
+    152           * @return 		None
+    153           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    154          void RIT_TimerEnableOnBreakCmd(LPC_RIT_TypeDef *RITx, FunctionalState NewState)
+    155          {
+   \                     RIT_TimerEnableOnBreakCmd: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    156          	CHECK_PARAM(PARAM_RITx(RITx));
+   \   00000006   0x....             LDR.N    R0,??DataTable6  ;; 0x400b0000
+   \   00000008   0x4284             CMP      R4,R0
+   \   0000000A   0xD003             BEQ.N    ??RIT_TimerEnableOnBreakCmd_0
+   \   0000000C   0x219C             MOVS     R1,#+156
+   \   0000000E   0x....             LDR.N    R0,??DataTable6_1
+   \   00000010   0x.... 0x....      BL       check_failed
+    157          	CHECK_PARAM(PARAM_FUNCTIONALSTATE(NewState));
+   \                     ??RIT_TimerEnableOnBreakCmd_0: (+1)
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0x2D00             CMP      R5,#+0
+   \   00000018   0xD006             BEQ.N    ??RIT_TimerEnableOnBreakCmd_1
+   \   0000001A   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001C   0x2D01             CMP      R5,#+1
+   \   0000001E   0xD003             BEQ.N    ??RIT_TimerEnableOnBreakCmd_1
+   \   00000020   0x219D             MOVS     R1,#+157
+   \   00000022   0x....             LDR.N    R0,??DataTable6_1
+   \   00000024   0x.... 0x....      BL       check_failed
+    158          
+    159          	//Timer Enable/Disable on break
+    160          	if(NewState==ENABLE)
+   \                     ??RIT_TimerEnableOnBreakCmd_1: (+1)
+   \   00000028   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000002A   0x2D01             CMP      R5,#+1
+   \   0000002C   0xD104             BNE.N    ??RIT_TimerEnableOnBreakCmd_2
+    161          	{
+    162          		RITx->RICTRL |= RIT_CTRL_ENBR;
+   \   0000002E   0x7A20             LDRB     R0,[R4, #+8]
+   \   00000030   0xF050 0x0004      ORRS     R0,R0,#0x4
+   \   00000034   0x7220             STRB     R0,[R4, #+8]
+   \   00000036   0xE003             B.N      ??RIT_TimerEnableOnBreakCmd_3
+    163          	}
+    164          	else
+    165          	{
+    166          		RITx->RICTRL &= ~RIT_CTRL_ENBR;
+   \                     ??RIT_TimerEnableOnBreakCmd_2: (+1)
+   \   00000038   0x7A20             LDRB     R0,[R4, #+8]
+   \   0000003A   0xF010 0x00FB      ANDS     R0,R0,#0xFB
+   \   0000003E   0x7220             STRB     R0,[R4, #+8]
+    167          	}
+    168          }
+   \                     ??RIT_TimerEnableOnBreakCmd_3: (+1)
+   \   00000040   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    169          /******************************************************************************//*
+    170           * @brief 		Check whether interrupt flag is set or not
+    171           * @param[in]	RITx is RIT peripheral selected, should be: RIT
+    172           * @return 		Current interrupt status, could be: SET/RESET
+    173           *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    174          IntStatus RIT_GetIntStatus(LPC_RIT_TypeDef *RITx)
+    175          {
+   \                     RIT_GetIntStatus: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    176          	uint8_t result;
+    177          	CHECK_PARAM(PARAM_RITx(RITx));
+   \   00000004   0x....             LDR.N    R0,??DataTable6  ;; 0x400b0000
+   \   00000006   0x4284             CMP      R4,R0
+   \   00000008   0xD003             BEQ.N    ??RIT_GetIntStatus_0
+   \   0000000A   0x21B1             MOVS     R1,#+177
+   \   0000000C   0x....             LDR.N    R0,??DataTable6_1
+   \   0000000E   0x.... 0x....      BL       check_failed
+    178          	if((RITx->RICTRL&RIT_CTRL_INTEN)==1)	result= SET;
+   \                     ??RIT_GetIntStatus_0: (+1)
+   \   00000012   0x7A20             LDRB     R0,[R4, #+8]
+   \   00000014   0x07C0             LSLS     R0,R0,#+31
+   \   00000016   0xD508             BPL.N    ??RIT_GetIntStatus_1
+   \   00000018   0x2001             MOVS     R0,#+1
+   \   0000001A   0x0005             MOVS     R5,R0
+    179          	else return RESET;
+    180          	//clear interrupt flag
+    181          	RITx->RICTRL |= RIT_CTRL_INTEN;
+   \   0000001C   0x7A20             LDRB     R0,[R4, #+8]
+   \   0000001E   0xF050 0x0001      ORRS     R0,R0,#0x1
+   \   00000022   0x7220             STRB     R0,[R4, #+8]
+    182          	return result;
+   \   00000024   0x0028             MOVS     R0,R5
+   \   00000026   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000028   0xE000             B.N      ??RIT_GetIntStatus_2
+   \                     ??RIT_GetIntStatus_1: (+1)
+   \   0000002A   0x2000             MOVS     R0,#+0
+   \                     ??RIT_GetIntStatus_2: (+1)
+   \   0000002C   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    183          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6:
+   \   00000000   0x400B0000         DC32     0x400b0000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_1:
+   \   00000000   0x........         DC32     ?_0
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \   00000000   0x45 0x3A          DC8 45H, 3AH, 5CH, 0D0H, 0C2H, 0CFH, 0EEH, 0C4H
+   \              0x5C 0xD0    
+   \              0xC2 0xCF    
+   \              0xEE 0xC4    
+   \   00000008   0xBF 0x5C          DC8 0BFH, 5CH, 0D2H, 0C6H, 0BDH, 0BBH, 0D7H, 0CAH
+   \              0xD2 0xC6    
+   \              0xBD 0xBB    
+   \              0xD7 0xCA    
+   \   00000010   0xC1 0xCF          DC8 0C1H, 0CFH, 4CH, 48H, 54H, 5CH, 0D7H, 0D4H
+   \              0x4C 0x48    
+   \              0x54 0x5C    
+   \              0xD7 0xD4    
+   \   00000018   0xD6 0xFA          DC8 0D6H, 0FAH, 0BDH, 0C9H, 0B7H, 0D1H, 0BBH, 0FAH
+   \              0xBD 0xC9    
+   \              0xB7 0xD1    
+   \              0xBB 0xFA    
+   \   00000020   0x5C 0xC8          DC8 5CH, 0C8H, 0EDH, 0BCH, 0FEH, 5CH, 4DH, 69H
+   \              0xED 0xBC    
+   \              0xFE 0x5C    
+   \              0x4D 0x69    
+   \   00000028   0x63 0x72          DC8 63H, 72H, 69H, 75H, 6DH, 5FH, 4CH, 50H
+   \              0x69 0x75    
+   \              0x6D 0x5F    
+   \              0x4C 0x50    
+   \   00000030   0x43 0x31          DC8 43H, 31H, 37H, 36H, 38H, 2DH, 53H, 4BH
+   \              0x37 0x36    
+   \              0x38 0x2D    
+   \              0x53 0x4B    
+   \   00000038   0x5F 0x75          DC8 5FH, 75H, 43H, 4FH, 53H, 2DH, 49H, 49H
+   \              0x43 0x4F    
+   \              0x53 0x2D    
+   \              0x49 0x49    
+   \   00000040   0x49 0x2D          DC8 49H, 2DH, 52H, 65H, 6CH, 65H, 61H, 73H
+   \              0x52 0x65    
+   \              0x6C 0x65    
+   \              0x61 0x73    
+   \   00000048   0x65 0x5C          DC8 65H, 5CH, 53H, 6FH, 66H, 74H, 77H, 61H
+   \              0x53 0x6F    
+   \              0x66 0x74    
+   \              0x77 0x61    
+   \   00000050   0x72 0x65          DC8 72H, 65H, 5CH, 45H, 76H, 61H, 6CH, 42H
+   \              0x5C 0x45    
+   \              0x76 0x61    
+   \              0x6C 0x42    
+   \   00000058   0x6F 0x61          DC8 6FH, 61H, 72H, 64H, 73H, 5CH, 4EH, 58H
+   \              0x72 0x64    
+   \              0x73 0x5C    
+   \              0x4E 0x58    
+   \   00000060   0x50 0x5C          DC8 50H, 5CH, 4CH, 50H, 43H, 31H, 37H, 36H
+   \              0x4C 0x50    
+   \              0x43 0x31    
+   \              0x37 0x36    
+   \   00000068   0x38 0x2D          DC8 38H, 2DH, 53H, 4BH, 5CH, 4CH, 50H, 43H
+   \              0x53 0x4B    
+   \              0x5C 0x4C    
+   \              0x50 0x43    
+   \   00000070   0x31 0x37          DC8 31H, 37H, 58H, 58H, 43H, 4DH, 53H, 49H
+   \              0x58 0x58    
+   \              0x43 0x4D    
+   \              0x53 0x49    
+   \   00000078   0x53 0x5C          DC8 53H, 5CH, 44H, 72H, 69H, 76H, 65H, 72H
+   \              0x44 0x72    
+   \              0x69 0x76    
+   \              0x65 0x72    
+   \   00000080   0x73 0x5C          DC8 73H, 5CH, 73H, 6FH, 75H, 72H, 63H, 65H
+   \              0x73 0x6F    
+   \              0x75 0x72    
+   \              0x63 0x65    
+   \   00000088   0x5C 0x6C          DC8 5CH, 6CH, 70H, 63H, 31H, 37H, 78H, 78H
+   \              0x70 0x63    
+   \              0x31 0x37    
+   \              0x78 0x78    
+   \   00000090   0x5F 0x72          DC8 5FH, 72H, 69H, 74H, 2EH, 63H, 0
+   \              0x69 0x74    
+   \              0x2E 0x63    
+   \              0x00         
+   \   00000097   0x00               DC8 0
+    184          
+    185          /**
+    186           * @}
+    187           */
+    188          
+    189          #endif /* _RIT */
+    190          
+    191          /**
+    192           * @}
+    193           */
+    194          
+    195          /* --------------------------------- End Of File ------------------------------ */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   RIT_Cmd
+        16   -> check_failed
+       8   RIT_DeInit
+         8   -> CLKPWR_ConfigPPWR
+         8   -> check_failed
+      16   RIT_GetIntStatus
+        16   -> check_failed
+       8   RIT_Init
+         8   -> CLKPWR_ConfigPPWR
+         8   -> check_failed
+      16   RIT_TimerClearCmd
+        16   -> check_failed
+      16   RIT_TimerConfig
+        16   -> check_failed
+      16   RIT_TimerEnableOnBreakCmd
+        16   -> check_failed
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable6
+       4  ??DataTable6_1
+     152  ?_0
+      66  RIT_Cmd
+      48  RIT_DeInit
+      46  RIT_GetIntStatus
+      48  RIT_Init
+      66  RIT_TimerClearCmd
+      34  RIT_TimerConfig
+      66  RIT_TimerEnableOnBreakCmd
+
+ 
+ 152 bytes in section .rodata
+ 382 bytes in section .text
+ 
+ 382 bytes of CODE  memory
+ 152 bytes of CONST memory
+
+Errors: none
+Warnings: 1

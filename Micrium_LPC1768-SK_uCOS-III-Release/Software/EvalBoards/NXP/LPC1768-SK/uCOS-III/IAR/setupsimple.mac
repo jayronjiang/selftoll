@@ -1,0 +1,16 @@
+execUserSetup()
+{
+	__message "execUserSetup() called\n";
+	
+	_fileHandle=__openFile("$PROJ_DIR$\\InputData.txt","r");
+}
+
+Access()
+{
+  __message "Access() called\n";
+  __var _fibValue;
+  if(0==__readFile(_fileHandle,&_fibValue))
+  {
+  	UDR0=_fibValue;
+  }
+}
