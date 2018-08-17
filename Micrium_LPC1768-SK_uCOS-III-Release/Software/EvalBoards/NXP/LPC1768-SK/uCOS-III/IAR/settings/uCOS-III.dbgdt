@@ -55,7 +55,7 @@
           
           
           
-        <item>g_usrDMoto</item><item>g_usrGetKey</item><item>m_ucKeyBit</item><item>m_ucDMotoBit</item><item>m_usrBoxInfo</item><item>m_ucSMotoBit</item><item>m_ucUartBit</item><item>g_usrSMoto</item><item>m_ucSMotoFreq</item><item>g_usrGetKey1.ulKeyOutput</item><item>ulKeyOutput1</item><item>ulTmp</item><item>g_usrGetKey.ulKeyOutput</item><item>ucTimes</item><item>ucMaxTimes</item><item>g_ucLedMode</item><item>clk_freq</item><item>ucRx</item><item>ucTimes</item><item>ucNoTimes</item><item>ucCounts</item><item>g_usrScan</item><item>g_ucScanOpenTime</item><item>m_ucDMotoBit</item><item></item></expressions>
+        <item>g_usrDMoto</item><item>g_usrGetKey</item><item>m_ucKeyBit</item><item>m_ucDMotoBit</item><item>m_usrBoxInfo</item><item>m_ucSMotoBit</item><item>m_ucUartBit</item><item>g_usrSMoto</item><item>m_ucSMotoFreq</item><item>g_usrGetKey1.ulKeyOutput</item><item>ulKeyOutput1</item><item>ulTmp</item><item>g_usrGetKey.ulKeyOutput</item><item>ucTimes</item><item>ucMaxTimes</item><item>g_ucLedMode</item><item>clk_freq</item><item>ucRx</item><item>ucTimes</item><item>ucNoTimes</item><item>ucCounts</item><item>g_usrScan</item><item>g_ucScanOpenTime</item><item>m_ucDMotoBit</item><item/></expressions>
         <col-names>
           
           
