@@ -137,10 +137,14 @@
 #define  BSP_GPIO_LED1_PORT                     CSP_GPIO_PORT_NBR_01    
 #define  BSP_GPIO_LED2_PORT                     CSP_GPIO_PORT_NBR_01
 #define  BSP_GPIO_LEDOUT_PORT                   CSP_GPIO_PORT_NBR_01
+#define  BSP_GPIO_LED4_PORT                     CSP_GPIO_PORT_NBR_00
+#define  BSP_GPIO_LEDRF_PORT                    CSP_GPIO_PORT_NBR_04
 
 #define  BSP_GPIO_LED1                          DEF_BIT_30    /* P1.30 LED1                                          */
 #define  BSP_GPIO_LED2                          DEF_BIT_00    /* P1.0 LED2                                          */
-#define  BSP_GPIO_LEDOUT                        DEF_BIT_31    /* P1.31 LED2                                          */
+#define  BSP_GPIO_LEDOUT                        DEF_BIT_31    /* P1.31 LED3 /JLED                                          */
+#define  BSP_GPIO_LED4                          DEF_BIT_30    /* P1.0 LED4 /JLED1                                          */
+#define  BSP_GPIO_LEDRF                         DEF_BIT_28    /* P4.28 JLED2                                          */
 
 
 //Switch
@@ -391,6 +395,22 @@ void  BSP_Init (void)
 
     
     //Led
+    CSP_GPIO_Cfg(BSP_GPIO_LEDRF_PORT,
+                 BSP_GPIO_LEDRF,
+                 CSP_GPIO_DIR_OUT,
+                 CSP_GPIO_FLAG_MODE_NONE,
+                 DEF_NO,
+                 0u,
+                 CSP_GPIO_FNCT_00);
+
+    CSP_GPIO_Cfg(BSP_GPIO_LED4_PORT,
+                 BSP_GPIO_LED4,
+                 CSP_GPIO_DIR_OUT,
+                 CSP_GPIO_FLAG_MODE_NONE,
+                 DEF_NO,
+                 0u,
+                 CSP_GPIO_FNCT_00);
+
     CSP_GPIO_Cfg(BSP_GPIO_LEDOUT_PORT,
                  BSP_GPIO_LEDOUT,
                  CSP_GPIO_DIR_OUT,
@@ -434,6 +454,8 @@ void  BSP_Init (void)
     CSP_GPIO_BitSet(BSP_GPIO_SWITCH_PORT,
                     BSP_GPIO_SWITCH_OUT);
   
+    CSP_GPIO_BitSet(BSP_GPIO_SWITCH_PORT,
+                    BSP_GPIO_SWITCH1_OUT);
     
     BSP_LED_Off(0);
     
@@ -613,6 +635,11 @@ void  BSP_LED_Off (CPU_INT08U  led)
         case 4u:
              CSP_GPIO_BitClr(BSP_GPIO_SWITCH_PORT, BSP_GPIO_SWITCH_OUT);
              break;
+
+        case 5u:
+             CSP_GPIO_BitClr(BSP_GPIO_LEDRF_PORT, BSP_GPIO_LEDRF);
+             break;
+
     default:
             break;
     }
@@ -662,7 +689,12 @@ void  BSP_LED_On (CPU_INT08U  led)
         case 4u:
            CSP_GPIO_BitSet(BSP_GPIO_SWITCH_PORT, BSP_GPIO_SWITCH_OUT);
            break;
-        default:
+
+        case 5u:
+           CSP_GPIO_BitSet(BSP_GPIO_LEDRF_PORT, BSP_GPIO_LEDRF);
+           break;
+
+    default:
             break;
     }
 }
@@ -710,6 +742,10 @@ void  BSP_LED_Toggle (CPU_INT08U  led)
              
         case 4u:
              CSP_GPIO_BitToggle(BSP_GPIO_SWITCH_PORT, BSP_GPIO_SWITCH_OUT);
+             break;
+
+        case 5u:
+             CSP_GPIO_BitToggle(BSP_GPIO_LEDRF_PORT, BSP_GPIO_LEDRF);
              break;
              
         default:

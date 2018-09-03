@@ -170,6 +170,7 @@ D????¡À??x:17.895-17.9mm,?¨¹3¡èy:56.2367-56.2345mm
 #define DMOTO_TIME_SK_DEFAULT			80
 #define DMOTO_TIME_GK_DEFAULT			70
 
+#define SMOTO_FREQ_MIN                  	10
 #define SMOTO_FREQ_500US                  	50
 #define SMOTO_FREQ_600US                  	60
 #define SMOTO_FREQ_700US                  	70
@@ -177,7 +178,7 @@ D????¡À??x:17.895-17.9mm,?¨¹3¡èy:56.2367-56.2345mm
 #define SMOTO_FREQ_1500US                  	150
 #define SMOTO_FREQ_2500US                  	250
 
-#define SMOTO_FREQ_DEFAULT                 	SMOTO_FREQ_700US
+#define SMOTO_FREQ_DEFAULT                 	SMOTO_FREQ_600US
 #define SMOTO_COUNT_DEFAULT			1200
 
 #define SMOTO_COUNT_GK_CLEAR_DEFAULT		1800
@@ -185,7 +186,7 @@ D????¡À??x:17.895-17.9mm,?¨¹3¡èy:56.2367-56.2345mm
 #define SMOTO_COUNT_GK_ANTTOBOX_DEFAULT		600
 #define SMOTO_COUNT_GK_ANTTOOUT_DEFAULT		800
 #define SMOTO_COUNT_ZIN_ANTTOOUT_DEFAULT        800
-#define SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT   800
+#define SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT   10000          //800   É¨Ö½ÐÐ³Ì
 
 #define SMOTO_COUNT_ANTTOBOX_DEFAULT		400
 

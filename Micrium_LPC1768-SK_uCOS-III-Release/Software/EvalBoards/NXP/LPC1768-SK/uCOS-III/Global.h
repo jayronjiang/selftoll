@@ -689,6 +689,10 @@ GLOBAL_EXT SCAN g_usrScan;
 GLOBAL_EXT INT8U g_ucLedMode;
 GLOBAL_EXT INT8U g_ucLedErrMode;
 
+GLOBAL_EXT INT8U g_ucJLed1Mode;
+GLOBAL_EXT INT8U g_ucJLed2Mode;
+
+
 #if BUZZ_EN>0
 GLOBAL_EXT SOUNDBUZZ g_usrBuzz;
 #endif

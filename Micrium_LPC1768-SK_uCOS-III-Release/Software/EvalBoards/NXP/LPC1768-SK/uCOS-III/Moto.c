@@ -980,8 +980,8 @@ void SMotoStart(INT8U ucFreq,INT16U uiCounts,INT8U ucDirection,INT8U ucSelected)
     return;
   }
   
-  if(ucFreq<SMOTO_FREQ_600US){
-    ucFreq=SMOTO_FREQ_600US;
+  if(ucFreq<SMOTO_FREQ_MIN){
+    ucFreq=SMOTO_FREQ_MIN;
   }
 
   MOTO_STEP_DISABLED(ucSelected,NORMAL_MODE);  
@@ -1237,7 +1237,8 @@ void Action_Process(void)
             
           case MOTO_DOOR_OPEN_MSG:
             if(ucType==SMALL_THICK_ZIN_TYPE){
-              ZDoorOpenProcess(pcommData,DOOR_CLOSE_MODE);
+              //ZDoorOpenProcess(pcommData,DOOR_CLOSE_MODE);            //MOTO_DOOR_OPEN_MSG
+              ZPrintOpenProcess(pcommData,DOOR_CLOSE_MODE);   //0x39 MOTO_PRINT_OPEN_MSG
             }
             break;
             
@@ -3222,7 +3223,7 @@ INT8U ZInToAnt(void)
     while(!ucRet){
       ulTmp=GetKeyOutput();    
       if(!CheckBit(ulTmp,ucCardPosCBit)){
-        //离开
+        //卡离开入口
         OSTimeDly(20,OS_OPT_TIME_DLY, &os_err) ;         
         MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
         ucLeaveC=1;
@@ -3258,8 +3259,8 @@ INT8U ZInToAnt(void)
     ulTmp=GetKeyOutput();    
     //if(CheckBit(ulTmp,ucCardPosCBit)){
     if(!CheckBit(ulTmp,ucCardPosABit)){
-      //
-      //OSTimeDly(10,OS_OPT_TIME_DLY, &os_err) ;         
+      //卡离开C位进入AB位
+      OSTimeDly(18,OS_OPT_TIME_DLY, &os_err) ;      //延时微调位置   
       MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
       ucEnterC=1;
     }
@@ -3277,8 +3278,9 @@ INT8U ZInToAnt(void)
     }else{
       ucRet=4;
     }
-    OSTimeDly(5,OS_OPT_TIME_DLY, &os_err) ;         
+    OSTimeDly(5,OS_OPT_TIME_DLY, &os_err) ;         //原值5
   }
+  OSTimeDly(500,OS_OPT_TIME_DLY, &os_err) ;
   MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
   	
   if(ucRet>=2){
@@ -3958,7 +3960,9 @@ INT8U ZPrintOpen(INT8U ucState)
     OSTimeDly(5,OS_OPT_TIME_DLY, &os_err) ;         
   }
   MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
-  	
+
+  
+  
   if(ucRet>=2){
     return FALSE;
   }
@@ -3973,6 +3977,141 @@ INT8U ZPrintOpen(INT8U ucState)
   return TRUE;
 #endif  
 }
+
+/*******************************************************************************************************/
+INT8U ZPrintClose(INT8U ucState)
+{
+#if PAPER_RECYCLE_EN==0    
+  OS_ERR os_err;
+  
+  INT8U ucRet;
+  INT32U ulTmp;
+  INT8U ucTmp;
+  INT8U ucDSelected=m_ucDMotoBit[DMOTO_FIRST];
+  INT16U uiDMotoPwm=m_uiDMotoPwm[ucDSelected];	                                                        
+  INT16U uiDMotoTime=((INT32U)DMOTO_FREQ_DEFAULT)*DMOTO_TIME_SK_DEFAULT/uiDMotoPwm;
+      
+  INT8U ucDMoto2PosABit=m_ucKeyBit[DMOTO2_POSA_BIT];
+  
+  
+  INT8U ucDelays;
+  INT8U ucTimes;
+  
+  INT8U ucFDir=MOTO_FORWARD_MODE;
+  INT8U ucBDir=MOTO_BACKWARD_MODE;
+  
+  CPU_SR_ALLOC();
+  
+  
+  ulTmp=GetKeyOutput();    
+       
+  ucDelays=MOTO_INTERFER_TIME_DEFAULT*2/5;
+  ucTimes=uiDMotoTime;
+  DMotoStart(DMOTO_FREQ_DEFAULT,uiDMotoPwm,MOTO_BACKWARD_MODE,uiDMotoTime,ucDSelected);
+  /*if(!CheckBit(ulTmp,ucDMoto2PosABit)){
+    OSTimeDly(200,OS_OPT_TIME_DLY, &os_err) ;  
+  }*/
+  ucRet=0;
+  while(!ucRet){
+    if(ucDelays>0){
+      ucDelays--;
+    }else{
+      ulTmp=GetKeyOutput();    
+      if(CheckBit(ulTmp,ucDMoto2PosABit)){
+        //OSTimeDly(20,OS_OPT_TIME_DLY, &os_err) ;         
+        MOTO_DC_DISABLED(ucDSelected,NORMAL_MODE);
+        ucRet=1;
+      }
+
+      if(ucTimes>0){
+        ucTimes--;
+      }else{
+        ucRet=2;
+      }
+    }
+    OSTimeDly(5,OS_OPT_TIME_DLY, &os_err) ;         
+  }
+  MOTO_DC_DISABLED(ucDSelected,NORMAL_MODE);
+  OSTimeDly(MOTO_INTERFER_TIME_DEFAULT/10,OS_OPT_TIME_DLY, &os_err) ;         
+	    
+  if(ucRet>=2){
+    return FALSE;
+  }
+  return TRUE;
+#else  
+  OS_ERR os_err;
+  
+  INT8U ucRet;
+  INT32U ulTmp;
+  
+  INT8U ucSSelected=m_ucSMotoBit[SMOTO_SECOND];
+  INT8U ucSMotoFreq=m_ucSMotoFreq[ucSSelected];
+          
+  INT8U ucDMoto1PosABit=m_ucKeyBit[DMOTO1_POSA_BIT];
+  INT8U ucDMoto1PosBBit=m_ucKeyBit[DMOTO1_POSB_BIT];
+ 
+  INT8U ucEnterB=0;
+  
+  INT8U ucTimes;
+  
+  CPU_SR_ALLOC();
+    
+  ulTmp=GetKeyOutput();    
+  if(!CheckBit(ulTmp,ucDMoto1PosBBit) && !CheckBit(ulTmp,ucDMoto1PosABit)){
+    //中间位置
+    SMotoStart(ucSMotoFreq,SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT,MOTO_BACKWARD_MODE,ucSSelected);    
+    ucRet=DMotoPosAWaitEnter(SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT-10,0);//ucSSelected);
+    MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
+    //
+    SMotoReset(WAIT_MODE,SMOTO_SECOND);
+  }
+       
+  ucTimes=(((INT32U)SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT)*ucSMotoFreq)/(100*ACTION_DELAY_TIME_DEFAULT)+10/ACTION_DELAY_TIME_DEFAULT;
+  SMotoStart(ucSMotoFreq,SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT,MOTO_BACKWARD_MODE,ucSSelected);
+  ucRet=0;
+  while(!ucRet){
+    ulTmp=GetKeyOutput();    
+    if(CheckBit(ulTmp,ucDMoto1PosABit)){
+//      OSTimeDly(2,OS_OPT_TIME_DLY, &os_err) ;  
+      MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
+      ucEnterB=1;
+    }
+    
+    OS_ENTER_CRITICAL();
+    if(ucEnterB){
+      ucRet=1;
+    }else if(!g_usrSMoto[ucSSelected].uiCounts){
+      ucRet=2;
+    }
+    OS_EXIT_CRITICAL();
+    
+    if(ucTimes>0){
+      ucTimes--;
+    }else{
+      ucRet=4;
+    }
+    OSTimeDly(5,OS_OPT_TIME_DLY, &os_err) ;         
+  }
+  MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
+
+  
+  
+  if(ucRet>=2){
+    return FALSE;
+  }
+  
+  if(ucState==DOOR_CLOSE_MODE){
+    if(SMotoReset(WAIT_MODE,SMOTO_SECOND)){
+      return TRUE;
+    }else{
+      return FALSE;
+    }
+  }
+  return TRUE;
+#endif  
+}
+
+
 
 /*******************************************************************************************************
 ** oˉêy??3?: ZPrintOpenProcess
@@ -3993,9 +4132,10 @@ INT8U ZPrintOpen(INT8U ucState)
 *******************************************************************************************************/
 INT8U ZPrintOpenProcess(CardMachineRxData *pcommRx1Data,INT8U ucState)
 {
-  INT8U ucRetrys=0;
+  INT8U ucRetrys=0,ucRetrys1=0;
   INT8U ucData[16];
   INT8U ucMode;
+  OS_ERR os_err;
     
   ucMode=0;
   if(!pcommRx1Data){
@@ -4008,6 +4148,29 @@ INT8U ZPrintOpenProcess(CardMachineRxData *pcommRx1Data,INT8U ucState)
     }
   }
   
+/*  if(ucRetrys<=MOTO_RETRYS){
+    //???ˉ?¨ê±?′°?3?±¨?ˉ  
+    //TakeoutOvertimeRead();    
+    Uart0Pack(INFTYPE_CMD_FINISHED,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,0,0,ucMode);
+    return TRUE;
+  }else{
+    ucData[0]=SUBTYPE_ERR_PRINTOPEN_FAIL;
+    Uart0Pack(INFTYPE_DEVICE_ERR,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,ucData,1,ucMode);
+    BuzzSet(4,50,25,BUZZ_SFK_ERROR_PRIOR);
+    return FALSE;
+  }  
+*/
+
+  OSTimeDly(50,OS_OPT_TIME_DLY, &os_err) ;  
+  
+  while(++ucRetrys1<=MOTO_RETRYS){
+    if(ZPrintClose(ucState)){
+      break;
+    }
+  }
+  //OSTimeDly(20,OS_OPT_TIME_DLY, &os_err) ;  
+
+
   if(ucRetrys<=MOTO_RETRYS){
     //???ˉ?¨ê±?′°?3?±¨?ˉ  
     //TakeoutOvertimeRead();    
@@ -4019,6 +4182,7 @@ INT8U ZPrintOpenProcess(CardMachineRxData *pcommRx1Data,INT8U ucState)
     BuzzSet(4,50,25,BUZZ_SFK_ERROR_PRIOR);
     return FALSE;
   }  
+
 }
 
 

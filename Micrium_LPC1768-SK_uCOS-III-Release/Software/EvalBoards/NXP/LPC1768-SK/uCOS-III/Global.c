@@ -1162,7 +1162,7 @@ void KeySelectGet(INT8U ucMode)
     m_ucKeyBit[26]=25;
     m_ucKeyBit[27]=1;
     m_ucKeyBit[28]=28;
-    m_ucKeyBit[28]=29;
+    m_ucKeyBit[29]=29;
     m_ucKeyBit[30]=30;
     m_ucKeyBit[31]=31;
   }
@@ -1476,7 +1476,7 @@ void SMotoFreqGet(void)
       ucTmp=SMOTO_FREQ_DEFAULT;
       EepromWriteVerifyBytes(SMOTO_FREQ_ADDR+i*4,(INT8U *)&ucTmp,1);
     }
-    if(ucTmp<SMOTO_FREQ_500US || ucTmp>SMOTO_FREQ_2500US){
+    if(ucTmp<SMOTO_FREQ_MIN || ucTmp>SMOTO_FREQ_2500US){
       ucTmp=SMOTO_FREQ_DEFAULT;
       EepromWriteVerifyBytes(SMOTO_FREQ_ADDR+i*4,&ucTmp,1);
     }	

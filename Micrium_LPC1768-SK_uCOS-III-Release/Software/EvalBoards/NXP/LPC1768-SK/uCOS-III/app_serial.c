@@ -110,6 +110,8 @@ static INT8U m_ucUartToBox[3]={1,0,2};
 
 CPU_BOOLEAN  App_SerialInit (void)
 {
+    INT8U                 ucType;
+  
     SERIAL_ERR     err;
 #if (APP_SERIAL_CFG_TRACE_EN == DEF_ENABLED)  
     SERIAL_IF_CFG  uart_cfg;
@@ -118,7 +120,7 @@ CPU_BOOLEAN  App_SerialInit (void)
     CPU_SIZE_T      octets_reqd;
     LIB_ERR         lib_err;
     
-    INT8U ucType=DEV_TYPE();
+    ucType=DEV_TYPE();
     
     CPU_SR_ALLOC();
     
@@ -172,14 +174,17 @@ CPU_BOOLEAN  App_SerialInit (void)
         return (DEF_FAIL);    
     }
 
-    Serial_DevDrvAdd(                  "UART3",                 /* Add serial interface/device.                         */
-                     (SERIAL_DEV_CFG *)&SerialDev_LPCxxxx_UART3_Alt1,
-                                        128u,
-                                        128u,
-                                       &err);
-    
-    if (err != SERIAL_ERR_NONE) {
-        return (DEF_FAIL);    
+    ucType=DEV_TYPE();
+    if(ucType!=SMALL_THICK_ZIN_TYPE && ucType!=SMALL_THIN_ZIN_TYPE){
+      Serial_DevDrvAdd(                  "UART3",                 /* Add serial interface/device.                         */
+                       (SERIAL_DEV_CFG *)&SerialDev_LPCxxxx_UART3_Alt1,
+                                          128u,
+                                          128u,
+                                         &err);
+      
+      if (err != SERIAL_ERR_NONE) {
+          return (DEF_FAIL);    
+      }
     }
     
 #if (APP_SERIAL_CFG_TRACE_EN == DEF_ENABLED)    
@@ -1363,11 +1368,12 @@ void Uart0Process(CPU_CHAR *pMsg,OS_MSG_SIZE msgSize)
     case 0x38:                                  //掉卡开门3
     case 0x39:                                  //打印机门
       if(BSP_OS_SemWait(g_pActionSem,20)==DEF_FAIL){
-        ucBuf[0]=SUBTYPE_ERR_DEVICE_BUSY;
-        Uart0Pack(INFTYPE_DEVICE_ERR,pcommData->ucAddr,pcommData->ucSeq,ucBuf,1,0);
+//        ucBuf[0]=SUBTYPE_ERR_DEVICE_BUSY;
+//        Uart0Pack(INFTYPE_DEVICE_ERR,pcommData->ucAddr,pcommData->ucSeq,ucBuf,1,0);
       }else{
         Box_TaskQPost(&App_TaskActionTCB,&pcommData->ucHead,sizeof(CardMachineRxData));  
       }
+        Uart0Pack(INFTYPE_CMD_FINISHED,pcommData->ucAddr,pcommData->ucSeq,NULL,0,0);    //Peng,20180124
       break;
       
     case 0x15:					//?D??1¤??

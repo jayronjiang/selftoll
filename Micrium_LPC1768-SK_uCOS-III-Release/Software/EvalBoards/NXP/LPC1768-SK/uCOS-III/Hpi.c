@@ -96,7 +96,7 @@ void SMotoWriteParams(CardMachineRxData *pcommData)
     if(ucSelected<CARDMACHINE_SMOTO_NUMS){
       pcommData->ucData[4]=0x00;
       ucTmp=(INT8U)(atoi((const char *)&pcommData->ucData[1]));
-      if(ucTmp<SMOTO_FREQ_600US || ucTmp>SMOTO_FREQ_2500US){
+      if(ucTmp<SMOTO_FREQ_MIN || ucTmp>SMOTO_FREQ_2500US){
         Uart0Pack(INFTYPE_FORMAT_ERR,pcommData->ucAddr,pcommData->ucSeq,0,0,0);
         return;
       }
@@ -146,7 +146,7 @@ void SMotoReadParams(CardMachineRxData *pcommData)
         ucTmp=SMOTO_FREQ_DEFAULT;
         EepromWriteVerifyBytes(SMOTO_FREQ_ADDR+ucSelected*4,&ucTmp,1);
       }
-      if(ucTmp<SMOTO_FREQ_600US || ucTmp>SMOTO_FREQ_2500US){
+      if(ucTmp<SMOTO_FREQ_MIN || ucTmp>SMOTO_FREQ_2500US){
         ucTmp=SMOTO_FREQ_DEFAULT;
         EepromWriteVerifyBytes(SMOTO_FREQ_ADDR+ucSelected*4,&ucTmp,1);
       }

@@ -170,7 +170,18 @@ static  void  App_TaskStart (void *p_arg)
     App_TaskCreate();                                           /* Create Application tasks                             */
 
     BSP_LED_Off(1);
+    BSP_LED_On(2);                      //PCB--LED31
     BSP_LED_On(2);
+//    BSP_LED_On(3);
+    
+    BSP_LED_Off(4);
+    BSP_LED_On(4);
+    BSP_LED_Off(4);
+
+    BSP_LED_Off(5);
+    BSP_LED_On(5);
+    BSP_LED_Off(5);
+    
     
     Key_Process();
 }
@@ -490,6 +501,20 @@ static  void  App_TaskBuzz (void *p_arg)
         BSP_LED_Toggle(3);
       }else{
         BSP_LED_Off(3);
+      }
+      if(g_ucJLed2Mode==LEDOUT_ON_MODE){
+        BSP_LED_On(5);
+      }else if(g_ucJLed2Mode==LEDOUT_TOGGLE_MODE){
+        BSP_LED_Toggle(5);
+      }else{
+        BSP_LED_Off(5);
+      }
+      if(g_ucJLed1Mode==LEDOUT_ON_MODE){
+        BSP_LED_On(4);
+      }else if(g_ucJLed1Mode==LEDOUT_TOGGLE_MODE){
+        BSP_LED_Toggle(4);
+      }else{
+        BSP_LED_Off(4);
       }
     }
     
