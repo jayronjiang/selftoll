@@ -83,10 +83,13 @@ void KeyDeBounce1(void)
 *******************************************************************************************************/
 void KeyDeBounce(void)
 {
+  // The & is priorer to the |, so when the bit 0->1, the 'ready' keeps the 0, next time the bit holds 1, the 'ready' becomes 1.
+  // When the bit 1->0, the 'ready' keeps the 1, next time the bit holds 0, the 'ready' becomes 0.
   g_usrGetKey.ulKeyReady=g_usrGetKey.ulKeyTemp & g_usrGetKey.ulKeyInput | g_usrGetKey.ulKeyReady & (g_usrGetKey.ulKeyTemp^g_usrGetKey.ulKeyInput);
   
   g_usrGetKey.ulKeyTemp=g_usrGetKey.ulKeyInput;
-  
+
+  // 'output' is exactly the 'ready'
   g_usrGetKey.ulKeyOutput=g_usrGetKey.ulKeyReady &(~g_usrGetKey.ulKeyStore | KEY_REPEAT_INST);   		//?????????????????
   
   g_usrGetKey.ulKeyStore=g_usrGetKey.ulKeyReady;
@@ -113,27 +116,33 @@ INT32U GetKey(void)
 {  
   INT8U ucType=DEV_TYPE();
 
+// Default is 0x3f173778, the concerning bits are:
+// bit0: (CARD_POSA_BIT) =0, means there is no card at the entry.
+// bit1: (CARD_POSB_BIT) =0, means there is no card getting in.
+// bit2: (CARD_POSC_BIT) =0, means there is no card at the anterna position.
+// bit3: (BOXLOAD1_BIT) =1,must be 1, means there is a box loader at position1.
 #if BOARD_OLD_EN==0  
   INT32U ulTmp=0;
   INT32U ulMaskBit=0x7F7F7F7F;
   INT32U ulXorBit=0xFFFFFFFF;
           
-  ulTmp=(FIO0PIN>>4)&0x3F;
-  ulTmp|=(FIO1PIN<<5)&0x40;
+  ulTmp=(FIO0PIN>>4)&0x3F;		// I1A-I1F, P0.4-P0.9, ulTmp bit0~bit5
+  ulTmp|=(FIO1PIN<<5)&0x40;	// BSP_GPIO_BOX1_POS, P1.1, ulTmp bit6
   
-  ulTmp|=(FIO2PIN<<6)&0x3F00;
-  ulTmp|=(FIO1PIN<<10)&0x4000;
+  ulTmp|=(FIO2PIN<<6)&0x3F00;	//I2A-I2F, P2.2-P2.7,ulTmp bit8~bit13
+  ulTmp|=(FIO1PIN<<10)&0x4000;	//BSP_GPIO_BOX2_POS,P1.4,ulTmp bit8~bit14
   
-  ulTmp|=(FIO2PIN<<8)&0x30000;
-  ulTmp|=(FIO0PIN<<2)&0x40000;
-  ulTmp|=(FIO0PIN<<4)&0x80000;
-  ulTmp|=(FIO0PIN<<3)&0x300000;
-  ulTmp|=(FIO1PIN<<14)&0x400000;
+  ulTmp|=(FIO2PIN<<8)&0x30000; //I3A-I3B, P2.8-P2.9,ulTmp bit16~bit17
+  ulTmp|=(FIO0PIN<<2)&0x40000; //I3C, P0.16,ulTmp bit18
+  ulTmp|=(FIO0PIN<<4)&0x80000; //I3D, P0.15,ulTmp bit19
+  ulTmp|=(FIO0PIN<<3)&0x300000; //I3E,I3F, P0.17,P0.18,ulTmp bit20~bit21
+  ulTmp|=(FIO1PIN<<14)&0x400000; //BSP_GPIO_BOX3_POS, P1.8,,ulTmp bit22
   
-  ulTmp|=(FIO0PIN<<5)&0x0F000000;
-  ulTmp|=(FIO2PIN<<17)&0x30000000;
-  ulTmp|=(FIO2PIN<<20)&0x40000000;
-  
+  ulTmp|=(FIO0PIN<<5)&0x0F000000; //I4A-I4D, P0.19-P0.22,ulTmp bit24~bit27
+  ulTmp|=(FIO2PIN<<17)&0x30000000; //I4E-I4F, P2.11-P0.12,ulTmp bit28~bit29
+  ulTmp|=(FIO2PIN<<20)&0x40000000;  //BSP_GPIO_SELFTEST_KEY, P2.10,ulTmp bit30
+
+  // Some bits get the same value.
   ulXorBit&=~(1<<m_ucKeyBit[BOXLOAD1_BIT]);
   ulXorBit&=~(1<<m_ucKeyBit[BOXLOAD2_BIT]);
   ulXorBit&=~(1<<m_ucKeyBit[BOXLOAD3_BIT]);
@@ -142,8 +151,9 @@ INT32U GetKey(void)
   if(ucType==SMALL_THICK_ZIN_TYPE || ucType==SMALL_THIN_ZIN_TYPE){
     ulXorBit&=~(1<<m_ucKeyBit[DMOTO2_POSA_BIT]);
   }
-  
-  ulTmp^=ulXorBit;
+
+  // Others will get reverse.
+  ulTmp^=ulXorBit;		 
   ulTmp&=ulMaskBit;
   
 #else
@@ -217,8 +227,8 @@ INT32U GetKeyOutput(void)
 ** 作　  者: John Tonny
 ** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** 修 改 人:
-** 日　  期:
+** 修 改 人: Jerry
+** 日　  期: 20180916
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
 INT32U KeyConvert(INT32U ulData)
@@ -282,21 +292,32 @@ INT32U KeyConvert(INT32U ulData)
     ulTmp|= ((ulData>>m_ucKeyBit[CARD_POSD_BIT]) & 0x01)<<26;
     ulTmp|= ((ulData>>m_ucKeyBit[CARDBOX1_POS_BIT]) & 0x01)<<27;
   }else if(ucType==SMALL_THICK_ZIN_TYPE || ucType==SMALL_THIN_ZIN_TYPE){
-    ulTmp|= ((ulData>>m_ucKeyBit[CARD_POSE_BIT]) & 0x01);					//?¨?D???¨?ú?a1?,0:óD?¨
-    ulTmp|= 1<<1;				                                                //?±á÷μ??ú1μ????a1?,0:μ???
-    ulTmp|= 0<<2;				                                                //?±á÷μ??ú2μ????a1?,0:μ???
-    ulTmp|= ((ulData>>m_ucKeyBit[BOXLOAD1_BIT]) & 0x01)<<3;					//?¨?D1×°???a1?,0:×°??
-    ulTmp|=  (m_usrBoxInfo[BOX_FIRST].ucCounts?1:0)<<4;						//?¨?D1?DóD?T?¨,0:óD?¨
-    ulTmp|= 1<<5;					                                        //?¨?D1?¨??óD?Tμ???,0:μ???
-    ulTmp|= 0<<6;																											//ìì??￡?0￡o?μ??ìì??￡?1￡o?úìì??	′ó?¨?ú￡?2?ê1ó??μ??ìì??
+    // bit0: if there is a card at the entry of the box? 0:yes, 1:no. 
+    ulTmp|= ((ulData>>m_ucKeyBit[CARD_POSE_BIT]) & 0x01);
+    // bit1: D motor1 stop 1, 0:get the stop position, 1: not yet.
+    ulTmp|= 1<<1;
+    // bit2: D motor1 stop 2, 0:get the stop position, 1: not yet.
+    ulTmp|= 0<<2;
+    // bit3: if the box1 is loaded?  0:yes, 1:no.
+    ulTmp|= ((ulData>>m_ucKeyBit[BOXLOAD1_BIT]) & 0x01)<<3;
+    // bit4: if the ard cards in the box?  0:yes, 1:no.
+    ulTmp|=  (m_usrBoxInfo[BOX_FIRST].ucCounts?1:0)<<4;
+    // bit5: if the card in the box gets ready?  0:yes, 1:no.
+    ulTmp|= 1<<5;
+    // bit6: 1 forever???
+    ulTmp|= 0<<6;
+    // bit7: 1 forever???
     ulTmp|= 0<<7;
     ulTmp|= 0<<15;
     ulTmp|= 0<<23;
+    // bit31: 1 forever???
     ulTmp|= 0<<31;
-    
+
+    // bit24~26: the position1~3 of the entry card, 0:get it, 1:not yet.
     ulTmp|= ((ulData>>m_ucKeyBit[CARD_POSA_BIT]) & 0x01)<<24;
     ulTmp|= ((ulData>>m_ucKeyBit[CARD_POSB_BIT]) & 0x01)<<25;
     ulTmp|= ((ulData>>m_ucKeyBit[CARD_POSC_BIT]) & 0x01)<<26;
+    // bit27: the position4 of the entry card, 0:get it, 1:not yet, only for the small card machine.
     ulTmp|= ((ulData>>m_ucKeyBit[CARD_POSD_BIT]) & 0x01)<<27;
   }
   //ulTmp1=((ulTmp>>24) & 0xFF) | ((ulTmp>>8) & 0xFF00) | ((ulTmp<<8) & 0xFF0000) | ((ulTmp<<24) & 0xFF000000);
@@ -343,6 +364,7 @@ void Key_Process(void)
   ulKeyOutputOld=g_usrGetKey.ulKeyOutput;
 
   while (DEF_TRUE) {                                          /* Task body, always written as an infinite loop.       */
+    // 5ms a loop, so the debounce is only 5ms.
     OSTimeDly(5,OS_OPT_TIME_DLY, &os_err) ;         
     g_usrGetKey.ulKeyInput=GetKey();
     KeyDeBounce();	

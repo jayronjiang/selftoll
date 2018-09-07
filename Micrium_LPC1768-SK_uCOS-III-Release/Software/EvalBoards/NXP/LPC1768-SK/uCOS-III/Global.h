@@ -194,9 +194,13 @@
 #define  BSP_GPIO_BOX1_REV2_PORT                                        CSP_GPIO_PORT_NBR_00                                                
 #define  BSP_GPIO_BOX1_POS_PORT                                         CSP_GPIO_PORT_NBR_01      
 
-#define  BSP_GPIO_DMOTO1_POSA                                           DEF_BIT_04    // P0.4                                                
-#define  BSP_GPIO_DMOTO1_POSB                                           DEF_BIT_05    // P0.5                                                 
-#define  BSP_GPIO_CARD_POSE1                                            DEF_BIT_06    // P0.6                                                 
+// The positionA switch of DC MOTOR1
+#define  BSP_GPIO_DMOTO1_POSA                                           DEF_BIT_04    // P0.4  
+// The positionB switch of DC MOTOR1
+#define  BSP_GPIO_DMOTO1_POSB                                           DEF_BIT_05    // P0.5    
+// The position switch of INPUT CARD
+#define  BSP_GPIO_CARD_POSE1                                            DEF_BIT_06    // P0.6     
+// The position of the BOX LOADER?
 #define  BSP_GPIO_BOXLOAD1                                              DEF_BIT_07    // P0.7                                                 
 #define  BSP_GPIO_BOX1_REV1                                             DEF_BIT_08    // P0.8                                                 
 #define  BSP_GPIO_BOX1_REV2                                             DEF_BIT_09    // P0.9                                                 
@@ -253,7 +257,8 @@
 #define  BSP_GPIO_AUTOCARD                                              DEF_BIT_23    // P0.23                                                 
 #define  BSP_GPIO_AUTOCARD_BIT                                          23                                                 
 
-#define  BSP_GPIO_DEV_TYPE_PORT                                         CSP_GPIO_PORT_NBR_00                                                 
+#define  BSP_GPIO_DEV_TYPE_PORT                                         CSP_GPIO_PORT_NBR_00
+// There are 3 different device types, big card, small card, and self terminal
 #define  BSP_GPIO_DEV1_TYPE                                             DEF_BIT_24    // P0.24                                                 
 #define  BSP_GPIO_DEV2_TYPE                                             DEF_BIT_25    // P0.25                                                 
 #define  BSP_GPIO_DEV3_TYPE                                             DEF_BIT_26    // P0.26         
