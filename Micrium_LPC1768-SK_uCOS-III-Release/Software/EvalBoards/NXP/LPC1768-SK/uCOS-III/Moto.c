@@ -508,7 +508,8 @@ void MotoInit(void)
 
 /********************************************************************************************************
 ** 函数名称: SMotoHook
-** 功能描述:
+** 功能描述: Generate the CLK pulse, high pulse is 700us, low pulse is 700us
+**				 the whole time is uiCounts*700us.
 ** 输 　 入:
 **
 ** 输　  出:
@@ -519,8 +520,8 @@ void MotoInit(void)
 ** 作　  者: John Tonny
 ** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** 修 改 人:
-** 日　  期:
+** 修 改 人:Jerry
+** 日　  期:20180912
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
 void SMotoHook(void)
@@ -957,7 +958,10 @@ void MOTO_STEP_CLK(INT8U ucSelected)
 
 /********************************************************************************************************
 ** 函数名称: SMotoStart
-** 功能描述:
+** 功能描述: There are 2 time setting for the step motor:
+**				1) uiCounts, the whole time = uiCounts*0.6ms(600ms interrupt):
+**                             SMOTO_SET_TIME(ucFreq); will update the T1MR0.
+**				2) uiTime, the whole time = uiTime*10ms(depend on the OSTimeDly outside this function)
 ** 输 　 入:
 **
 ** 输　  出:
@@ -1072,7 +1076,7 @@ void DMotoStart(INT16U uiFreq,INT16U uiPwm,INT8U ucDirection,INT16U uiMotoTime,I
 
 /********************************************************************************************************
 ** 函数名称: MotoTime
-** 功能描述:
+** 功能描述: it runs every 10ms.
 ** 输 　 入:
 **
 ** 输　  出:
@@ -1083,7 +1087,7 @@ void DMotoStart(INT16U uiFreq,INT16U uiPwm,INT8U ucDirection,INT16U uiMotoTime,I
 ** 作　  者: John Tonny
 ** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** 修 改 人:
+** 修 改 人:Jerry
 ** 日　  期:
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
@@ -1138,130 +1142,124 @@ void Action_Process(void)
   INT8U                 ucType;
   INT8U                 ucCmd;
 
+  // First power up, do initialization, and push out all the cards.
   PowerOnSelftest();
     
   while(DEF_TRUE){
     ucType=DEV_TYPE();
-    if(CARD_AUTO_MODE()){
-      if(!m_usrGlobalFlag.usrBit.bKeyTest){
-        if(ucType==LARGE_THICK_OUT_TYPE){
-          LOutAutoEvent();
-        }else if(ucType==SMALL_THICK_OUT_TYPE){
+    if (CARD_AUTO_MODE()) {
+       if (!m_usrGlobalFlag.usrBit.bKeyTest) {
+          if(ucType==LARGE_THICK_OUT_TYPE) {
+             LOutAutoEvent();
+          } else if (ucType==SMALL_THICK_OUT_TYPE) {
           SOutAutoEvent();
-        }else if(ucType==SMALL_THICK_IN_TYPE){
-          SInAutoEvent();
-        }else if(ucType==SMALL_THICK_ZIN_TYPE){
-          ZInAutoEvent();
-        }else if(ucType==SMALL_THICK_GIN_TYPE){
-          SGInAutoEvent();
-        }
+          } else if (ucType==SMALL_THICK_IN_TYPE) {
+             SInAutoEvent();
+          } else if (ucType==SMALL_THICK_ZIN_TYPE) {
+             ZInAutoEvent();
+          } else if (ucType==SMALL_THICK_GIN_TYPE) {
+             SGInAutoEvent();
+          }
       }
       OSTimeDly(10,OS_OPT_TIME_DLY, &os_err) ;         
-    }else{
-      BSP_OS_SemPost(g_pActionSem);
-      pMsg = (INT8U *)OSTaskQPend(0, OS_OPT_PEND_BLOCKING, &msgSize, &ts, &os_err);
-      if(pMsg){
-        if(msgSize==1){
-          ucCmd=*pMsg;
-          if(ucCmd==POWER_ON_SELFTEST_MSG){
-            ucCmd=DISPLAY_SELFTEST_MSG;
-            Box_TaskLcdQPost(&App_TaskLcdTCB,&ucCmd,1);  
+    } else{
+       BSP_OS_SemPost(g_pActionSem);
+       pMsg = (INT8U *)OSTaskQPend (0, OS_OPT_PEND_BLOCKING, &msgSize, &ts, &os_err);
+       if (pMsg) {
+	 // if it comes from the CARD pluging
+        if (msgSize==1) {
+           ucCmd=*pMsg;
+           if(ucCmd==POWER_ON_SELFTEST_MSG) {
+	      if (ucType==SMALL_THICK_IN_TYPE || ucType==SMALL_THICK_OUT_TYPE ||
+                 ucType==SMALL_THICK_GIN_TYPE || ucType==SMALL_THIN_IN_TYPE || 
+                 ucType==SMALL_THIN_OUT_TYPE || ucType==SMALL_THIN_GIN_TYPE) {
+                 ucCmd=DISPLAY_SELFTEST_MSG;
+                 Box_TaskLcdQPost(&App_TaskLcdTCB,&ucCmd,1);
+            }  
             PowerOnSelftest();
-          }else if(ucCmd==MOTO_IN_TO_ANT_MSG){
-            if(ucType==SMALL_THICK_IN_TYPE){
-              InToAntProcess(NULL);
-            }else{
-              if(ZInToAntProcess(NULL)){
+         } else if (ucCmd==MOTO_IN_TO_ANT_MSG) {
+            if (ucType==SMALL_THICK_IN_TYPE) {
+                InToAntProcess(NULL);
+            } else {
+               if (ZInToAntProcess(NULL)) {
               #if PRINT_MOTO_EN==1                
-                ZPrintOpenProcess(NULL,DOOR_CLOSE_MODE);
+                   ZPrintOpenProcess(NULL,DOOR_CLOSE_MODE);
               #endif
               }
             }
           }
-        }else if(msgSize==sizeof(CardMachineRxData)){
-          ucType=DEV_TYPE();
-          pcommData=(CardMachineRxData *)pMsg;
-          switch(pcommData->ucCmd){
-          case MOTO_IN_TO_ANT_MSG:
-            if(ucType==SMALL_THICK_GIN_TYPE){
-              GCardToAntProcess(pcommData);		
-            }else if(ucType==SMALL_THICK_IN_TYPE){
-              InToAntProcess(pcommData);
-            }else if(ucType==SMALL_THICK_ZIN_TYPE){
-              if(ZInToAntProcess(pcommData)){
+        } else if (msgSize==sizeof(CardMachineRxData)) {
+           ucType=DEV_TYPE();
+           pcommData=(CardMachineRxData *)pMsg;
+           switch(pcommData->ucCmd){
+           case MOTO_IN_TO_ANT_MSG:
+              if (ucType==SMALL_THICK_GIN_TYPE) {
+                  GCardToAntProcess(pcommData);		
+              } else if(ucType==SMALL_THICK_IN_TYPE) {
+                  InToAntProcess(pcommData);
+              } else if(ucType==SMALL_THICK_ZIN_TYPE) {
+              if (ZInToAntProcess(pcommData)) {
               #if PRINT_MOTO_EN==1                
-                ZPrintOpenProcess(pcommData,DOOR_CLOSE_MODE);
+                  ZPrintOpenProcess(pcommData,DOOR_CLOSE_MODE);
               #endif                
               }
-            }
-            break;
+          }
+          break;
             
           case MOTO_ANT_TO_BOX_MSG:
-            if(ucType==SMALL_THICK_GIN_TYPE){
-              GAntToBoxProcess(pcommData);		
-            }else if(ucType==SMALL_THICK_IN_TYPE){
-              AntToBoxProcess(pcommData);
-            }else if(ucType==SMALL_THICK_ZIN_TYPE){
-              ZAntToBoxProcess(pcommData);
-            }
-            break;
+              if (ucType==SMALL_THICK_GIN_TYPE){
+                  GAntToBoxProcess(pcommData);		
+              } else if(ucType==SMALL_THICK_IN_TYPE){
+                  AntToBoxProcess(pcommData);
+              } else if(ucType==SMALL_THICK_ZIN_TYPE){
+                  ZAntToBoxProcess(pcommData);
+          }
+          break;
             
           case MOTO_BOX_TO_ANT_MSG:
           case MOTO_BOX_TO_ANT_B_MSG:
-            if(ucType==LARGE_THICK_OUT_TYPE){
-              LBoxToAntProcess(pcommData,pcommData->ucData[0]-0x30);
-            }else if(DEV_TYPE()==SMALL_THICK_IN_TYPE || DEV_TYPE()==SMALL_THICK_OUT_TYPE){
-              BoxToAntProcess(pcommData);
-            }
-            break;
+              if (ucType==LARGE_THICK_OUT_TYPE) {
+                 LBoxToAntProcess(pcommData,pcommData->ucData[0]-0x30);
+              } else if(DEV_TYPE()==SMALL_THICK_IN_TYPE || DEV_TYPE()==SMALL_THICK_OUT_TYPE) {
+                 BoxToAntProcess(pcommData);
+          }
+          break;
             
           case MOTO_ANT_TO_OUT_MSG:
-            m_ucMachineAddr=m_usrComm1RxData.ucAddr;
+              m_ucMachineAddr=m_usrComm1RxData.ucAddr;
           case MOTO_ANT_TO_OUT_B_MSG:
-            if(ucType==LARGE_THICK_OUT_TYPE){
-              LAntToOutProcess(pcommData);
-            }else if(ucType==SMALL_THICK_GIN_TYPE){
-              GAntToOutProcess(pcommData);
-            }else if(ucType==SMALL_THICK_IN_TYPE || ucType==SMALL_THICK_OUT_TYPE){
-              AntToOutProcess(pcommData);
-            }else if(ucType==SMALL_THICK_ZIN_TYPE){
-              ZAntToOutProcess(pcommData);
-            }
-            break;
+              if (ucType==LARGE_THICK_OUT_TYPE) {
+                 LAntToOutProcess(pcommData);
+              } else if(ucType==SMALL_THICK_GIN_TYPE) {
+                 GAntToOutProcess(pcommData);
+              } else if(ucType==SMALL_THICK_IN_TYPE || ucType==SMALL_THICK_OUT_TYPE){
+                 AntToOutProcess(pcommData);
+              } else if(ucType==SMALL_THICK_ZIN_TYPE) {
+                 ZAntToOutProcess(pcommData);
+          }
+          break;
             
           case MOTO_ANT_TO_REV_MSG:
-            if(ucType==LARGE_THICK_OUT_TYPE){
-              LAntToRevProcess(pcommData);
-            }
-            break;
+              if (ucType==LARGE_THICK_OUT_TYPE) {
+                 LAntToRevProcess(pcommData);
+              }
+          break;
             
           case MOTO_DOOR_OPEN_MSG:
-            if(ucType==SMALL_THICK_ZIN_TYPE){
-              //ZDoorOpenProcess(pcommData,DOOR_CLOSE_MODE);            //MOTO_DOOR_OPEN_MSG
-              ZPrintOpenProcess(pcommData,DOOR_CLOSE_MODE);   //0x39 MOTO_PRINT_OPEN_MSG
-            }
-            break;
+              if (ucType==SMALL_THICK_ZIN_TYPE) {
+                 ZPrintOpenProcess(pcommData,DOOR_CLOSE_MODE);   //0x39 MOTO_PRINT_OPEN_MSG
+              }
+          break;
             
           case MOTO_PRINT_OPEN_MSG:
-            if(ucType==SMALL_THICK_ZIN_TYPE){
-              ZPrintOpenProcess(pcommData,DOOR_CLOSE_MODE);
-            }
-            break;
-            
-          /*case SCAN_OPEN_MSG:
-            if(ucType==SMALL_THICK_ZIN_TYPE || ucType==SMALL_THIN_ZIN_TYPE){
-              CloseScan();
-              BSP_OS_TimeDlyMs(30);    
-              OpenScan();
-              Uart0Pack(INFTYPE_CMD_FINISHED,pcommData->ucAddr,pcommData->ucSeq,NULL,0,0);
-            }
-            break;
-            */
-            
+              if (ucType==SMALL_THICK_ZIN_TYPE) {
+                 ZPrintOpenProcess(pcommData,DOOR_CLOSE_MODE);
+          }
+          break;
           }
         }
         Mem_PoolBlkFree(&m_BoxPool, pMsg, &lib_err);
-        if (lib_err != LIB_MEM_ERR_NONE)  {
+        if (lib_err != LIB_MEM_ERR_NONE) {
           //error
         }
       }
@@ -1282,8 +1280,8 @@ void Action_Process(void)
 ** 作　  者: John Tonny
 ** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** 修 改 人:
-** 日　  期:
+** 修 改 人: Jerry_error
+** 日　  期: 20180914
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
 void PowerOnSelftest(void)
@@ -1300,19 +1298,26 @@ void PowerOnSelftest(void)
   INT8U ucDMotoErr1=0;
   
   INT8U ucRet;
-  
-  ucTmp=DISPLAY_SELFTEST_MSG;
-  Box_TaskLcdQPost(&App_TaskLcdTCB,&ucTmp,1);    
-  
+
   INT8U ucType=DEV_TYPE();
-  if(ucType==SMALL_THICK_IN_TYPE){
-  }else if(ucType==SMALL_THICK_OUT_TYPE){
-  }else if(ucType==SMALL_THICK_GIN_TYPE){
-    SMotoMoveWait(1500,MOTO_BACKWARD_MODE,SMOTO_FIRST);									
-    ulTmp=GetKey();    
-    ucTmp=((ulTmp>>m_ucKeyBit[CARD_POSA_BIT]) & 0x01) | (((ulTmp>>m_ucKeyBit[CARD_POSC_BIT]) & 0x03)<<1);
-    if(ucTmp){
-      ucSwitchErr=1;
+
+  if (ucType==SMALL_THICK_IN_TYPE || ucType==SMALL_THICK_OUT_TYPE ||
+      ucType==SMALL_THICK_GIN_TYPE || ucType==SMALL_THIN_IN_TYPE || 
+      ucType==SMALL_THIN_OUT_TYPE || ucType==SMALL_THIN_GIN_TYPE) {
+      ucTmp=DISPLAY_SELFTEST_MSG;
+      Box_TaskLcdQPost(&App_TaskLcdTCB,&ucTmp,1); 
+  }
+  
+  if (ucType==SMALL_THICK_IN_TYPE) {
+  } else if(ucType==SMALL_THICK_OUT_TYPE) {
+  } else if(ucType==SMALL_THICK_GIN_TYPE) {
+     // Run about min (1500*0.6ms, (1500*60/1000+2)ms ), ref SMotoStart for detail.
+     // It here runs about 900ms
+     SMotoMoveWait(1500,MOTO_BACKWARD_MODE,SMOTO_FIRST);									
+     ulTmp=GetKey(); 
+     ucTmp=((ulTmp>>m_ucKeyBit[CARD_POSA_BIT]) & 0x01) | (((ulTmp>>m_ucKeyBit[CARD_POSB_BIT]) & 0x03)<<1);
+     if(ucTmp){
+        ucSwitchErr=1;
     }
     DMotoMoveWait(35,MOTO_BACKWARD_MODE,DMOTO_FIRST);	
     DMotoMoveWait(35,MOTO_FORWARD_MODE,DMOTO_FIRST);	
@@ -1321,36 +1326,45 @@ void PowerOnSelftest(void)
     uiDMotoTime=((INT32U)DMOTO_FREQ_DEFAULT)*DMOTO_TIME_SK_DEFAULT/uiDMotoPwm;
     ucDSelected=m_ucDMotoBit[DMOTO_SECOND];
     
-    if(!DMotoPosAValid(DMOTO_SECOND)){
-      if(!MotoReset(WAIT_MODE,DMOTO_SECOND)){
-        ucDMotoErr=1;
-      }
+    if (!DMotoPosAValid(DMOTO_SECOND)) {
+       if (!MotoReset(WAIT_MODE,DMOTO_SECOND)) {
+           ucDMotoErr=1;
+       }
     }
-    if(!ucDMotoErr){
-      DMotoStart(DMOTO_FREQ_DEFAULT,uiDMotoPwm,MOTO_FORWARD_MODE,uiDMotoTime,ucDSelected);
-      ucRet=DMotoPosBWaitEnter(uiDMotoTime+5,DMOTO_SECOND);			
-      MOTO_DC_DISABLED(ucDSelected,NORMAL_MODE);
-      if(ucRet){
-        if(!MotoReset(WAIT_MODE,DMOTO_SECOND)){
-          ucDMotoErr=1;
-        }				
-      }else{
-        ucDMotoErr=1;
-      }
+
+    if (!ucDMotoErr) {
+       DMotoStart(DMOTO_FREQ_DEFAULT,uiDMotoPwm,MOTO_FORWARD_MODE,uiDMotoTime,ucDSelected);
+       ucRet=DMotoPosBWaitEnter(uiDMotoTime+5,DMOTO_SECOND);			
+       MOTO_DC_DISABLED(ucDSelected,NORMAL_MODE);
+       if(ucRet){
+         if(!MotoReset(WAIT_MODE,DMOTO_SECOND)){
+            ucDMotoErr=1;
+         }				
+      } else{
+         ucDMotoErr=1;
+         }
     }
-    if(ucSwitchErr && ucDMotoErr){
-      m_usrErrorFlags.usrBit.bSelfTest=3;
-    }else if(ucSwitchErr){
-      m_usrErrorFlags.usrBit.bSelfTest=1;			
-    }else if(ucDMotoErr){
-      m_usrErrorFlags.usrBit.bSelfTest=2;			
+
+    if (ucSwitchErr && ucDMotoErr) {
+       m_usrErrorFlags.usrBit.bSelfTest=3;
+    } else if (ucSwitchErr){
+       m_usrErrorFlags.usrBit.bSelfTest=1;			
+    } else if (ucDMotoErr){
+       m_usrErrorFlags.usrBit.bSelfTest=2;			
     }
-  }else if(ucType==SMALL_THICK_ZIN_TYPE){
-    SMotoMoveWait(1500,MOTO_BACKWARD_MODE,SMOTO_FIRST);									
-    ulTmp=GetKey();    
-    ucTmp=((ulTmp>>m_ucKeyBit[CARD_POSA_BIT]) & 0x01) | (((ulTmp>>m_ucKeyBit[CARD_POSC_BIT]) & 0x03)<<1);
-    if(ucTmp){
-      ucSwitchErr=1;
+  } else if (ucType==SMALL_THICK_ZIN_TYPE) {
+    // Push out the card left last time
+    // Run about min(1500*0.6ms, (1500*60/1000+2)ms ), ref SMotoStart for detail.
+    // It here runs about 900ms
+    SMotoMoveWait (1500,MOTO_BACKWARD_MODE,SMOTO_FIRST);									
+    ulTmp=GetKey();
+    // This statement probably the wrong, as the CARD_POSC_BIT is bit26, the value is 2
+    // after it shifts 2 bits, the CARD_POSB_BIT (bit25,value is 1) is lost, it should be:
+    ucTmp=((ulTmp>>m_ucKeyBit[CARD_POSA_BIT]) & 0x01) | (((ulTmp>>m_ucKeyBit[CARD_POSB_BIT]) & 0x03)<<1);
+    //ucTmp = ((ulTmp>>m_ucKeyBit[CARD_POSA_BIT]) & 0x01) | (((ulTmp>>m_ucKeyBit[CARD_POSC_BIT]) & 0x03)<<1);
+    if (ucTmp) {
+        // It is always 1 as the statement last line is wrong.
+        ucSwitchErr=1;
     }
     
 #if DOOR_OPEN_EN==1
@@ -1397,16 +1411,15 @@ void PowerOnSelftest(void)
     }
 #endif    
     
-    if(ucSwitchErr && ucDMotoErr && ucDMotoErr1){
-      m_usrErrorFlags.usrBit.bSelfTest=3;
-    }else if(ucSwitchErr){
-      m_usrErrorFlags.usrBit.bSelfTest=1;			
-    }else if(ucDMotoErr){
-      m_usrErrorFlags.usrBit.bSelfTest=2;			
+    if(ucSwitchErr && ucDMotoErr && ucDMotoErr1) {
+       m_usrErrorFlags.usrBit.bSelfTest=3;
+    } else if(ucSwitchErr){
+       m_usrErrorFlags.usrBit.bSelfTest=1;			
+    } else if(ucDMotoErr){
+       m_usrErrorFlags.usrBit.bSelfTest=2;			
     }
     g_ucLedMode=LEDOUT_ON_MODE;
-    
-  }else if(DEV_TYPE()==LARGE_THICK_OUT_TYPE){
+    } else if(DEV_TYPE()==LARGE_THICK_OUT_TYPE) {
   }	
   ucTmp=DISPLAY_MAIN_MSG;
   Box_TaskLcdQPost(&App_TaskLcdTCB,&ucTmp,1);  
@@ -1448,21 +1461,22 @@ INT8U SMotoMoveWait(INT16U uiCounts,INT8U ucDirection,INT8U ucSelected)
   
   ucRet=0;
   while(!ucRet){
+    // 10ms every loop
     OSTimeDly(10,OS_OPT_TIME_DLY, &os_err) ;         
     OS_ENTER_CRITICAL();
     if(!g_usrSMoto[ucSSelected].uiCounts){
-      ucRet=1;
+      ucRet= STOP_OK;
     }
     OS_EXIT_CRITICAL();
     if(uiTimes>0){
       uiTimes--;
     }else{
-      ucRet=2;                                                                      //系统故障
+      ucRet = 2;                                 //系统故障
     }
   }
   MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
-  if(ucRet==1){
-    return TRUE;
+  if (ucRet == STOP_OK) {
+      return TRUE;
   }
   return FALSE;
 }
@@ -1508,8 +1522,8 @@ void DMotoMoveWait(INT16U uiTime,INT8U ucDirection,INT8U ucSelected)
 ** 作　  者: John Tonny
 ** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** 修 改 人:
-** 日　  期:
+** 修 改 人: Jerry_error
+** 日　  期: 20180913
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
 INT8U DMotoPosAValid(INT8U ucSelected)
@@ -1523,6 +1537,8 @@ INT8U DMotoPosAValid(INT8U ucSelected)
     return FALSE;
   }
 
+  // It should only has the DMotoPosBySelected(), as if DMotoByPos executes later
+  // it goes back the same ucSelected.
   ucPos=DMotoPosBySelected(ucSelected);	
   ucPos=DMotoByPos(ucPos);
   ucTmp=m_ucKeyBit[DMOTO1_POSA_BIT+ucPos*8];
@@ -1534,6 +1550,49 @@ INT8U DMotoPosAValid(INT8U ucSelected)
     return FALSE;
   }
 }
+
+/********************************************************************************************************
+** 函数名称: DMotoPosACheck
+** 功能描述: Check if the Dmotor is at the positionA? True: YES, False: NO.
+** 输 　 入:
+**
+** 输　  出:
+**
+** 全局变量:
+** 调用模块:
+**
+** 作　  者: Jerry_error
+** 日　  期: 20180913
+**------------------------------------------------------------------------------------------------------
+** 修 改 人: 
+** 日　  期: 
+**------------------------------------------------------------------------------------------------------
+*******************************************************************************************************/
+INT8U DMotoPosACheck(INT8U ucSelected)
+{
+  INT8U ucTmp;
+  INT8U ucPos;
+  INT32U ulTmp;
+
+  
+  if(ucSelected>=CARDMACHINE_DMOTO_NUMS){
+    return FALSE;
+  }
+
+  // It should only has the DMotoPosBySelected(), as if DMotoByPos executes later
+  // it goes back the same ucSelected.
+  ucPos=DMotoPosBySelected(ucSelected);	
+  ucTmp=m_ucKeyBit[DMOTO1_POSA_BIT+ucPos*8];
+  ulTmp=GetKeyOutput();  
+  
+  if(CheckBit(ulTmp,ucTmp)){
+    return TRUE;
+  }else{
+    return FALSE;
+  }
+}
+
+
 
 /********************************************************************************************************
 ** 函数名称: DMotoPosBValid
@@ -1597,7 +1656,7 @@ INT8U DMotoPosAWaitEnter(INT16U uiWaitTime,INT8U ucSelected)
   OS_ERR os_err;
   INT16U uiTimes=uiWaitTime;
   
-  while(!DMotoPosAValid(ucSelected)){
+  while(!DMotoPosACheck(ucSelected)){
     OSTimeDly(10,OS_OPT_TIME_DLY, &os_err);
     if(uiTimes>0){
       uiTimes--;
@@ -1654,8 +1713,8 @@ INT8U DMotoPosBWaitEnter(INT16U uiWaitTime,INT8U ucSelected)
 ** 作　  者: John Tonny
 ** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** 修 改 人:
-** 日　  期:
+** 修 改 人: Jerry_error
+** 日　  期: 20180914
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
 INT8U SMotoReset(INT8U ucMode,INT8U ucSelected)
@@ -1666,19 +1725,14 @@ INT8U SMotoReset(INT8U ucMode,INT8U ucSelected)
 
   INT8U ucSMotoFreq=m_ucSMotoFreq[ucSSelected];
 
-  if(DMotoPosAValid(ucSelected)){
+  // Checkout if the motor is at the proper position
+  if(DMotoPosACheck(ucSelected)){
     return TRUE;
   }
   
-  /*
-  if(!ucMode){
-    SMotoStart(ucSMotoFreq,SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT,MOTO_BACKWARD_MODE,ucSSelected);    
-    return TRUE;
-  }*/
-  
   while(ucRetrys++<MOTO_RETRYS){
     SMotoStart(ucSMotoFreq,SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT,MOTO_BACKWARD_MODE,ucSSelected);    
-    ucRet=DMotoPosAWaitEnter(SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT-10,0);//ucSelected);
+    ucRet=DMotoPosAWaitEnter(SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT-10,ucSSelected);
     MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
     if(ucRet){
       return TRUE;
@@ -2181,7 +2235,7 @@ INT8U GAntToBoxProcess(CardMachineRxData *pcommRx1Data)
       if((CheckBit(ulTmp,ucCardPosCBit) || CheckBit(ulTmp,ucCardPosDBit))){
         DebugInfoA(0x99,(INT8U *)&ulTmp,4);
         while(1){
-          BSP_LED_Toggle(2);
+          BSP_LED_Toggle(LED2);
           OSTimeDly(100,OS_OPT_TIME_DLY, &os_err) ;         
           ulTmp=GetKeyOutput();    
           DebugInfoA(0xAA,(INT8U *)&ulTmp,4);
@@ -2757,74 +2811,73 @@ INT8U InToAnt(void)
   
   CPU_SR_ALLOC();
   
-  ulTmp=GetKeyOutput();    
-  if(CheckBit(ulTmp,ucCardPosCBit)){
+  ulTmp=GetKeyOutput();
+  // If there is a former CARD in the machine, do not allow the new CARD in.
+  if(CheckBit(ulTmp,ucCardPosCBit)) {
     //反转
     ucTimes=(((INT32U)SMOTO_COUNT_DEFAULT)*ucSMotoFreq)/(100*ACTION_DELAY_TIME_DEFAULT)+10/ACTION_DELAY_TIME_DEFAULT;
     SMotoStart(ucSMotoFreq,SMOTO_COUNT_DEFAULT,MOTO_FORWARD_MODE,ucSSelected);
     ucRet=0;
-    while(!ucRet){
+    while (!ucRet) {
       ulTmp=GetKeyOutput();    
-      if(!CheckBit(ulTmp,ucCardPosCBit)){
-        //离开
-        OSTimeDly(20,OS_OPT_TIME_DLY, &os_err) ;         
-        MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
-        ucLeaveC=1;
+      if (!CheckBit(ulTmp,ucCardPosCBit)){
+         //离开
+         OSTimeDly(20,OS_OPT_TIME_DLY, &os_err) ;         
+         MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
+         ucLeaveC=1;
       }
       
-      
       OS_ENTER_CRITICAL();
-      if(ucLeaveC){
-        ucRet=1;
-      }else if(!g_usrSMoto[ucSSelected].uiCounts){
-        ucRet=2;
+      if (ucLeaveC) {
+         ucRet = STOP_OK;
+      } else if(!g_usrSMoto[ucSSelected].uiCounts){
+         ucRet = STOP_INT_TICKOUT;
       }
       OS_EXIT_CRITICAL();
       
-      if(ucTimes>0){
-        ucTimes--;
-      }else{
-        ucRet=4;
+      if (ucTimes>0){
+          ucTimes--;
+      } else{
+          ucRet = STOP_LOOP_TIMEOUT;
       }
-      OSTimeDly(5,OS_OPT_TIME_DLY, &os_err) ;         
+      OSTimeDly(ACTION_DELAY_TIME_DEFAULT, OS_OPT_TIME_DLY, &os_err) ;         
     }
     MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
   }
   
-  if(ucRet>=2){
-    return FALSE;
+  if (ucRet >= STOP_INT_TICKOUT) {
+     return FALSE;
   }
-  
+
+  // The time will be min(SMOTO_COUNT_DEFAULT*0.6ms, ucTimes), which is almost the same.
   ucTimes=(((INT32U)SMOTO_COUNT_DEFAULT)*ucSMotoFreq)/(100*ACTION_DELAY_TIME_DEFAULT)+10/ACTION_DELAY_TIME_DEFAULT;
   SMotoStart(ucSMotoFreq,SMOTO_COUNT_DEFAULT,MOTO_BACKWARD_MODE,ucSSelected);
   ucRet=0;
   while(!ucRet){
     ulTmp=GetKeyOutput();    
-    if(CheckBit(ulTmp,ucCardPosCBit)){
-      //
-      //OSTimeDly(10,OS_OPT_TIME_DLY, &os_err) ;         
-      MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
-      ucEnterC=1;
+    if (CheckBit(ulTmp,ucCardPosCBit)){      
+        MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
+        ucEnterC=1;	// Stopped normally
     }
     
     OS_ENTER_CRITICAL();
-    if(ucEnterC){
-      ucRet=1;
-    }else if(!g_usrSMoto[ucSSelected].uiCounts){
-      ucRet=2;
+    if (ucEnterC) {
+        ucRet = STOP_OK;
+    } else if (!g_usrSMoto[ucSSelected].uiCounts) {
+        ucRet = STOP_INT_TICKOUT;		// The interrupt tick runs out
     }
     OS_EXIT_CRITICAL();
     
-    if(ucTimes>0){
-      ucTimes--;
-    }else{
-      ucRet=4;
+    if (ucTimes>0) {
+        ucTimes--;
+    } else{
+        ucRet = STOP_LOOP_TIMEOUT;		// The loop time runs out
     }
-    OSTimeDly(5,OS_OPT_TIME_DLY, &os_err) ;         
+    OSTimeDly(ACTION_DELAY_TIME_DEFAULT,OS_OPT_TIME_DLY, &os_err) ;         
   }
   MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
   	
-  if(ucRet>=2){
+  if(ucRet >= STOP_INT_TICKOUT){
     return FALSE;
   }
   return TRUE;
@@ -2857,28 +2910,29 @@ INT8U InToAntProcess(CardMachineRxData *pcommRx1Data)
   INT8U ucType=DEV_TYPE();
 
   CPU_SR_ALLOC();
-  
+
+  // Reset the paper sweeping motor to the initilization
   MotoReset(NOWAIT_MODE,DMOTO_SECOND);
   
-  if(ucType==SMALL_THICK_IN_TYPE){
-    ulTmp=GetKeyOutput();
-    if(InToAntPreProcess(ulTmp)){
-      return 2;
-    }
+  if (ucType==SMALL_THICK_IN_TYPE) {
+      ulTmp=GetKeyOutput();
+      if (InToAntPreProcess(ulTmp)){
+         return 2;
+     }
   }
   
   ucMode=0;
-  if(!pcommRx1Data){
-    ucMode=1;
+  if (!pcommRx1Data){
+      ucMode=1;
   }
   
   OS_ENTER_CRITICAL();
   g_usrMotoFlags.uiFlag=0;
   OS_EXIT_CRITICAL();
   
-  while(++ucRetrys<=MOTO_RETRYS){
-    if(InToAnt()){
-      break;
+  while (++ucRetrys<=MOTO_RETRYS) {
+      if(InToAnt()){
+         break;
     }
   }
   
@@ -3143,7 +3197,7 @@ INT8U AntToBoxProcess(CardMachineRxData *pcommRx1Data)
       if((CheckBit(ulTmp,ucCardPosCBit) || CheckBit(ulTmp,ucCardPosDBit))){
         DebugInfoA(0x99,(INT8U *)&ulTmp,4);
         while(1){
-          BSP_LED_Toggle(1);
+          BSP_LED_Toggle(LED1);
           OSTimeDly(1000,OS_OPT_TIME_DLY, &os_err) ;         
           ulTmp=GetKeyOutput();    
           DebugInfoA(0xAA,(INT8U *)&ulTmp,4);
@@ -3214,96 +3268,101 @@ INT8U ZInToAnt(void)
   
   CPU_SR_ALLOC();
   
-  ulTmp=GetKeyOutput();    
+  ulTmp=GetKeyOutput();
+  // Reset the paper sweeping motor to the initilization.
   if(CheckBit(ulTmp,ucCardPosCBit)){
     //反转
     ucTimes=(((INT32U)SMOTO_COUNT_DEFAULT)*ucSMotoFreq)/(100*ACTION_DELAY_TIME_DEFAULT)+10/ACTION_DELAY_TIME_DEFAULT;
     SMotoStart(ucSMotoFreq,SMOTO_COUNT_DEFAULT,ucBDir,ucSSelected);
     ucRet=0;
-    while(!ucRet){
+    while(!ucRet) {
       ulTmp=GetKeyOutput();    
-      if(!CheckBit(ulTmp,ucCardPosCBit)){
-        //卡离开入口
-        OSTimeDly(20,OS_OPT_TIME_DLY, &os_err) ;         
-        MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
-        ucLeaveC=1;
+      if (!CheckBit(ulTmp,ucCardPosCBit)) {
+         //卡离开入口
+         OSTimeDly(20,OS_OPT_TIME_DLY, &os_err) ;         
+         MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
+         ucLeaveC=1;
       }
       
-      
       OS_ENTER_CRITICAL();
-      if(ucLeaveC){
-        ucRet=1;
-      }else if(!g_usrSMoto[ucSSelected].uiCounts){
-        ucRet=2;
+      if (ucLeaveC) {
+          ucRet = STOP_OK;
+      } else if (!g_usrSMoto[ucSSelected].uiCounts) {
+          ucRet = STOP_INT_TICKOUT;
       }
       OS_EXIT_CRITICAL();
       
-      if(ucTimes>0){
-        ucTimes--;
-      }else{
-        ucRet=4;
+      if (ucTimes>0) {
+          ucTimes--;
+      } else {
+        ucRet = STOP_LOOP_TIMEOUT;
       }
-      OSTimeDly(5,OS_OPT_TIME_DLY, &os_err) ;         
+      OSTimeDly(ACTION_DELAY_TIME_DEFAULT, OS_OPT_TIME_DLY, &os_err) ;         
     }
     MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
   }
   
-  if(ucRet>=2){
+  if (ucRet >= STOP_INT_TICKOUT) {
     return FALSE;
   }
   
   ucTimes=(((INT32U)SMOTO_COUNT_DEFAULT)*ucSMotoFreq)/(100*ACTION_DELAY_TIME_DEFAULT)+10/ACTION_DELAY_TIME_DEFAULT;
   SMotoStart(ucSMotoFreq,SMOTO_COUNT_DEFAULT,ucFDir,ucSSelected);
   ucRet=0;
-  while(!ucRet){
+  while(!ucRet) {
     ulTmp=GetKeyOutput();    
     //if(CheckBit(ulTmp,ucCardPosCBit)){
     if(!CheckBit(ulTmp,ucCardPosABit)){
-      //卡离开C位进入AB位
+      //卡离开A位进入BC位
       OSTimeDly(18,OS_OPT_TIME_DLY, &os_err) ;      //延时微调位置   
       MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
       ucEnterC=1;
     }
     
     OS_ENTER_CRITICAL();
-    if(ucEnterC){
-      ucRet=1;
-    }else if(!g_usrSMoto[ucSSelected].uiCounts){
-      ucRet=2;
+
+    // If come to the positionC, jump the loop immediately.
+    if (ucEnterC) {
+        ucRet = STOP_OK;
+    // Else waiting for the uiCounts to 0.
+    } else if(!g_usrSMoto[ucSSelected].uiCounts){
+        ucRet = STOP_INT_TICKOUT;
     }
     OS_EXIT_CRITICAL();
-    
-    if(ucTimes>0){
-      ucTimes--;
-    }else{
-      ucRet=4;
+
+    // Else waiting for the ucTimes to 0.
+    if (ucTimes>0) {
+        ucTimes--;
+    } else{
+        ucRet = STOP_LOOP_TIMEOUT;
     }
-    OSTimeDly(5,OS_OPT_TIME_DLY, &os_err) ;         //原值5
+    OSTimeDly(ACTION_DELAY_TIME_DEFAULT,OS_OPT_TIME_DLY, &os_err);
   }
-  OSTimeDly(500,OS_OPT_TIME_DLY, &os_err) ;
+  // Wait a moment, actually these 2 statements have no effects when normal stopped.
+  OSTimeDly(500,OS_OPT_TIME_DLY, &os_err);
   MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
   	
-  if(ucRet>=2){
-    return FALSE;
+  if (ucRet >= STOP_INT_TICKOUT) {
+      return FALSE;
   }
   return TRUE;
 }
 
 /*******************************************************************************************************
-** oˉêy??3?: ZInToAntProcess
-** 1|?ü?èê?: 
-** ê? ?? è?:
+** 函数名称: ZInToAntProcess
+** 功能描述:
+** 输 　 入:
 **
-** ê???  3?:
+** 输　  出:
 **
-** è???±?á?:
-** μ÷ó??￡?é:
+** 全局变量:
+** 调用模块:
 **
-** ×÷??  ??: John Tonny
-** è???  ?ú: 2009?ê11??01è?
+** 作　  者: John Tonny
+** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** DT ?? è?:
-** è???  ?ú:
+** 修 改 人: Jerry
+** 日　  期: 20180914
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
 INT8U ZInToAntProcess(CardMachineRxData *pcommRx1Data)
@@ -3362,20 +3421,20 @@ INT8U ZInToAntProcess(CardMachineRxData *pcommRx1Data)
 }
 
 /*******************************************************************************************************
-** oˉêy??3?: ZAntToBox
-** 1|?ü?èê?: 
-** ê? ?? è?:
+** 函数名称: ZAntToBox
+** 功能描述:
+** 输 　 入:
 **
-** ê???  3?:
+** 输　  出:
 **
-** è???±?á?:
-** μ÷ó??￡?é:
+** 全局变量:
+** 调用模块:
 **
-** ×÷??  ??: John Tonny
-** è???  ?ú: 2009?ê11??01è?
+** 作　  者: John Tonny
+** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** DT ?? è?:
-** è???  ?ú:
+** 修 改 人: Jerry
+** 日　  期: 20180914
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
 INT8U ZAntToBox(void)
@@ -3390,7 +3449,6 @@ INT8U ZAntToBox(void)
   INT8U ucSMotoFreq=m_ucSMotoFreq[ucSSelected];
     
   INT8U ucCardPosCBit=m_ucKeyBit[CARD_POSC_BIT];
-  //INT8U ucCardPosDBit=m_ucKeyBit[CARD_POSD_BIT];
 
   INT8U ucFDir=MOTO_FORWARD_MODE;
   INT8U ucBDir=MOTO_BACKWARD_MODE;
@@ -3401,71 +3459,56 @@ INT8U ZAntToBox(void)
   CPU_SR_ALLOC();
   
   ucTimes=(((INT32U)SMOTO_COUNT_ANTTOBOX_DEFAULT)*ucSMotoFreq)/(100*ACTION_DELAY_TIME_DEFAULT)+10/ACTION_DELAY_TIME_DEFAULT;
+  // Send the CARD in the Anterna position to BOX, about SMOTO_COUNT_ANTTOBOX_DEFAULT*0.6 = 240ms.
   SMotoStart(ucSMotoFreq,SMOTO_COUNT_ANTTOBOX_DEFAULT,ucFDir,ucSSelected);
   ucRet=0;
-  while(!ucRet){    
+  while(!ucRet) {    
     ulTmp=GetKeyOutput();    
-    /*if(CheckBit(ulTmp,ucCardPosDBit)){
-      //μ?′??¨?ú?a1?????
-      ucEnterD=1;
-    }*/
     
-    if(!CheckBit(ulTmp,ucCardPosCBit)){
-      //à??a?ú2??a1?????
-      ucLeaveC=1;
-    }   
-    
-    /*if(AntToBoxPreProcess(ulTmp)>1){
-      MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);	
-      if(PlugInClear(150)){
-        break;
-      }else{
-        SMotoStart(ucSMotoFreq,SMOTO_COUNT_ANTTOBOX_DEFAULT+150,MOTO_FORWARD_MODE,ucSSelected);
-        ucTimes=(((INT32U)SMOTO_COUNT_ANTTOBOX_DEFAULT+150)*ucSMotoFreq)/1000+2;
-      }
-    }*/
+    if (!CheckBit(ulTmp,ucCardPosCBit)) {
+        ucLeaveC=1;
+    }
     
     OS_ENTER_CRITICAL();
-    if(!g_usrSMoto[ucSSelected].uiCounts){
-      if(ucLeaveC){
-        ucRet=1;
-      }else{      
-        ucRet=2;
-      }
+    if (!g_usrSMoto[ucSSelected].uiCounts){
+       if (ucLeaveC) {
+          ucRet = STOP_OK;
+       } else{      
+         ucRet = STOP_INT_TICKOUT;
+       }
     }
     OS_EXIT_CRITICAL();
-    if(ucTimes>0){
-      ucTimes--;
-    }else{
-      ucRet=4;
+    if (ucTimes>0) {
+       ucTimes--;
+    } else{
+       ucRet = STOP_LOOP_TIMEOUT;
     }
-    
-    OSTimeDly(5,OS_OPT_TIME_DLY, &os_err) ;         
+    OSTimeDly(ACTION_DELAY_TIME_DEFAULT, OS_OPT_TIME_DLY, &os_err) ;         
   }
   MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);	
   
-  if(CheckBit(ulTmp,ucCardPosCBit) /*|| CheckBit(ulTmp,ucCardPosDBit)*/){								//óD?¨￡?′ò??￡?·μ????ê?
-    return 0;
+  if (CheckBit(ulTmp,ucCardPosCBit)) {	
+     return 0;
   }
           
   return ucRet; 
 }
 
 /*******************************************************************************************************
-** oˉêy??3?: ZAntToBoxProcess
-** 1|?ü?èê?: 
-** ê? ?? è?:
+** 函数名称: ZAntToBoxProcess
+** 功能描述:
+** 输 　 入:
 **
-** ê???  3?:
+** 输　  出:
 **
-** è???±?á?:
-** μ÷ó??￡?é:
+** 全局变量:
+** 调用模块:
 **
-** ×÷??  ??: John Tonny
-** è???  ?ú: 2009?ê11??01è?
+** 作　  者: John Tonny
+** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** DT ?? è?:
-** è???  ?ú:
+** 修 改 人: Jerry
+** 日　  期: 20180914
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
 INT8U ZAntToBoxProcess(CardMachineRxData *pcommRx1Data)
@@ -3498,65 +3541,66 @@ INT8U ZAntToBoxProcess(CardMachineRxData *pcommRx1Data)
 
   ucMode=0;
   if(!pcommRx1Data){
-    ucMode=1;
+     ucMode=1;
   }
 
-  ulTmp=GetKeyOutput();
-  if(!CheckBit(ulTmp,ucBoxLoad1Bit)){
-    ucData[0]=SUBTYPE_ERR_CARDBOX_UNLOAD;
-    Uart0Pack(INFTYPE_DEVICE_ERR,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,ucData,1,ucMode);
-    return FALSE;
+  ulTmp = GetKeyOutput();
+  // The jumper is always setting it to 1.
+  if (!CheckBit(ulTmp,ucBoxLoad1Bit)) {
+      ucData[0]=SUBTYPE_ERR_CARDBOX_UNLOAD;
+      Uart0Pack(INFTYPE_DEVICE_ERR,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,ucData,1,ucMode);
+      return FALSE;
   }
 
-  if(!AntToBoxPreProcess(ulTmp)){
-    ucData[0]=SUBTYPE_ERR_NOCARD_ONANT;
-    Uart0Pack(INFTYPE_DEVICE_ERR,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,ucData,1,ucMode);
-    return FALSE;
+  if (!AntToBoxPreProcess(ulTmp)) {
+      ucData[0]=SUBTYPE_ERR_NOCARD_ONANT;
+      Uart0Pack(INFTYPE_DEVICE_ERR,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,ucData,1,ucMode);
+      return FALSE;
   }
   
   ucRetrys=0;
-  while(++ucRetrys<=MOTO_RETRYS){
-    if(ZAntToBox()==1){
-      break;
-    }else{
-      ucTest=1;
-    }
+  while (++ucRetrys<=MOTO_RETRYS) {
+      if (ZAntToBox()==STOP_OK) {
+         break;		// Stopping OK, jump out the loop.
+      } else {
+         ucTest=1; 	// Else try it with 3times.
+      }
   }
 
-  if(ucRetrys<=MOTO_RETRYS){
-    Uart0Pack(INFTYPE_CMD_FINISHED,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,0,0,ucMode);
-    if(m_usrBoxInfo[BOX_FIRST].usrFlag.usrBit.bBuzzEn){
-      if(m_usrBoxInfo[BOX_FIRST].ucBuzzMode>3){
-        m_usrBoxInfo[BOX_FIRST].ucBuzzMode=0;
-      }
-      BuzzSet(2,BUZZ_SK_MODE[m_usrBoxInfo[BOX_FIRST].ucBuzzMode],BUZZ_SK_MODE[m_usrBoxInfo[BOX_FIRST].ucBuzzMode],0);
-    }
-    g_ucLedMode=LEDOUT_ON_MODE;
-    return TRUE;
-  }else{
-    ucData[0]=SUBTYPE_ERR_ANT2BOX_FAIL;
-    Uart0Pack(INFTYPE_DEVICE_ERR,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,ucData,1,ucMode);
-    BuzzSet(4,50,25,BUZZ_SFK_ERROR_PRIOR);
+  if (ucRetrys<=MOTO_RETRYS) {
+     Uart0Pack(INFTYPE_CMD_FINISHED,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,0,0,ucMode);
+     if (m_usrBoxInfo[BOX_FIRST].usrFlag.usrBit.bBuzzEn) {
+        if (m_usrBoxInfo[BOX_FIRST].ucBuzzMode>3) {
+           m_usrBoxInfo[BOX_FIRST].ucBuzzMode=0;
+        }
+        BuzzSet (2,BUZZ_SK_MODE[m_usrBoxInfo[BOX_FIRST].ucBuzzMode],BUZZ_SK_MODE[m_usrBoxInfo[BOX_FIRST].ucBuzzMode],0);
+     }
+     g_ucLedMode=LEDOUT_ON_MODE;
+     return TRUE;
+  } else {
+     ucData[0]=SUBTYPE_ERR_ANT2BOX_FAIL;
+     Uart0Pack(INFTYPE_DEVICE_ERR,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,ucData,1,ucMode);
+     BuzzSet(4,50,25,BUZZ_SFK_ERROR_PRIOR);
   }
   return FALSE; 
 }
 
 
 /*******************************************************************************************************
-** oˉêy??3?: ZAntToOut
-** 1|?ü?èê?: 
-** ê? ?? è?:
+** 函数名称: ZAntToOut
+** 功能描述: Push the CARD out of the machine.
+** 输 　 入:
 **
-** ê???  3?:
+** 输　  出:
 **
-** è???±?á?:
-** μ÷ó??￡?é:
+** 全局变量:
+** 调用模块:
 **
-** ×÷??  ??: John Tonny
-** è???  ?ú: 2009?ê11??01è?
+** 作　  者: John Tonny
+** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** DT ?? è?:
-** è???  ?ú:
+** 修 改 人: Jerry
+** 日　  期: 20180914
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
 INT8U ZAntToOut(void)
@@ -3581,54 +3625,54 @@ INT8U ZAntToOut(void)
   INT8U ucBDir=MOTO_BACKWARD_MODE;
   
   CPU_SR_ALLOC();
-  
+
+  // The time is about 800*0.6ms = 480ms
   ucTimes=(((INT32U)SMOTO_COUNT_ZIN_ANTTOOUT_DEFAULT)*ucSMotoFreq)/(100*ACTION_DELAY_TIME_DEFAULT)+10/ACTION_DELAY_TIME_DEFAULT;
   SMotoStart(ucSMotoFreq,SMOTO_COUNT_ZIN_ANTTOOUT_DEFAULT,ucBDir,ucSSelected);
   ucRet=0;
-  while(!ucRet){
-    ulTmp=GetKeyOutput();    
-    if(!CheckBit(ulTmp,ucCardPosBBit)){
-      //à??a?ú2??a1?????
-      MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
-      ucLeaveB=1;
+  while(!ucRet) {
+    ulTmp=GetKeyOutput();  
+    if (!CheckBit(ulTmp,ucCardPosBBit)){
+       MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
+       ucLeaveB=1;
     }    
     OS_ENTER_CRITICAL();
-    if(ucLeaveB){
-      ucRet=1;
-    }else if(!g_usrSMoto[ucSSelected].uiCounts){
-      ucRet=2;
+    if (ucLeaveB) {
+      ucRet = STOP_OK;
+    } else if (!g_usrSMoto[ucSSelected].uiCounts) {
+      ucRet = STOP_INT_TICKOUT;
     }
     OS_EXIT_CRITICAL();
-    if(ucTimes>0){
-      ucTimes--;
-    }else{
-      ucRet=4;
+    if (ucTimes>0){
+       ucTimes--;
+    } else{
+       ucRet = STOP_LOOP_TIMEOUT;
     }
-    OSTimeDly(5,OS_OPT_TIME_DLY, &os_err) ;         
+    OSTimeDly(ACTION_DELAY_TIME_DEFAULT, OS_OPT_TIME_DLY, &os_err) ;         
   }
   MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
 	
-  if(ucRet>=2){
-    return FALSE;
+  if(ucRet >= STOP_INT_TICKOUT) {
+    return FALSE;	//The motor stopped with timeout, it is abnormal.
   }
   return TRUE;
 }
 
 /*******************************************************************************************************
-** oˉêy??3?: ZAntToOutProcess
-** 1|?ü?èê?: 
-** ê? ?? è?:
+** 函数名称: ZAntToOutProcess
+** 功能描述: Push the CARD out of the machine.
+** 输 　 入:
 **
-** ê???  3?:
+** 输　  出:
 **
-** è???±?á?:
-** μ÷ó??￡?é:
+** 全局变量:
+** 调用模块:
 **
-** ×÷??  ??: John Tonny
-** è???  ?ú: 2009?ê11??01è?
+** 作　  者: John Tonny
+** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** DT ?? è?:
-** è???  ?ú:
+** 修 改 人: Jerry
+** 日　  期: 20180914
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
 INT8U ZAntToOutProcess(CardMachineRxData *pcommRx1Data)
@@ -3658,30 +3702,28 @@ INT8U ZAntToOutProcess(CardMachineRxData *pcommRx1Data)
   }
   
   ulTmp=GetKeyOutput();
-  if(!(CheckBit(ulTmp,ucCardPosCBit) ||  CheckBit(ulTmp,ucCardPosBBit))){
-    ucData[0]=SUBTYPE_ERR_NOCARD_ONANT;
-    Uart0Pack(INFTYPE_DEVICE_ERR,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,ucData,1,ucMode);
-    return FALSE;
+  if (!(CheckBit(ulTmp,ucCardPosCBit) ||  CheckBit(ulTmp,ucCardPosBBit))) {
+     ucData[0]=SUBTYPE_ERR_NOCARD_ONANT;
+     Uart0Pack(INFTYPE_DEVICE_ERR,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,ucData,1,ucMode);
+     return FALSE;
   }
   
-  while(++ucRetrys<=MOTO_RETRYS){
-    if(ZAntToOut()){
-      break;
+  while(++ucRetrys<=MOTO_RETRYS) {
+    if (ZAntToOut()) {
+       break;
     }
   }
   
-  if(ucRetrys<=MOTO_RETRYS){
-    //???ˉ?¨ê±?′°?3?±¨?ˉ  
-    //TakeoutOvertimeRead();    
-    Uart0Pack(INFTYPE_CMD_FINISHED,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,0,0,ucMode);
-    g_ucLedMode=LEDOUT_TOGGLE_MODE;
-    m_usrGlobalFlag.usrBit.bWaitTakeOut=1;
-    return TRUE;
-  }else{
-    ucData[0]=SUBTYPE_ERR_ANT2EXIT_FAIL;
-    Uart0Pack(INFTYPE_DEVICE_ERR,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,ucData,1,ucMode);
-    BuzzSet(4,50,25,BUZZ_SFK_ERROR_PRIOR);
-    return FALSE;
+  if (ucRetrys<=MOTO_RETRYS) {
+     Uart0Pack(INFTYPE_CMD_FINISHED,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,0,0,ucMode);
+     g_ucLedMode=LEDOUT_TOGGLE_MODE;
+     m_usrGlobalFlag.usrBit.bWaitTakeOut=1;	// Wait the user to take out the card.
+     return TRUE;
+  } else {
+     ucData[0]=SUBTYPE_ERR_ANT2EXIT_FAIL;
+     Uart0Pack(INFTYPE_DEVICE_ERR,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,ucData,1,ucMode);
+     BuzzSet(4,50,25,BUZZ_SFK_ERROR_PRIOR);
+     return FALSE;
   }  
 }
 
@@ -5076,39 +5118,40 @@ INT8U LBoxToAntPreProcess(void)
   return ucRet;
 }
 
-/*******************************************************************************************************
-** oˉêy??3?: AntToBoxPreProcess
-** 1|?ü?èê?: 
-** ê? ?? è?: 
+/********************************************************************************************************
+** 函数名称: AntToBoxPreProcess
+** 功能描述:
+** 输 　 入:
 **
-** ê???  3?:
+** 输　  出:
 **
-** è???±?á?:
-** μ÷ó??￡?é:
+** 全局变量:
+** 调用模块:
 **
-** ×÷??  ??: John Tonny
-** è???  ?ú: 2009?ê11??01è?
+** 作　  者: John Tonny
+** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** DT ?? è?:
-** è???  ?ú:
+** 修 改 人: Jerry
+** 日　  期: 20180914
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
 INT8U AntToBoxPreProcess(INT32U ulState)
 { 
 	INT8U ucTmp;
+	// bit3 is BOXLOAD1_BIT, so the ucTmp =  BOXLOAD1_BIT | BOXLOAD1_BIT | CARD_POSA_BIT;
 	ucTmp=((ulState>>m_ucKeyBit[CARD_POSA_BIT]) & 0x01) | (((ulState>>m_ucKeyBit[CARD_POSC_BIT]) & 0x03)<<1) ;
 	switch(ucTmp){
 		case 0:
-			return 0;															//?T?¨
+			return 0;
 		case 3:
 		case 2:
 		case 6:
 		case 4:
-			return 1;															//ò????¨
-		case 7:																	
-			return 2;															//á????¨￡?ò????ú???¨?ú￡?ò????úí¨μà?D
+			return 1;	
+		case 7:
+			return 2;	
 		case 5:																														
-			return 3;															//á????¨￡?ò????ú???¨?ú￡?ò????ú???¨?D?ú	
+			return 3;	
 		default:
 			return 4;
 	}

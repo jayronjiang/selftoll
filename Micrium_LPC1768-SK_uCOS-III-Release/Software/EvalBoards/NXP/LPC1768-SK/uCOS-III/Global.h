@@ -623,20 +623,20 @@ typedef struct
 }CardMachineRxData;
 
 typedef struct _DMOTO {
-  INT8U ucDirection;                  //﹞??辰
-  INT16U uiFreq;                      //?米?那
-  INT16U uiPwm;                       //???赤	
+  INT8U ucDirection;  
+  INT16U uiFreq;  
+  INT16U uiPwm; 
   INT8U ucEnabled;
   INT16U uiTime;
 }DMOTO, *PDMOTO;
 
 typedef struct _SMOTO {
-  INT8U ucDirection;                  //﹞??辰
-  INT8U ucFreq;                       //?米?那
-  INT16U uiCounts;                    //2?那y
-  INT16U uiBakCounts;                 //㊣?﹞Y2?那y
-  INT8U ucEnabled;
-  INT16U uiTime;
+  INT8U ucDirection;	// 0: forward, 1:backward
+  INT8U ucFreq;		//The pulse clk for the step motor(*10us), 60:600us.
+  INT16U uiCounts;		// How long does the step motor run (*10ms), 90:900ms.
+  INT16U uiBakCounts;
+  INT8U ucEnabled; 	//0: disable, 1:enable
+  INT16U uiTime;		// How long does the step motor run timeout (*10ms).
 }SMOTO, *PSMOTO;
 
 typedef union __MOTO_FLAGS {

@@ -107,7 +107,32 @@
 #define  BSP_JOY_LEFT                 DEF_BIT_04
 #define  BSP_JOY_CENTER               DEF_BIT_05
 
+/*
+*********************************************************************************************************
+*                                          LEDS DEFINES
+*********************************************************************************************************
+*/
+#define  LED12_BOTH                 0
+#define  LED1					1
+#define  LED2					2
+#define  LED3					3
+#define  LED4					4
+#define  LED5					5
 
+// CARD indication
+// 1. No card at the entry, it is ON.
+// 2. The card is in the machine, it is OFF.
+// 3. The card is at the entry, it blinks.
+#define  LED_CARD			LED3
+// Waiting for code scanning
+// ON: waiting the user to scan
+// OFF: not waiting
+#define  LED_CODE_SCAN		LED4
+
+// Waiting for 
+// ON: waiting the user to get the receipt
+// OFF: not waiting
+#define  LED_RECEIPT_GET		LED5
 /*
 *********************************************************************************************************
 *                                              ADC ID DEFINES

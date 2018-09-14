@@ -169,18 +169,17 @@ static  void  App_TaskStart (void *p_arg)
 
     App_TaskCreate();                                           /* Create Application tasks                             */
 
-    BSP_LED_Off(1);
-    BSP_LED_On(2);                      //PCB--LED31
-    BSP_LED_On(2);
-//    BSP_LED_On(3);
+    BSP_LED_Off(LED1);
+    BSP_LED_On(LED2); 
+    BSP_LED_On(LED2);
     
-    BSP_LED_Off(4);
-    BSP_LED_On(4);
-    BSP_LED_Off(4);
+    BSP_LED_Off(LED4);
+    BSP_LED_On(LED4);
+    BSP_LED_Off(LED4);
 
-    BSP_LED_Off(5);
-    BSP_LED_On(5);
-    BSP_LED_Off(5);
+    BSP_LED_Off(LED5);
+    BSP_LED_On(LED5);
+    BSP_LED_Off(LED5);
     
     
     Key_Process();
@@ -487,45 +486,52 @@ static  void  App_TaskBuzz (void *p_arg)
   static INT8U ucLedTimes=0;
   static INT8U ucTimes=0;
     
-  while(DEF_TRUE){
-    if(++ucTimes>100){
-      ucTimes=0;
-      BSP_LED_Toggle(1);
+  while(DEF_TRUE) {
+    if (++ucTimes>100) {
+       ucTimes=0;
+	// The RUNNING LED, toggled every 1s.
+       BSP_LED_Toggle(LED1);
     }
-    
-    if(++ucLedTimes>50){
+
+    // Actually, it should detect the status of the CARD, not to accept the command.
+    if(++ucLedTimes>50) {
       ucLedTimes=0;
-      if(g_ucLedMode==LEDOUT_ON_MODE){
-        BSP_LED_On(3);
-      }else if(g_ucLedMode==LEDOUT_TOGGLE_MODE){
-        BSP_LED_Toggle(3);
+      if(g_ucLedMode==LEDOUT_ON_MODE) {
+        BSP_LED_On(LED_CARD);
+      }else if(g_ucLedMode==LEDOUT_TOGGLE_MODE) {
+        BSP_LED_Toggle(LED_CARD);
       }else{
-        BSP_LED_Off(3);
+        BSP_LED_Off(LED_CARD);
       }
+
+      // Not used.
       if(g_ucJLed2Mode==LEDOUT_ON_MODE){
-        BSP_LED_On(5);
-      }else if(g_ucJLed2Mode==LEDOUT_TOGGLE_MODE){
-        BSP_LED_Toggle(5);
+        BSP_LED_On(LED_RECEIPT_GET);
+      }else if(g_ucJLed2Mode==LEDOUT_TOGGLE_MODE) {
+        BSP_LED_Toggle(LED_RECEIPT_GET);
       }else{
-        BSP_LED_Off(5);
+        BSP_LED_Off(LED_RECEIPT_GET);
       }
+
+      // Not used.
       if(g_ucJLed1Mode==LEDOUT_ON_MODE){
-        BSP_LED_On(4);
-      }else if(g_ucJLed1Mode==LEDOUT_TOGGLE_MODE){
-        BSP_LED_Toggle(4);
+        BSP_LED_On(LED_CODE_SCAN);
+      }else if(g_ucJLed1Mode==LEDOUT_TOGGLE_MODE) {
+        BSP_LED_Toggle(LED_CODE_SCAN);
       }else{
-        BSP_LED_Off(4);
+        BSP_LED_Off(LED_CODE_SCAN);
       }
     }
-    
+
+    // Not used.
     if(++ucLedErrTimes>20){
       ucLedErrTimes=0;
       if(g_ucLedErrMode==LEDOUT_ON_MODE){
-        BSP_LED_On(2);
+        BSP_LED_On(LED2);
       }else if(g_ucLedErrMode==LEDOUT_TOGGLE_MODE){
-        BSP_LED_Toggle(2);
+        BSP_LED_Toggle(LED2);
       }else{
-        BSP_LED_Off(2);
+        BSP_LED_Off(LED2);
       }
     }
 
@@ -548,10 +554,10 @@ static  void  App_TaskBuzz (void *p_arg)
       }
     }
   #endif    
-    
+
+    // The timer is 10ms.
     BSP_OS_TimeDlyMs(10);    
     Buzz_Process();
-    
   }
 }
 

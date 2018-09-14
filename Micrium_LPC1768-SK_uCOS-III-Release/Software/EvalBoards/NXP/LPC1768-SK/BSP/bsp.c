@@ -457,7 +457,7 @@ void  BSP_Init (void)
     CSP_GPIO_BitSet(BSP_GPIO_SWITCH_PORT,
                     BSP_GPIO_SWITCH1_OUT);
     
-    BSP_LED_Off(0);
+    BSP_LED_Off(LED12_BOTH);
     
     CSP_IntInit();
     CSP_IntDisAll(CSP_INT_CTRL_NBR_MAIN);
@@ -600,9 +600,12 @@ CPU_INT08U  BSP_Joy_GetStatus (CPU_INT08U  joy_pos)
 *
 * Argument(s) : led_id   The ID of the LED to control:
 *
-*                       0    turn OFF all LEDs on the board
-*                       1    turn OFF USB_UP_LED1
-*                       2    turn OFF USB_UP_LED2
+*                       0    turn OFF LED1&LED2
+*                       1    turn OFF LED1
+*                       2    turn OFF LED2
+*                       3    turn OFF LED3
+*                       4    turn OFF LED4
+*                       5    turn OFF LED5
 *
 * Return(s)   : none.
 *
@@ -615,28 +618,28 @@ CPU_INT08U  BSP_Joy_GetStatus (CPU_INT08U  joy_pos)
 void  BSP_LED_Off (CPU_INT08U  led)
 {
     switch (led)  {
-        case 0u:
+        case LED12_BOTH:
              CSP_GPIO_BitSet(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1);
              CSP_GPIO_BitSet(BSP_GPIO_LED2_PORT, BSP_GPIO_LED2);
              break;
 
-        case 1u:
+        case LED1:
              CSP_GPIO_BitSet(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1);
              break;
 
-        case 2u:
+        case LED2:
              CSP_GPIO_BitSet(BSP_GPIO_LED2_PORT, BSP_GPIO_LED2);
              break;
 
-        case 3u:
+        case LED3:
              CSP_GPIO_BitClr(BSP_GPIO_LEDOUT_PORT, BSP_GPIO_LEDOUT);
              break;
 
-        case 4u:
+        case LED4:
              CSP_GPIO_BitClr(BSP_GPIO_SWITCH_PORT, BSP_GPIO_SWITCH_OUT);
              break;
 
-        case 5u:
+        case LED5:
              CSP_GPIO_BitClr(BSP_GPIO_LEDRF_PORT, BSP_GPIO_LEDRF);
              break;
 
@@ -669,28 +672,28 @@ void  BSP_LED_Off (CPU_INT08U  led)
 void  BSP_LED_On (CPU_INT08U  led)
 {
     switch (led)  {
-        case 0u:
+        case LED12_BOTH:
              CSP_GPIO_BitClr(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1);
              CSP_GPIO_BitClr(BSP_GPIO_LED2_PORT, BSP_GPIO_LED2);
              break;
 
-        case 1u:
+        case LED1:
              CSP_GPIO_BitClr(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1);
              break;
 
-        case 2u:
+        case LED2:
              CSP_GPIO_BitClr(BSP_GPIO_LED2_PORT, BSP_GPIO_LED2);
              break;
 
-        case 3u:
+        case LED3:
            CSP_GPIO_BitSet(BSP_GPIO_LEDOUT_PORT, BSP_GPIO_LEDOUT);
            break;
            
-        case 4u:
+        case LED4:
            CSP_GPIO_BitSet(BSP_GPIO_SWITCH_PORT, BSP_GPIO_SWITCH_OUT);
            break;
 
-        case 5u:
+        case LED5:
            CSP_GPIO_BitSet(BSP_GPIO_LEDRF_PORT, BSP_GPIO_LEDRF);
            break;
 
@@ -723,28 +726,28 @@ void  BSP_LED_On (CPU_INT08U  led)
 void  BSP_LED_Toggle (CPU_INT08U  led)
 {
     switch (led)  {
-        case 0u:
+        case LED12_BOTH:
              CSP_GPIO_BitToggle(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1);
              CSP_GPIO_BitToggle(BSP_GPIO_LED2_PORT, BSP_GPIO_LED2);
              break;
 
-        case 1u:
+        case LED1:
              CSP_GPIO_BitToggle(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1);
              break;
 
-        case 2u:
+        case LED2:
              CSP_GPIO_BitToggle(BSP_GPIO_LED2_PORT, BSP_GPIO_LED2);
              break;
 
-        case 3u:
+        case LED3:
              CSP_GPIO_BitToggle(BSP_GPIO_LEDOUT_PORT, BSP_GPIO_LEDOUT);
              break;
              
-        case 4u:
+        case LED4:
              CSP_GPIO_BitToggle(BSP_GPIO_SWITCH_PORT, BSP_GPIO_SWITCH_OUT);
              break;
 
-        case 5u:
+        case LED5:
              CSP_GPIO_BitToggle(BSP_GPIO_LEDRF_PORT, BSP_GPIO_LEDRF);
              break;
              
