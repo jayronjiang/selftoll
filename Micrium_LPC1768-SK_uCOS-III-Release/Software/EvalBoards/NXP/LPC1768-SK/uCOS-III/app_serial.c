@@ -1415,7 +1415,8 @@ void Uart0Process(CPU_CHAR *pMsg,OS_MSG_SIZE msgSize)
     case 0x36:					//éè???¨?úμ??·
       CardMachineAddrWrite(pcommData);
       break;
-      
+
+    // Switch the ANTERNA
     case 0x3A:			//内部天线	
       CardBoxSetSelected(BOX_FIRST,BOX_POWER_OFF_MODE);
       Uart0Pack(INFTYPE_CMD_FINISHED,pcommData->ucAddr,pcommData->ucSeq,NULL,0,0);

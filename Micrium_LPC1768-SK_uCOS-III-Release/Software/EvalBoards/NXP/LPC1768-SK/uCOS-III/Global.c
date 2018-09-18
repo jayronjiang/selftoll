@@ -559,25 +559,30 @@ void SprintF(INT8U *pucData,INT8U ucLen,INT32U ulData)
 }
 
 /********************************************************************************************************
-** oˉêy??3?: CardBoxGetSelected
-** 1|?ü?èê?:
-** ê? ?? è?:
+** 函数名称: BytesToAscs
+** 功能描述: Read the POWER3~POWER1 status.
+** 输 　 入:
 **
-** ê???  3?:
+** 输　  出:
 **
-** è???±?á?:
-** μ÷ó??￡?é:
+** 全局变量:
+** 调用模块:
 **
-** ×÷??  ??: John Tonny
-** è???  ?ú: 2005?ê05??01è?
+** 作　  者: John Tonny
+** 日　  期: 2005年05月01日
 **------------------------------------------------------------------------------------------------------
-** DT ?? è?:
-** è???  ?ú:
+** 修 改 人: Jerry
+** 日　  期: 20180918
 **------------------------------------------------------------------------------------------------------
 *******************************************************************************************************/
 INT8U CardBoxGetSelected(void)
 {
-  return (((CSP_GPIO_Rd(BSP_GPIO_BOX1_SELECT_PORT)&BSP_GPIO_BOX1_SELECT)>>BSP_GPIO_BOX1_SELECT_BIT)|((CSP_GPIO_Rd(BSP_GPIO_BOX2_SELECT_PORT)&BSP_GPIO_BOX2_SELECT)>>(BSP_GPIO_BOX2_SELECT_BIT-1))|((CSP_GPIO_Rd(BSP_GPIO_BOX3_SELECT_PORT)&BSP_GPIO_BOX3_SELECT)>>(BSP_GPIO_BOX3_SELECT_BIT-2)))&0x07;
+  // the Sequence is BSP_GPIO_BOX3_SELECT| 0 | BSP_GPIO_BOX2_SELECT| BSP_GPIO_BOX1_SELECT
+  // which maybe wrong.
+  return (((CSP_GPIO_Rd(BSP_GPIO_BOX1_SELECT_PORT)&BSP_GPIO_BOX1_SELECT)>>BSP_GPIO_BOX1_SELECT_BIT)
+  	           |((CSP_GPIO_Rd(BSP_GPIO_BOX2_SELECT_PORT)&BSP_GPIO_BOX2_SELECT)>>(BSP_GPIO_BOX2_SELECT_BIT-1))
+  	           |((CSP_GPIO_Rd(BSP_GPIO_BOX3_SELECT_PORT)&BSP_GPIO_BOX3_SELECT)>>(BSP_GPIO_BOX3_SELECT_BIT-2))
+  	      )&0x07;
 }
 
 /********************************************************************************************************
