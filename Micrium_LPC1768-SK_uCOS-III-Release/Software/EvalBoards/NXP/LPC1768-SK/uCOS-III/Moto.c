@@ -4102,9 +4102,8 @@ INT8U ZPrintClose(INT8U ucState)
   if(!CheckBit(ulTmp,ucDMoto1PosBBit) && !CheckBit(ulTmp,ucDMoto1PosABit)){
     //÷–º‰Œª÷√
     SMotoStart(ucSMotoFreq,SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT,MOTO_BACKWARD_MODE,ucSSelected);    
-    ucRet=DMotoPosAWaitEnter(SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT-10,0);//ucSSelected);
+    ucRet=DMotoPosAWaitEnter(SMOTO_COUNT_ZIN_PAPER_RECYCLE_DEFAULT-10,ucSSelected);//ucSSelected);
     MOTO_STEP_DISABLED(ucSSelected,NORMAL_MODE);
-    //
     SMotoReset(WAIT_MODE,SMOTO_SECOND);
   }
        
