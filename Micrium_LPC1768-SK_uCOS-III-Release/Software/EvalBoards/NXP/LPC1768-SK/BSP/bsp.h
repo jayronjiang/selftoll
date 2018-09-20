@@ -127,12 +127,12 @@
 // Waiting for code scanning
 // ON: waiting the user to scan
 // OFF: not waiting
-#define  LED_CODE_SCAN		LED4
+#define  LED_CODE_SCAN		LED5
 
 // Waiting for 
 // ON: waiting the user to get the receipt
 // OFF: not waiting
-#define  LED_RECEIPT_GET		LED5
+#define  LED_RECEIPT_GET		LED4
 /*
 *********************************************************************************************************
 *                                              ADC ID DEFINES

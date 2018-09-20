@@ -1419,7 +1419,7 @@ void PowerOnSelftest(void)
        m_usrErrorFlags.usrBit.bSelfTest=2;			
     }
     g_ucLedMode=LEDOUT_ON_MODE;
-    g_ucJLed1Mode==LEDOUT_OFF_MODE;
+    g_ucJLed1Mode=LEDOUT_OFF_MODE;
     } else if(DEV_TYPE()==LARGE_THICK_OUT_TYPE) {
   }	
   ucTmp=DISPLAY_MAIN_MSG;
@@ -3412,7 +3412,7 @@ INT8U ZInToAntProcess(CardMachineRxData *pcommRx1Data)
   if(ucRetrys<=MOTO_RETRYS){
     Uart0Pack(INFTYPE_CMD_FINISHED,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,0,0,ucMode);
     g_ucLedMode=LEDOUT_OFF_MODE;
-    g_ucJLed1Mode==LEDOUT_ON_MODE;
+    g_ucJLed1Mode=LEDOUT_ON_MODE;
     return TRUE;
   }else{
     ucData[0]=SUBTYPE_ERR_EXIT2ANT_FAIL;
@@ -3578,7 +3578,7 @@ INT8U ZAntToBoxProcess(CardMachineRxData *pcommRx1Data)
         BuzzSet (2,BUZZ_SK_MODE[m_usrBoxInfo[BOX_FIRST].ucBuzzMode],BUZZ_SK_MODE[m_usrBoxInfo[BOX_FIRST].ucBuzzMode],0);
      }
      g_ucLedMode=LEDOUT_ON_MODE;
-     g_ucJLed1Mode==LEDOUT_OFF_MODE;
+     g_ucJLed1Mode=LEDOUT_OFF_MODE;
      return TRUE;
   } else {
      ucData[0]=SUBTYPE_ERR_ANT2BOX_FAIL;
@@ -3720,7 +3720,7 @@ INT8U ZAntToOutProcess(CardMachineRxData *pcommRx1Data)
   if (ucRetrys<=MOTO_RETRYS) {
      Uart0Pack(INFTYPE_CMD_FINISHED,pcommRx1Data->ucAddr,pcommRx1Data->ucSeq,0,0,ucMode);
      g_ucLedMode=LEDOUT_TOGGLE_MODE;
-     g_ucJLed1Mode==LEDOUT_OFF_MODE;
+     g_ucJLed1Mode=LEDOUT_OFF_MODE;
      m_usrGlobalFlag.usrBit.bWaitTakeOut=1;	// Wait the user to take out the card.
      return TRUE;
   } else {

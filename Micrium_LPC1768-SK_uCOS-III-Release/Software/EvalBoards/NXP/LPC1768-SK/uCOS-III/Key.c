@@ -402,7 +402,7 @@ void Key_Process(void)
             m_usrGlobalFlag.usrBit.bCardTakeout=1;
             m_usrGlobalFlag.usrBit.bWaitTakeOut=0;
             g_ucLedMode=LEDOUT_ON_MODE;
-            g_ucJLed1Mode==LEDOUT_OFF_MODE;
+            g_ucJLed1Mode=LEDOUT_OFF_MODE;
           }
         }
       }

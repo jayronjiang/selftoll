@@ -513,7 +513,7 @@ static  void  App_TaskBuzz (void *p_arg)
         BSP_LED_Off(LED_RECEIPT_GET);
       }
 
-      // Not used.
+      // Used for waiting scanning.
       if(g_ucJLed1Mode==LEDOUT_ON_MODE){
         BSP_LED_On(LED_CODE_SCAN);
       }else if(g_ucJLed1Mode==LEDOUT_TOGGLE_MODE) {
